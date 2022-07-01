@@ -1,0 +1,37 @@
+<nav class="Nav__bg">
+    <div class="Nav">
+        <div class="Nav__FirstLine__Desktop">
+            <a routerLink="/"><img class="Nav__Brand" src="../../../assets/img/brandLogo.png" alt="Logo" /></a>
+            <app-search-bar class="Nav__Search"></app-search-bar>
+            <div class="Nav__Icons">
+                <a routerLink="/perfil"><img src="../../../assets/img/user-ico.png" alt="Perfil" height="30px"
+                        width="25px" /></a>
+                <a routerLink="/carrito"><img src="../../../assets/img/cart-ico.png" alt="Carrito de compras"
+                        height="30px" width="30px" /></a>
+            </div>
+        </div>
+        <div class="Nav__FirstLine__Mobile">
+            <div [ngClass]="isMenuOpen ? 'Nav__MenuIco--open' : 'Nav__MenuIco--closed'" (click)="toggleMenu()">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+            <a routerLink="/"><img class="Nav__Brand" src="../../../assets/img/brandLogo.png" alt="Logo" /></a>
+            <div class="Nav__Icons">
+                <a routerLink="/perfil"><img src="../../../assets/img/user-ico.png" alt="Perfil" height="30px"
+                        width="25px" /></a>
+                <a routerLink="/carrito"><img src="../../../assets/img/cart-ico.png" alt="Carrito de compras"
+                        height="30px" width="30px" /></a>
+            </div>
+        </div>
+        <app-search-bar class="Nav__Search__Mobile"></app-search-bar>
+        <hr />
+        <ul [ngClass]="isMenuOpen ? 'Nav__List--open' : 'Nav__List--closed'">
+            <li><a routerLink="/">Inicio</a></li>
+            <li><a routerLink="/productos">Productos</a></li>
+            <li><a routerLink="/blog">Blog</a></li>
+            <li><a routerLink="/nosotros">Nosotros</a></li>
+            <li><a routerLink="/contacto">Contacto</a></li>
+        </ul>
+    </div>
+</nav>
