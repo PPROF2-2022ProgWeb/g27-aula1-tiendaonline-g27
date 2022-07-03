@@ -21,26 +21,47 @@ Esta especificación de requisitos está dirigida al usuario del sistema.
 
 ### **Personal involucrado**
 
+|Nombre|	Barreyro, Liza Solange|
+| :- | :- | 
+|Rol|	Desarrolladora Frontend|
+|Categoría Profesional|	Estudiante|
+|Responsabilidad| |	
+|Información de contacto|	lisabarreyro@gmail.com|
+
+|Nombre|	Massimino , Ivan|
+| :- | :- | 
+|Rol|	Desarrollador Frontend|
+|Categoría Profesional|	Estudiante|
+|Responsabilidad| |	
+|Información de contacto|	ivaanmass@gmail.com|
+
 |Nombre|	Monzón, Lucila|
 | :- | :- | 
-|Rol|	Desarrollador|
+|Rol|	Desarrolladora Frontend|
 |Categoría Profesional|	Estudiante|
 |Responsabilidad| |	
 |Información de contacto|	lumonzon2021@gmail.com|
 
 |Nombre|	Murga, María Luciana|
 | :- | :- | 
-|Rol|	Desarrollador|
+|Rol|	Scrum Master – Desarrolladora Backend
 |Categoría Profesional|	Estudiante|
 |Responsabilidad| |
 |Información de contacto|	lulipsicounc@gmail.com |
 
 |Nombre|	Yorbandi, Selien Xavier|
 | :- | :- | 
-|Rol|	Desarrollador|
+|Rol|	Desarrollador Frontend|
 |Categoría Profesional|	Estudiante|
 |Responsabilidad| |	
 |Información de contacto|	selienxavieryorbandi@gmail.com|
+
+|Nombre|	Zamudia , Ana Carolina|
+| :- | :- | 
+|Rol|	Desarrolladora Frontend|
+|Categoría Profesional|	Estudiante|
+|Responsabilidad| |	
+|Información de contacto|	carozamudia@gmail.com|
 
 ### **Definiciones, acrónimos y abreviaturas**
 
