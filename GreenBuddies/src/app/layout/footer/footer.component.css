@@ -1,0 +1,189 @@
+footer {
+    background: var(--main-color);
+    display: flex;
+}
+
+.Footer__Content {
+    color: var(--ligther-font-color);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1rem;
+    padding: 1rem;
+    max-width: 1200px;
+}
+
+.Footer__Content h5 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.Footer__Content a {
+    color: var(--ligther-font-color);
+    text-decoration: none;
+}
+
+.Footer__Content a:hover {
+    text-decoration: underline;
+}
+
+.Footer__Section ul {
+    display: none;
+}
+
+.Footer__Disclaimer {
+    display: none;
+}
+
+.Footer__Section__Social {
+    display: none;
+}
+
+.Footer__Badges {
+    display: none;
+}
+
+.Footer__Section__Social {
+    display: flex;
+    gap: .5rem;
+}
+
+.Footer__Section__Social img {
+    width: 30px;
+    filter: brightness(10);
+}
+
+.Footer__Section__Social img:hover {
+    filter: none;
+}
+
+.Footer__Redes h5 {
+    display: none;
+}
+
+@media screen and (min-width: 650px) {
+    footer {
+        justify-content: center;
+        padding: 2rem 0;
+    }
+
+    .Footer__Content {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .Footer__Redes {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .Footer__Copyright {
+        font-size: .85rem;
+        text-align: center;
+    }
+
+    .Footer__Disclaimer {
+        display: flex;
+        font-size: .7rem;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 900px) {
+
+    /* Estructura en grid */
+
+    .Footer__Content {
+        width: 100%;
+        display: grid;
+        grid-template-areas:
+            "legal atencion ayuda"
+            "legal redes newsletter"
+            "copyright copyright copyright";
+        grid-template-columns: 2fr 2fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        row-gap: 1rem;
+        column-gap: 2rem;
+    }
+
+    .Footer__Legal {
+        grid-area: legal;
+    }
+
+    .Footer__Atencion {
+        grid-area: atencion;
+    }
+
+    .Footer__Ayuda {
+        grid-area: ayuda;
+    }
+
+    .Footer__Redes {
+        grid-area: redes;
+        gap: .5rem;
+    }
+
+    .Footer__Copy {
+        grid-area: copyright;
+    }
+
+    .Footer__Section {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: .4rem;
+    }
+
+    /* Tamaños de texto y separaciones  */
+
+    .Footer__Section h5 {
+        font-size: 1.5rem;
+    }
+
+    .Footer__Section ul {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        gap: .35rem;
+        font-size: 1.15rem;
+    }
+
+    .Footer__Copyright {
+        font-size: 1.05rem;
+    }
+
+    .Footer__Disclaimer {
+        font-size: .9rem;
+    }
+
+    .Footer__Copy p {
+        text-align: left;
+    }
+
+    .Footer__Badges {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .Footer__Badges ul {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .Footer__Redes {
+        justify-content: flex-start;
+    }
+
+    .Footer__Redes h5 {
+        display: flex;
+    }
+}

@@ -4,11 +4,13 @@ import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { ComponentsModule } from '../components/components.module';
+import { OutsideClickDirective } from '../directives/outside-click.directive';
 
 @NgModule({
   declarations: [
     NavComponent,
-    FooterComponent
+    FooterComponent,
+    OutsideClickDirective
   ],
   imports: [
     CommonModule,

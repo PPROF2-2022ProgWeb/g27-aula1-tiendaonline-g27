@@ -17,7 +17,7 @@
 .SearchBar button img {
     width: 16px;
     height: 16px;
-    padding: 5px;
+    padding: 10px;
 }
 
 .SearchBar button:hover {
