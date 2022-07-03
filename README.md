@@ -123,5 +123,5 @@ Green Buddies SA no sólo persigue un fin comercial sino también una finalidad 
 [Figma Green Buddies](https://www.figma.com/file/tUEV6OEPa16jo3jaq9mHNG/GreenBuddies?node-id=6%3A2)
 
 ### Modelo relacional de Base de Datos  
-![Green Buddies](https://i.ibb.co/YX06HTf/BD-grupo4-aula5.jpg)
+![Green Buddies](https://github.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/blob/main/Especificaciones/DER_green_buddies.png)
 
