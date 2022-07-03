@@ -13,6 +13,10 @@ export class NavComponent implements OnInit {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
+  handleOutsideClick(): void {
+    this.isMenuOpen = false;
+  }
+  
   constructor() { }
 
   ngOnInit(): void {

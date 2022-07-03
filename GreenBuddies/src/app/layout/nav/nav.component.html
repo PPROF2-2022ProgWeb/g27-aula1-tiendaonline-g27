@@ -1,5 +1,5 @@
-<nav class="Nav__bg">
-    <div class="Nav">
+<nav class="Nav__bg" >
+    <div class="Nav" appOutsideClick (outsideClick)="handleOutsideClick()">
         <div class="Nav__FirstLine__Desktop">
             <a routerLink="/"><img class="Nav__Brand" src="../../../assets/img/brandLogo.png" alt="Logo" /></a>
             <app-search-bar class="Nav__Search"></app-search-bar>
@@ -25,7 +25,7 @@
             </div>
         </div>
         <app-search-bar class="Nav__Search__Mobile"></app-search-bar>
-        <hr />
+        <div class="Separator"></div>
         <ul [ngClass]="isMenuOpen ? 'Nav__List--open' : 'Nav__List--closed'">
             <li><a routerLink="/">Inicio</a></li>
             <li><a routerLink="/productos">Productos</a></li>
