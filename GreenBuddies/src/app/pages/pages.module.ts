@@ -4,6 +4,7 @@ import { NosotrosComponent } from './nosotros/nosotros.component';
 import { LayoutModule } from '../layout/layout.module';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { RegistroComponent } from './registro/registro.component';
   ],
   imports: [
     CommonModule,
-    LayoutModule
+    LayoutModule,
+    RouterModule
   ],
   exports: [
     NosotrosComponent,
