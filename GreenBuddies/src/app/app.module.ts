@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';/* Routing Modules */
-import { AppComponent } from './app.component';/*App Root */
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { LayoutModule } from './layout/layout.module';
 import { PagesModule } from './pages/pages.module';
-PagesModule
+
 @NgModule({
   declarations: [
     AppComponent
@@ -12,9 +13,11 @@ PagesModule
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PagesModule 
+    LayoutModule,
+    PagesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
