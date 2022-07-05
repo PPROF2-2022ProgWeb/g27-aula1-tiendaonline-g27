@@ -1,0 +1,99 @@
+.Nav__bg {
+    width: 100%;
+    height: 130px;
+    background: var(--ligther-bg);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.Nav {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    padding: 0 1rem;
+}
+
+.Nav__FirstLine__Desktop {
+    padding: .4rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Nav__FirstLine__Mobile {
+    display: none;
+}
+
+.Nav__Brand {
+    width: 120px;
+    height: 55px;
+}
+
+.Nav__Search {
+    display: flex;
+}
+
+.Nav__Icons {
+    display: flex;
+    align-items: center;
+    gap: 1.3rem;
+}
+
+.Nav__Icons img:hover {
+    filter: brightness(1.3);
+}
+
+.Nav__Search__Mobile {
+    display: none;
+}
+
+/** Separator */
+.Separator {
+    width: 100%;
+    height: 1px;
+    background: var(--gray-border);
+}
+
+@media screen and (max-width: 650px) {
+    .Nav__FirstLine__Desktop {
+        display: none;
+    }
+
+    .Nav__bg {
+        height: 110px;
+    }
+
+    .Nav__FirstLine__Mobile {
+        display: flex;
+        justify-content: space-between;
+        padding: .5rem 0;
+    }
+
+    .Nav__Brand {
+        width: 80px;
+        height: 38px;
+    }
+
+    .Nav__Icons a img {
+        width: 25px;
+        height: 27px;
+    }
+
+    .Nav__Search__Mobile {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .Separator {
+        margin-top: .5rem;
+    }
+
+}

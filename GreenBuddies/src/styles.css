@@ -8,6 +8,11 @@
     --gray-border: rgba(89, 89, 89, 0.575);
 }
 
+* {
+    padding: 0;
+    margin: 0;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background: var(--main-bg);
