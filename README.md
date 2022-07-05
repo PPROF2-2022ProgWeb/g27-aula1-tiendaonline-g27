@@ -21,26 +21,47 @@ Esta especificación de requisitos está dirigida al usuario del sistema.
 
 ### **Personal involucrado**
 
+|Nombre|	Barreyro, Liza Solange|
+| :- | :- | 
+|Rol|	Desarrolladora Frontend|
+|Categoría Profesional|	Estudiante|
+|Responsabilidad| |	
+|Información de contacto|	lisabarreyro@gmail.com|
+
+|Nombre|	Massimino , Ivan|
+| :- | :- | 
+|Rol|	Desarrollador Frontend|
+|Categoría Profesional|	Estudiante|
+|Responsabilidad| |	
+|Información de contacto|	ivaanmass@gmail.com|
+
 |Nombre|	Monzón, Lucila|
 | :- | :- | 
-|Rol|	Desarrollador|
+|Rol|	Desarrolladora Frontend|
 |Categoría Profesional|	Estudiante|
 |Responsabilidad| |	
 |Información de contacto|	lumonzon2021@gmail.com|
 
 |Nombre|	Murga, María Luciana|
 | :- | :- | 
-|Rol|	Desarrollador|
+|Rol|	Scrum Master – Desarrolladora Backend
 |Categoría Profesional|	Estudiante|
 |Responsabilidad| |
 |Información de contacto|	lulipsicounc@gmail.com |
 
 |Nombre|	Yorbandi, Selien Xavier|
 | :- | :- | 
-|Rol|	Desarrollador|
+|Rol|	Desarrollador Frontend|
 |Categoría Profesional|	Estudiante|
 |Responsabilidad| |	
 |Información de contacto|	selienxavieryorbandi@gmail.com|
+
+|Nombre|	Zamudia , Ana Carolina|
+| :- | :- | 
+|Rol|	Desarrolladora Frontend|
+|Categoría Profesional|	Estudiante|
+|Responsabilidad| |	
+|Información de contacto|	carozamudia@gmail.com|
 
 ### **Definiciones, acrónimos y abreviaturas**
 
@@ -102,5 +123,5 @@ Green Buddies SA no sólo persigue un fin comercial sino también una finalidad 
 [Figma Green Buddies](https://www.figma.com/file/tUEV6OEPa16jo3jaq9mHNG/GreenBuddies?node-id=6%3A2)
 
 ### Modelo relacional de Base de Datos  
-![Green Buddies](https://i.ibb.co/YX06HTf/BD-grupo4-aula5.jpg)
+![Green Buddies](https://github.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/blob/main/Especificaciones/DER_green_buddies.png)
 
