@@ -19,12 +19,15 @@
     padding: 0 1rem;
 }
 
-/** First line */
 .Nav__FirstLine__Desktop {
     padding: .4rem 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.Nav__FirstLine__Mobile {
+    display: none;
 }
 
 .Nav__Brand {
@@ -46,43 +49,15 @@
     filter: brightness(1.3);
 }
 
+.Nav__Search__Mobile {
+    display: none;
+}
+
 /** Separator */
 .Separator {
     width: 100%;
     height: 1px;
     background: var(--gray-border);
-}
-
-/** Second line */
-.Nav__List--open,
-.Nav__List--closed {
-    display: flex;
-    gap: 2.5rem;
-    list-style: none;
-    text-decoration: none;
-    justify-content: center;
-    margin: .5rem 0;
-}
-
-.Nav__List--open a,
-.Nav__List--closed a {
-    color: var(--main-color);
-    text-decoration: none;
-    font-size: 1.3rem;
-    font-weight: 500;
-}
-
-.Nav__List--open a:hover,
-.Nav__List--closed a:hover {
-    text-decoration: solid underline;
-}
-
-.Nav__FirstLine__Mobile {
-    display: none;
-}
-
-.Nav__Search__Mobile {
-    display: none;
 }
 
 @media screen and (max-width: 650px) {
@@ -110,55 +85,11 @@
         height: 27px;
     }
 
-    .Nav__MenuIco--closed>div,
-    .Nav__MenuIco--open>div {
-        width: 30px;
-        height: 4px;
-        background-color: var(--main-color);
-        margin: 6px 0;
-    }
-
-    .Nav__MenuIco--open .bar1 {
-        -webkit-transform: rotate(-45deg) translate(-6px, 6px);
-        transform: rotate(-45deg) translate(-6px, 6px);
-    }
-
-    .Nav__MenuIco--open .bar2 {
-        opacity: 0;
-    }
-
-    .Nav__MenuIco--open .bar3 {
-        -webkit-transform: rotate(45deg) translate(-8px, -8px);
-        transform: rotate(45deg) translate(-8px, -8px);
-    }
-
     .Nav__Search__Mobile {
         display: flex;
         justify-content: center;
         width: 100%;
         box-sizing: border-box;
-    }
-
-    .Nav__List--open {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        width: 100%;
-        top: 100px;
-        left: 0;
-        padding: 1rem 1rem 2rem 1rem;
-        background: var(--ligther-bg);
-    }
-
-    .Nav__List--closed {
-        display: none;
-        opacity: 0;
-    }
-
-    .Nav__List--open a,
-    .Nav__List--closed a {
-        font-size: 1.7rem;
-        font-weight: 500;
     }
 
     .Separator {

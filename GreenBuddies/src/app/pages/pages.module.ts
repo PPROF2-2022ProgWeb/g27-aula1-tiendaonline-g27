@@ -1,16 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PerfilComponent } from './perfil/perfil.component';
+import { NosotrosComponent } from './nosotros/nosotros.component';
+import { LayoutModule } from '../layout/layout.module';
 
 @NgModule({
   declarations: [
-    PerfilComponent
+    NosotrosComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    LayoutModule
   ],
   exports: [
-    PerfilComponent
+    NosotrosComponent
   ]
 })
+
 export class PagesModule { }

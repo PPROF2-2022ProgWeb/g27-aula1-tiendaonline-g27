@@ -143,7 +143,7 @@ footer {
     /* Tamaños de texto y separaciones  */
 
     .Footer__Section h5 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 
     .Footer__Section ul {
@@ -151,15 +151,16 @@ footer {
         flex-direction: column;
         list-style: none;
         gap: .35rem;
-        font-size: 1.15rem;
+        font-size: 1rem;
+        font-weight: 500;
     }
 
     .Footer__Copyright {
-        font-size: 1.05rem;
+        font-size: .85rem;
     }
 
     .Footer__Disclaimer {
-        font-size: .9rem;
+        font-size: .8rem;
     }
 
     .Footer__Copy p {
