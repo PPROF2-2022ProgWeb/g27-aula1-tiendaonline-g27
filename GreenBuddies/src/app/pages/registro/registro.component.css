@@ -1,4 +1,4 @@
-/*  ======== registro.html ========  */
+/*  ======== registro.css ========  */
 
 .forms {
   background-image: url("../../../assets/img/fondo_hojas1.jpg");
@@ -31,25 +31,32 @@ form{
   border-radius: 10px;
   margin-bottom: 10px;
   font-size: 14px;
-  border: none;
+  border-style: solid;
+  border-color: rgb(193, 244, 193);
 }
 
 input:focus{
   color: rgb(7, 62, 7);
 }
 
- /*no anda*/
+
 #nacimientoRegis,
 #paisRegis,
 #provinciaRegis,
 #cpRegis{
-  margin: 0px;
+  margin: 5px;
   width: 150px;
   padding: 5px ;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+ 
+}
 
+.flex-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+  
 }
 
 label{
@@ -67,7 +74,7 @@ button{
   width: 80%;
   margin: 10px auto;
   color:#fff;
-  height:40px;
+  height:35px;
   border: radius 5px;
   transition: all 0.5s ease-in;
   cursor: pointer;

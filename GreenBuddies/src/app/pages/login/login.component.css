@@ -1,4 +1,4 @@
-/*-----Login---------------------*/
+/*-----cssLogin---------------------*/
 
 .forms {
   background-image: url("../../../assets/img/fondo_hojas1.jpg");
@@ -20,8 +20,7 @@
   box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  align-items:center;
 }
 
 .mensajebienvenida {
@@ -34,6 +33,7 @@ label {
   text-align: left;
   color: rgb(7, 62, 7);
   font-size: 14px;
+  font-weight:bolder  ;
 }
 
 
@@ -57,19 +57,24 @@ input:focus {
   font-size: 14px;
 }
 
-#ingresar {
-  width: 360px;
+
+#ingreso {
+  width: 350px;
+  height: 40px;
   padding: 6px;
+  margin-top: 10px;
   font-family: 'Poppins', sans-serif;
   color: white;
   font-size: medium;
   background-color: rgb(60, 155, 60);
+  text-align: center;
   border-style: none;
-  border: radius 5px;
+  border: radius 10px;
   cursor: pointer;
 }
 
-#ingresar:hover {
+
+#ingreso:hover {
   background-color: forestgreen;
   font-weight: bold;
 }
@@ -82,18 +87,23 @@ a {
   color: rgb(17, 17, 253);
 }
 
+h4 a:hover{
+font-weight:lighter;
+background-color:rgb(175, 227, 229);
+}
 
+/*
 .formulario_registro input {
   padding: 10px;
   border-radius: 10px;
   margin-bottom: 16px;
-}
+}*/
 
 
 
 /* Inicio con facebook y google */
 .forms .btn {
-  margin-top: 20px;
+  margin-top: 15px;
   padding: .9rem;
   width: 350px;
   height: 10px;
@@ -101,25 +111,27 @@ a {
   text-align: center;
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
+  border-radius: 10px;
+  border-color: none;
 }
 
 .forms .btn-facebook {
   color: white;
   background-color: #3b5998;
-  border-color: rgba(0, 0, 0, 0.2);
+  
 }
 
 .forms .btn-facebook:hover,
 .forms .btn-facebook:focus {
   background: #30487B;
   color: #fff;
-  border-color: rgba(0, 0, 0, 0.2);
+  
 }
 
 .forms .btn-google-plus {
   color: white;
   background-color: #dd4b39;
-  border-color: rgba(0, 0, 0, 0.2);
+  
 }
 
 .forms .btn-google-plus:hover,
