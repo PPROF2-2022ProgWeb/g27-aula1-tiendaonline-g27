@@ -1,0 +1,66 @@
+<main class="forms">
+
+  <form class="formulario_registro container">
+
+    <h3>Crear una cuenta</h3>
+
+    <div class="grupo1">
+
+      <label for="nombreRegis" class="form-label">Nombre *</label><br>
+      <input type="text" class="form-control" id="nombreRegis" required minlength="2" maxlength="24"><br>
+
+      <label for="apellidoRegis" class="form-label">Apellido *</label><br>
+      <input type="text" class="form-control" id="apellidoRegis" value="" required minlength="2" maxlength="24"><br>
+
+      <label for="contraseniaRegis" class="form-label">Contraseña *</label><br>
+      <input type="password" class="form-control" id="contraseniaRegis" value="" required minlength="8"><br>
+
+      <label for="correoRegis" class="form-label">Correo *</label><br>
+      <input type="email" class="form-control" id="correoRegis" value="" required><br>
+    </div>
+
+    <div class="grupo2">
+      <label for="nacimientoRegis" class="form-label">Fecha de nacimiento</label>
+      <input type="date" class="form-control" id="nacimientoRegis" min="1930-01-01" max="2018-01-01" required>
+
+      <label for="paisRegis" class="form-label">País</label>
+      <input type="text" class="form-control" id="paisRegis">
+
+      <label for="provinciaRegis" class="form-label">Provincia</label>
+      <input type="text" class="form-control" id="provinciaRegis">
+
+      <label for="cpRegis" class="form-label">Código Postal</label>
+      <input type="number" class="form-control" id="cpRegis" maxlength="6">
+    </div>
+
+    <button class="btn btn-success submitBtn" type="submit" id="regSubmit"
+      data-bs-target="#modalForm">Registrarse</button>
+
+    <div class="cuenta">
+      <p><a href="login.html">Ya tengo una cuenta</a></p>
+    </div>
+
+  </form>
+
+  <!-- Modal -->
+  <div>
+    <div class="modal fade" id="modalForm" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">¿Está seguro que sus datos son correctos?</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+            <button type="button" class="btn btn-success" id="regisConfirm">Confirmar y enviar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
