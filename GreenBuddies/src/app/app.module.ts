@@ -3,16 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SliderComponent } from './slider/slider.component';
-import { MinilistadoComponent } from './minilistado/minilistado.component';
-import { NewsletterComponent } from './newsletter/newsletter.component';
+import { SliderComponent } from './shared/slider/slider.component';
+import { MinilistadoComponent } from './shared/minilistado/minilistado.component';
+import { NewsletterComponent } from './shared/newsletter/newsletter.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SliderComponent,
-    MinilistadoComponent,
-    NewsletterComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
