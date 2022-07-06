@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { InicioComponent } from './inicio/inicio.component';
-import { SharedModule } from 'src/app/shared/shared.module';
-
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
-    InicioComponent,
-  
+    InicioComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
+  ],
+  exports: [
+    InicioComponent
   ]
 })
 export class PagesModule { }

@@ -4,7 +4,6 @@ import { MinilistadoComponent } from './minilistado/minilistado.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
 import { SliderComponent } from './slider/slider.component';
 
-
 @NgModule({
   declarations: [
     MinilistadoComponent,

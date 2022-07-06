@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SliderComponent } from './shared/slider/slider.component';
-import { MinilistadoComponent } from './shared/minilistado/minilistado.component';
-import { NewsletterComponent } from './shared/newsletter/newsletter.component';
+import { PagesModule } from './pages/pages.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -13,9 +11,11 @@ import { NewsletterComponent } from './shared/newsletter/newsletter.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule,
+    PagesModule
   ],
   providers: [],
-  bootstrap: [AppComponent , SliderComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
