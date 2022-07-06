@@ -1,0 +1,23 @@
+<nav class="Nav__bg" >
+    <div class="Nav" appOutsideClick (outsideClick)="handleOutsideClick()">
+        <div class="Nav__FirstLine__Desktop">
+            <a routerLink="/"><img class="Nav__Brand" src="../../../assets/img/brandLogo.png" alt="Logo" /></a>
+            <app-search-bar class="Nav__Search"></app-search-bar>
+            <div class="Nav__Icons">
+                <app-profile-btn></app-profile-btn>
+                <app-cart-btn></app-cart-btn>
+            </div>
+        </div>
+        <div class="Nav__FirstLine__Mobile">
+            <app-menu-ico [isOpen]="isMenuOpen" (click)="toggleMenu()"></app-menu-ico>
+            <a routerLink="/"><img class="Nav__Brand" src="../../../assets/img/brandLogo.png" alt="Logo" /></a>
+            <div class="Nav__Icons">
+                <app-profile-btn></app-profile-btn>
+                <app-cart-btn></app-cart-btn>
+            </div>
+        </div>
+        <app-search-bar class="Nav__Search__Mobile"></app-search-bar>
+        <div class="Separator"></div>
+        <app-menu-list [isOpen]="isMenuOpen"></app-menu-list>
+    </div>
+</nav>

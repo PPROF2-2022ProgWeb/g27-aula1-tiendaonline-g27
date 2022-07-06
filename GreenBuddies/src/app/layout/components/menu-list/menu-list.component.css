@@ -1,0 +1,46 @@
+.Nav__List--open,
+.Nav__List--closed {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    text-decoration: none;
+    justify-content: center;
+    margin: .5rem 0;
+}
+
+.Nav__List--open a,
+.Nav__List--closed a {
+    color: var(--main-color);
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.Nav__List--open a:hover,
+.Nav__List--closed a:hover {
+    text-decoration: solid underline;
+}
+
+@media screen and (max-width: 650px) {
+    .Nav__List--open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        width: 100%;
+        top: 100px;
+        left: 0;
+        padding: 1rem 1rem 2rem 1rem;
+        background: var(--ligther-bg);
+    }
+
+    .Nav__List--closed {
+        display: none;
+        opacity: 0;
+    }
+
+    .Nav__List--open a,
+    .Nav__List--closed a {
+        font-size: 1.7rem;
+        font-weight: 500;
+    }
+}
