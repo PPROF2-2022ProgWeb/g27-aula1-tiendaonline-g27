@@ -5,10 +5,15 @@ Link de acceso al sitio: [greenbuddies.netlify.app](https://greenbuddies.netlify
 [IEEE](https://github.com/PPROF1-2021/a5-g4-tienda-on-line/tree/main/Especificaciones)  
 ## Integrantes 
 Barreyro, Liza Solange
-Massimini, Iván
+
+Massimino, Iván
+
 Monzón, Lucila  
+
 Murga, María Luciana   
+
 Yorbandi, Selien Xavier
+
 Zamudia, Ana Carolina
 
 ## Introducción  
