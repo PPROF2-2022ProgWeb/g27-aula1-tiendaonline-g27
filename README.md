@@ -4,9 +4,13 @@ Link de acceso al sitio: [greenbuddies.netlify.app](https://greenbuddies.netlify
 ## Especificación de Requerimientos
 [IEEE](https://github.com/PPROF1-2021/a5-g4-tienda-on-line/tree/main/Especificaciones)  
 ## Integrantes 
+Barreyro, Liza Solange
+Massimini, Iván
 Monzón, Lucila  
 Murga, María Luciana   
-Yorbandi, Selien Xavier  
+Yorbandi, Selien Xavier
+Zamudia, Ana Carolina
+
 ## Introducción  
 Este documento es una Especificación de Requisitos Software (ERS) para Green Buddies SA, que se dedica a la venta de productos reciclables, reciclados y/o biodegradables.
 ### Propósito
