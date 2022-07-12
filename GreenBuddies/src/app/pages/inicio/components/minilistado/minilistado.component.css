@@ -1,0 +1,76 @@
+main {
+    max-width: 1200px;
+    margin: 110px auto 30px auto;
+    padding: 0 1rem;
+}
+
+@media screen and (min-width: 650px) {
+    main {
+        margin: 140px auto 30px auto;
+    }
+}
+
+body{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+
+
+/* Contenedor boton "Ver mas productos" */
+
+.contenedor_ver_mas{
+    align-content: center;
+    justify-content: center;
+    display: grid;
+    height: 10vh;
+    margin: auto;
+    padding: 0;
+    
+    }
+     
+.boton_ver_mas{
+    border: 3px solid rgb(103, 139, 75);
+    margin-bottom: 20px;
+    padding: .5rem 2rem;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    background:rgb(103, 139, 75);
+    color: #ffffff;
+    }
+  
+ .boton_ver_mas:hover{
+     color: rgb(103, 139, 75);
+     background: #ffffff;
+      }
+
+ 
+/* Tarjetas de productos */
+
+.card {
+        border: none;
+      }
+
+.card:hover {
+        border: solid rgba(128, 128, 128, 0.452) 1px;
+      }
+        
+.card-footer {
+        display: flex;
+        flex-direction: column;
+      }
+      
+.card-footer div {
+        padding: 0.2rem;
+      }
+      
+.card-footer .btn {
+        max-width: 300px;
+        width: 100%;
+      }
+
+.d-flex :nth-child(2){
+        margin-right: 13px;
+      }
+

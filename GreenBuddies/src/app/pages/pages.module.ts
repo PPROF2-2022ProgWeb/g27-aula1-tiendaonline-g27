@@ -7,13 +7,17 @@ import { NosotrosComponent } from './nosotros/nosotros.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 import { RouterModule } from '@angular/router';
+import { SliderComponent } from './inicio/components/slider/slider.component';
+import { MinilistadoComponent } from './inicio/components/minilistado/minilistado.component';
 
 @NgModule({
   declarations: [
     InicioComponent,
     NosotrosComponent,
     LoginComponent,
-    RegistroComponent
+    RegistroComponent,
+    SliderComponent,
+    MinilistadoComponent
   ],
   imports: [
     CommonModule,
@@ -25,7 +29,9 @@ import { RouterModule } from '@angular/router';
     InicioComponent,
     NosotrosComponent,
     LoginComponent,
-    RegistroComponent
+    RegistroComponent,
+    SliderComponent,
+    MinilistadoComponent
   ]
 })
 
