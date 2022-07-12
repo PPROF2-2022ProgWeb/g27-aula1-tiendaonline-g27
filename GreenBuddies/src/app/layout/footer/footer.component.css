@@ -3,6 +3,10 @@ footer {
     display: flex;
 }
 
+ol,ul {
+    padding: 0;
+}
+
 .Footer__Content {
     color: var(--ligther-font-color);
     display: flex;
@@ -12,6 +16,7 @@ footer {
     gap: 1rem;
     padding: 1rem;
     max-width: 1200px;
+    
 }
 
 .Footer__Content h5 {
@@ -31,6 +36,8 @@ footer {
 
 .Footer__Section ul {
     display: none;
+    padding: 0;
+    margin: 0;
 }
 
 .Footer__Disclaimer {
