@@ -8,7 +8,9 @@
     align-items: center;
     align-content: center;
 }
-
+.Header h1 {
+    font-weight: 600;
+}
 .Header_top {
     margin: 110px auto 20px auto;
 }
