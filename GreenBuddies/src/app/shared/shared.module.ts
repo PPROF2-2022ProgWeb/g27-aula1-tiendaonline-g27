@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { NewsletterComponent } from './newsletter/newsletter.component';
 
 @NgModule({
   declarations: [
+    NewsletterComponent,
   ],
   imports: [
-    CommonModule,
-    RouterModule
+    CommonModule
   ],
   exports: [
+    NewsletterComponent,
   ]
 })
 
