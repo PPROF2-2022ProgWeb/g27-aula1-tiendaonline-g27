@@ -11,6 +11,7 @@ export class HeaderComponent implements OnInit {
   @Input() title: string = "Green Buddies";
   @Input() description: string = "";
   @Input() isTop: boolean = false;
+  @Input() hasMargin: boolean = true;
 
   constructor() { }
 
