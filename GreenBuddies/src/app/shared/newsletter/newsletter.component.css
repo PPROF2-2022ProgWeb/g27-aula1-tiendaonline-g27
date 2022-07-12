@@ -1,0 +1,29 @@
+main {
+    max-width: 1200px;
+    margin: 110px auto 30px auto;
+    padding: 0 1rem;
+}
+
+@media screen and (min-width: 650px) {
+    main {
+        margin: 140px auto 30px auto;
+    }
+}
+
+body{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+
+.suscripcionInput {
+    width: 250px;
+    margin-right: .4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.suscripcionBtn{
+    align-content: center;
+}
