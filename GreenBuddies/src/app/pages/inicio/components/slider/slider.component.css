@@ -1,0 +1,24 @@
+@media screen and (min-width: 650px) {
+    main {
+        margin: 140px auto 30px auto;
+    }
+}
+
+
+.sliderFs {
+    padding-left: 0;
+    padding-right: 0;
+    z-index: 0;
+    object-fit: fill;
+  }
+  
+  .carousel-indicators {
+    margin-bottom: 14vh;
+  }
+
+  
+     
+    
+  
+
+  
