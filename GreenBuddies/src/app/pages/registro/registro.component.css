@@ -3,21 +3,20 @@
 .forms {
   background-image: url("../../../assets/img/fondo_hojas1.jpg");
   background-size: cover;
-  padding: 2rem;
+  padding: 40px 0;
   box-sizing: border-box;
   margin: 110px auto 0 auto;
 }
 
-form{
-  height: 650px;
+form {
   width: 90%;
   max-width: 550px;
   margin: 0 auto;
   background: var(--main-bg);
-  padding: 10px;
+  padding: 40px 15px;
   border: solid var(--gray-border) 2px;
   border-radius: .8rem;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -26,56 +25,39 @@ form{
 
 /*formato inputs- block*/
 .formulario_registro input{
-  width: 90%;
-  padding: 8px;
   border-radius: 10px;
   margin-bottom: 16px;
   font-size: 14px;
   border: .5px solid var(--gray-border);
-  
 }
 
-
 .flex-container1{
-  width: 80%;
-  display: inline-block;
-  vertical-align: middle;
-  
+  width: 90%;
 }
 
 .flex-container2{
   max-width:500px ;
-  width: 90%;
-  margin: 5px;
+  width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
-  #nacimientoRegis,
-  #paisRegis,
-  #provinciaRegis,
-  #cpRegis{
-    display: flex;
-    padding: 5px;
-  }
-
+  
 label{
   color:rgb(7, 62, 7);
   font-size: 14px; 
 }
-
 
 button{
   font-family:'Poppins', sans-serif; 
   font-size: 1em;
   background-color: forestgreen; 
   border: none;
-  width: 90%;
-  margin: 10px;
+  width: 100%;
+  margin: 20px 0;
   color:#fff;
-  height:30px;
   border-radius: 10px;
   transition: all 0.5s ease-in;
   cursor: pointer;
@@ -89,13 +71,6 @@ button:hover {
   font-weight: bold ;
 }
 
-@media screen  and (min-width:650px) {
-  .forms {
-    margin: 130px auto 0 auto;
-  }
-}
-
-
 /* Modales */
 .modalRegistro {
   list-style: none;
@@ -105,7 +80,30 @@ button:hover {
   padding: .4rem 0;
 }
 
+/* --------- */
+.FLEXfila1, .FLEXfila2{
+  width: 100%;
+}
 
+@media screen  and (min-width:650px) {
+  .forms {
+    margin: 130px auto 0 auto;
+  }
+
+  .FLEXfila1, .FLEXfila2{
+    display: flex;
+    gap: 1rem;
+  }
+
+.flex-container2 .columna {
+  width: 50%;
+}
+
+  .flex-container2 input {
+    width: 100%;
+  }
+
+}
 
 
   
