@@ -1,0 +1,40 @@
+// Bootstrap --> Variable overrides
+$theme-colors: (
+  "primary": #187449,
+  "secondary": #678b4b,
+  "dark": #212529,
+);
+$headings-font-family: "Poppins", sans-serif;
+$font-family-sans-serif: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto,
+  "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+//Custom css
+:root {
+  --main-color: #187449;
+  --alt-color: #678b4b;
+  --main-bg: #f8f9fa;
+  --ligther-bg: #fff;
+  --main-font-color: #212529;
+  --ligther-font-color: #fff;
+  --gray-border: rgba(89, 89, 89, 0.575);
+
+  --zindex-dropdown: 1000;
+  --zindex-sticky: 1020;
+  --zindex-fixed: 1030;
+  --zindex-modal-backdrop: 1040;
+  --zindex-offcanvas: 1050;
+  --zindex-modal: 1060;
+  --zindex-popover: 1070;
+  --zindex-tooltip: 1080;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--main-bg);
+}
