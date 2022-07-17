@@ -1,15 +1,12 @@
-<div class="card-columns p-3">
 
-    <div class="col-sm-10">
+<div class="container text-center" id="card_productos">
 
-      
-                    <app-cards>
+        <div class="row">
+            
+                <div class="col-sm-4 mx-auto" *ngFor="let detalles_producto of var_productos">
+                    <app-cards  [dataEntrante]="detalles_producto"></app-cards>
+                </div>
 
+        </div>
 
-                        [dataEntrante]="detalles_productos"
-                        *ngFor="let detalles_productos of var_productos">
-
-                
-                    </app-cards>
-
-    </div>
+</div>
