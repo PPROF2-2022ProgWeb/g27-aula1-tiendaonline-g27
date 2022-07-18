@@ -8,8 +8,6 @@ import { SharedModule } from '../shared/shared.module';
 import { InicioComponent } from './inicio/inicio.component';
 import { SliderComponent } from './inicio/components/slider/slider.component';
 import { MinilistadoComponent } from './inicio/components/minilistado/minilistado.component';
-import { ProductosComponent } from '../pages/productos/productos.component';
-import { CardsComponent } from './productos/cards/cards.component';
 
 @NgModule({
   declarations: [
@@ -17,9 +15,7 @@ import { CardsComponent } from './productos/cards/cards.component';
     LoginComponent,
     RegistroComponent,
     SliderComponent,
-    MinilistadoComponent,
-    ProductosComponent,
-    CardsComponent
+    MinilistadoComponent
   ],
   imports: [
     CommonModule,
@@ -32,8 +28,7 @@ import { CardsComponent } from './productos/cards/cards.component';
     LoginComponent,
     RegistroComponent,
     SliderComponent,
-    MinilistadoComponent,
-    ProductosComponent
+    MinilistadoComponent
   ]
 })
 
