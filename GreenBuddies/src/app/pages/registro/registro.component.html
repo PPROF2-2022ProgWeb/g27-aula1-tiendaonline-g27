@@ -4,53 +4,63 @@
 
     <h3>Crear una cuenta</h3>
 
-    <div>
+    <div class="flex-container1">
+      <div class="items">
 
-      <label for="nombreRegis" class="form-label">Nombre *</label><br>
-      <input type="text" class="form-control" id="nombreRegis" required minlength="2" maxlength="24"><br>
-
-      <label for="apellidoRegis" class="form-label">Apellido *</label><br>
-      <input type="text" class="form-control" id="apellidoRegis" value="" required minlength="2" maxlength="24"><br>
-
-      <label for="contraseniaRegis" class="form-label">Contraseña *</label><br>
-      <input type="password" class="form-control" id="contraseniaRegis" value="" required minlength="8"><br>
-
-      <label for="correoRegis" class="form-label">Correo *</label><br>
-      <input type="email" class="form-control" id="correoRegis" value="" required><br>
-    </div>
-
-    <div class="flex-container">
-
-      <div class="FLEXfila1"> 
         <div class="columna1">
-        <label for="nacimientoRegis" class="form-label">Fecha de nacimiento</label>
-        <input type="date" class="form-control" id="nacimientoRegis" min="1930-01-01" max="2018-01-01" required>
+          <label for="nombreRegis" class="form-label">Nombre *</label>
+          <input type="text" class="form-control" id="nombreRegis" required minlength="2" maxlength="24">
         </div>
 
         <div class="columna2">
-        <label for="paisRegis" class="form-label">País</label>
-        <input type="text" class="form-control" id="paisRegis">
+          <label for="apellidoRegis" class="form-label">Apellido *</label>
+          <input type="text" class="form-control" id="apellidoRegis" value="" required minlength="2" maxlength="24">
+        </div>
+
+        <div class="columna3">
+          <label for="contraseniaRegis" class="form-label">Contraseña *</label>
+          <input type="password" class="form-control" id="contraseniaRegis" value="" required minlength="8">
+        </div>
+
+        <div class="columna4">
+          <label for="correoRegis" class="form-label">Correo *</label>
+          <input type="email" class="form-control" id="correoRegis" value="" required>
+        </div>
+      </div>
+    
+      
+    <div class="flex-container2">
+
+      <div class="FLEXfila1">
+        <div class="columna">
+          <label for="nacimientoRegis" class="form-label">Fecha de nacimiento</label>
+          <input type="date" class="form-control" id="nacimientoRegis" min="1930-01-01" max="2018-01-01" required>
+        </div>
+
+        <div class="columna">
+          <label for="paisRegis" class="form-label">País</label>
+          <input type="text" class="form-control" id="paisRegis">
         </div>
       </div>
 
       <div class="FLEXfila2">
-      <div class="columna3">
-      <label for="provinciaRegis" class="form-label">Provincia</label>
-      <input type="text" class="form-control" id="provinciaRegis">
-      </div>
+        <div class="columna">
+          <label for="provinciaRegis" class="form-label">Provincia</label>
+          <input type="text" class="form-control" id="provinciaRegis">
+        </div>
 
-      <div class="columna4">
-      <label for="cpRegis" class="form-label">Código Postal</label>
-      <input type="number" class="form-control" id="cpRegis" maxlength="6">
+        <div class="columna">
+          <label for="cpRegis" class="form-label">Código Postal</label>
+          <input type="number" class="form-control" id="cpRegis" maxlength="6">
+        </div>
       </div>
     </div>
-
-  </div>
 
 
 
     <button class="btn btn-success submitBtn" type="submit" id="regSubmit"
       data-bs-target="#modalForm">Registrarse</button>
+    </div>
 
     <div class="cuenta">
       <p><a routerLink="/login">Ya tengo una cuenta</a></p>
