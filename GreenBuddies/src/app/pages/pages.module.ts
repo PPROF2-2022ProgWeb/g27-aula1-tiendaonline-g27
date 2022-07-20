@@ -8,6 +8,9 @@ import { SharedModule } from '../shared/shared.module';
 import { InicioComponent } from './inicio/inicio.component';
 import { SliderComponent } from './inicio/components/slider/slider.component';
 import { MinilistadoComponent } from './inicio/components/minilistado/minilistado.component';
+import { TerminosYCondicionesComponent } from './terminos-y-condiciones/terminos-y-condiciones.component';
+import { PoliticaDePrivacidadComponent } from './politica-de-privacidad/politica-de-privacidad.component';
+import { GarantiaYDevolucionesComponent } from './garantia-y-devoluciones/garantia-y-devoluciones.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { MinilistadoComponent } from './inicio/components/minilistado/minilistad
     LoginComponent,
     RegistroComponent,
     SliderComponent,
-    MinilistadoComponent
+    MinilistadoComponent,
+    TerminosYCondicionesComponent,
+    PoliticaDePrivacidadComponent,
+    GarantiaYDevolucionesComponent
   ],
   imports: [
     CommonModule,
