@@ -11,6 +11,9 @@ import { MinilistadoComponent } from './inicio/components/minilistado/minilistad
 import { TerminosYCondicionesComponent } from './terminos-y-condiciones/terminos-y-condiciones.component';
 import { PoliticaDePrivacidadComponent } from './politica-de-privacidad/politica-de-privacidad.component';
 import { GarantiaYDevolucionesComponent } from './garantia-y-devoluciones/garantia-y-devoluciones.component';
+import { ProductosComponent } from '../pages/productos/productos.component';
+import { CardsComponent } from './productos/cards/cards.component';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +24,9 @@ import { GarantiaYDevolucionesComponent } from './garantia-y-devoluciones/garant
     MinilistadoComponent,
     TerminosYCondicionesComponent,
     PoliticaDePrivacidadComponent,
-    GarantiaYDevolucionesComponent
+    GarantiaYDevolucionesComponent,
+    ProductosComponent,
+    CardsComponent
   ],
   imports: [
     CommonModule,
@@ -34,7 +39,8 @@ import { GarantiaYDevolucionesComponent } from './garantia-y-devoluciones/garant
     LoginComponent,
     RegistroComponent,
     SliderComponent,
-    MinilistadoComponent
+    MinilistadoComponent,
+    ProductosComponent
   ]
 })
 
