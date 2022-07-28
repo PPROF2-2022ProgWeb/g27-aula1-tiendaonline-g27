@@ -2,28 +2,28 @@
 
   <form class="formulario_registro container">
 
-    <h3>Crear una cuenta</h3>
+    <h3>Create an account</h3>
 
     <div class="flex-container1">
       <div class="items">
 
         <div class="columna1">
-          <label for="nombreRegis" class="form-label">Nombre *</label>
+          <label for="nombreRegis" class="form-label">Name *</label>
           <input type="text" class="form-control" id="nombreRegis" required minlength="2" maxlength="24">
         </div>
 
         <div class="columna2">
-          <label for="apellidoRegis" class="form-label">Apellido *</label>
+          <label for="apellidoRegis" class="form-label">Last name *</label>
           <input type="text" class="form-control" id="apellidoRegis" value="" required minlength="2" maxlength="24">
         </div>
 
         <div class="columna3">
-          <label for="contraseniaRegis" class="form-label">Contraseña *</label>
+          <label for="contraseniaRegis" class="form-label">Password *</label>
           <input type="password" class="form-control" id="contraseniaRegis" value="" required minlength="8">
         </div>
 
         <div class="columna4">
-          <label for="correoRegis" class="form-label">Correo *</label>
+          <label for="correoRegis" class="form-label">Email *</label>
           <input type="email" class="form-control" id="correoRegis" value="" required>
         </div>
       </div>
@@ -33,24 +33,24 @@
 
       <div class="FLEXfila1">
         <div class="columna">
-          <label for="nacimientoRegis" class="form-label">Fecha de nacimiento</label>
+          <label for="nacimientoRegis" class="form-label">Date of birth</label>
           <input type="date" class="form-control" id="nacimientoRegis" min="1930-01-01" max="2018-01-01" required>
         </div>
 
         <div class="columna">
-          <label for="paisRegis" class="form-label">País</label>
+          <label for="paisRegis" class="form-label">Country</label>
           <input type="text" class="form-control" id="paisRegis">
         </div>
       </div>
 
       <div class="FLEXfila2">
         <div class="columna">
-          <label for="provinciaRegis" class="form-label">Provincia</label>
+          <label for="provinciaRegis" class="form-label">State</label>
           <input type="text" class="form-control" id="provinciaRegis">
         </div>
 
         <div class="columna">
-          <label for="cpRegis" class="form-label">Código Postal</label>
+          <label for="cpRegis" class="form-label">Zip code</label>
           <input type="number" class="form-control" id="cpRegis" maxlength="6">
         </div>
       </div>
@@ -59,11 +59,11 @@
 
 
     <button class="btn btn-success submitBtn" type="submit" id="regSubmit"
-      data-bs-target="#modalForm">Registrarse</button>
+      data-bs-target="#modalForm">Register</button>
     </div>
 
     <div class="cuenta">
-      <p><a routerLink="/login">Ya tengo una cuenta</a></p>
+      <p><a routerLink="/login">I already have an account</a></p>
     </div>
 
   </form>
