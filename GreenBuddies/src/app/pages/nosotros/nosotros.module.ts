@@ -4,6 +4,7 @@ import { NosotrosRoutingModule } from './nosotros-routing.module';
 import { NosotrosComponent } from './nosotros.component';
 import { LayoutModule } from 'src/app/layout/layout.module';
 
+
 @NgModule({
   declarations: [
     NosotrosComponent
