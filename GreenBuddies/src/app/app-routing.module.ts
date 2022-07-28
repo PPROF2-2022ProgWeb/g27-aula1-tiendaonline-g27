@@ -18,9 +18,8 @@ const routes: Routes = [
   {path: "politica-de-privacidad", component: PoliticaDePrivacidadComponent},
   {path: "garantia-y-devoluciones", component: GarantiaYDevolucionesComponent},
   {path: "productos", component: ProductosComponent},
+  { path: 'informacion-usuario-financiero', loadChildren: () => import('./pages/informacion-usuario-financiero/informacion-usuario-financiero.module').then(m => m.InformacionUsuarioFinancieroModule) },
   {path: "**", component: InicioComponent}
-
-
 ];
 
 @NgModule({
