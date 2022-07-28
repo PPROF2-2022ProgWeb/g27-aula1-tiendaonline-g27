@@ -13,6 +13,7 @@ import { PoliticaDePrivacidadComponent } from './politica-de-privacidad/politica
 import { GarantiaYDevolucionesComponent } from './garantia-y-devoluciones/garantia-y-devoluciones.component';
 import { ProductosComponent } from '../pages/productos/productos.component';
 import { CardsComponent } from './productos/cards/cards.component';
+import { AyudaComponent } from './ayuda/ayuda.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { CardsComponent } from './productos/cards/cards.component';
     PoliticaDePrivacidadComponent,
     GarantiaYDevolucionesComponent,
     ProductosComponent,
-    CardsComponent
+    CardsComponent,
+    AyudaComponent
   ],
   imports: [
     CommonModule,
