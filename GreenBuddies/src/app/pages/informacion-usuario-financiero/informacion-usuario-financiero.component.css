@@ -1,0 +1,43 @@
+.Section__content {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Section__content img {
+    max-width: 95%;
+    object-fit: contain;
+}
+
+.Img--fullwidth {
+    width: calc(90vw);
+}
+
+.Section__content ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+ol, ul {
+    padding: 1rem;
+}
+
+@media screen and (min-width: 650px) {
+    .Section__content {
+        font-size: 1.4rem;
+        margin: auto;
+        padding: 2rem;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .Section__content {
+        padding-top: 3rem;
+    }
+    .Section__content ul {
+        width: 70%;
+    }
+}
