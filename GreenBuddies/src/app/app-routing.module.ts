@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AyudaComponent } from './pages/ayuda/ayuda.component';
 import { GarantiaYDevolucionesComponent } from './pages/garantia-y-devoluciones/garantia-y-devoluciones.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: "garantia-y-devoluciones", component: GarantiaYDevolucionesComponent },
   { path: "productos", component: ProductosComponent },
   { path: "informacion-usuario-financiero", loadChildren: () => import("./pages/informacion-usuario-financiero/informacion-usuario-financiero.module").then(m => m.InformacionUsuarioFinancieroModule) },
+  { path: "ayuda",component: AyudaComponent},
   { path: "**", component: InicioComponent }
 ];
 
