@@ -10,6 +10,7 @@ import { RegistroComponent } from './pages/registro/registro.component';
 import { TerminosYCondicionesComponent } from './pages/terminos-y-condiciones/terminos-y-condiciones.component';
 
 const routes: Routes = [
+
   { path: "", component: InicioComponent },
   { path: "nosotros", loadChildren: () => import("./pages/nosotros/nosotros.module").then(m => m.NosotrosModule) },
   { path: "perfil", component: LoginComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: "informacion-usuario-financiero", loadChildren: () => import("./pages/informacion-usuario-financiero/informacion-usuario-financiero.module").then(m => m.InformacionUsuarioFinancieroModule) },
   { path: "ayuda",component: AyudaComponent},
   { path: "**", component: InicioComponent }
+
 ];
 
 @NgModule({
