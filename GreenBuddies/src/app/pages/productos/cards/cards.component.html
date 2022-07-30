@@ -3,11 +3,18 @@
 
             <div class="text-center">    
 
-                <h6 class="card-title text-secondary mb-5 text-light p-3 bg-success"> {{dataEntrante.nombre}}</h6>
+                <h6 class="card-title text-secondary mb-5 text-light p-2 bg-success"> {{dataEntrante.nombre}}</h6>
                 <img class="card-img-top"  src={{dataEntrante.imagenes}} alt="" style="width: 45%;">
-                <h5 class="card-text text-success mt-5">${{dataEntrante.precio}}</h5>
+
+           
+
+                    <h4 class="card-text text-success m-5">${{dataEntrante.precio_sin_descuento}}</h4>
+                
+           
+
                 <button type="button" class="btn btn-outline-secondary m-2 w-50 ">  Product details </button>
                 <button type="button" class="btn btn-outline-success m-2 w-50 "> Add to cart </button>
+                
             
             </div>   
 
