@@ -1,7 +1,6 @@
 import { Image } from "./image.model";
-
 export interface Product {
-  id: string | number;
+  id: number;
   nombre: string | null;
   categoria: string | null;
   descripcion: string | null;
