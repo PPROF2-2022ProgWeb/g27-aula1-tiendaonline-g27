@@ -1,0 +1,23 @@
+<div id="{{sliderId}}" class="carousel carousel-dark slide" data-bs-ride="true">
+    <div *ngIf="hasControllers" class="carousel-indicators">
+        <button *ngFor="let image of images; let i = index" type="button" [attr.data-bs-target]="'#' + sliderId"
+            [attr.data-bs-slide-to]="i" [attr.aria-current]="i == 0" [ngClass]="i==0 ? 'active' : ''"
+            [attr.aria-label]="'Slide ' + i"></button>
+    </div>
+    <div class="carousel-inner">
+        <div *ngFor="let image of images; let firstImg = first" [ngClass]="
+          firstImg
+            ? 'carousel-item active' 
+            : 'carousel-item'" [attr.data-bs-interval]="timeInterval">
+            <img src="{{ image.src }}" [ngClass]="hasPadding ? 'd-block w-100 sliderImg sliderImgPadd': 'd-block w-100 sliderImg'" [alt]="image.alt" [style]="'background:'+backgroundColor"/>
+        </div>
+    </div>
+    <button *ngIf="hasSideButtons" class="carousel-control-prev" type="button" [attr.data-bs-target]="'#' + sliderId" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+    </button>
+    <button *ngIf="hasSideButtons" class="carousel-control-next" type="button" [attr.data-bs-target]="'#' + sliderId" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Atrás</span>
+    </button>
+</div>

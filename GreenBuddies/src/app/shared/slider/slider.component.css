@@ -1,0 +1,19 @@
+.sliderImg {
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+    height: 100%;
+}
+
+.carousel-item:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.sliderImgPadd {
+    padding: 3rem;
+}
