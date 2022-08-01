@@ -1,3 +1,6 @@
-<app-slider-lm></app-slider-lm>
-<app-minilistado></app-minilistado>
-<app-newsletter></app-newsletter>
+<main>
+    <app-slider [images]="sliderTopImgs" [sliderId]="'topSlider'" [timeInterval]="3500"></app-slider>
+    <app-slider [images]="sliderMdImgs" [sliderId]="'midSlider'" [timeInterval]="3500"></app-slider>
+    <app-minilistado></app-minilistado>
+    <app-newsletter></app-newsletter>
+</main>

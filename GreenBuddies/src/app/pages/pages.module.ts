@@ -12,14 +12,12 @@ import { PoliticaDePrivacidadComponent } from './politica-de-privacidad/politica
 import { GarantiaYDevolucionesComponent } from './garantia-y-devoluciones/garantia-y-devoluciones.component';
 import { ProductosComponent } from '../pages/productos/productos.component';
 import { CardsComponent } from './productos/cards/cards.component';
-import { SliderLmComponent } from './inicio/components/slider/slider.component';
 
 @NgModule({
   declarations: [
     InicioComponent,
     LoginComponent,
     RegistroComponent,
-    SliderLmComponent,
     MinilistadoComponent,
     TerminosYCondicionesComponent,
     PoliticaDePrivacidadComponent,
@@ -37,7 +35,6 @@ import { SliderLmComponent } from './inicio/components/slider/slider.component';
     InicioComponent,
     LoginComponent,
     RegistroComponent,
-    SliderLmComponent,
     MinilistadoComponent,
     ProductosComponent
   ]
