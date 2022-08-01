@@ -34,6 +34,12 @@
     }
 }
 
+.Loader {
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+}
+
 @media screen and (min-width: 1400px) {
     .Section__content {
         margin: 200px auto 100px auto;

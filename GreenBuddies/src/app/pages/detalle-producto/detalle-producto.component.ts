@@ -12,7 +12,8 @@ import { GetProductByIdService } from 'src/app/services/getProductById.service';
 })
 export class DetalleProductoComponent implements OnInit {
 
-  public productDetails: Product = {
+  public isLoading : boolean = true;
+  public productDetails : Product = {
     id: NaN,
     nombre: null,
     categoria: null,
@@ -25,7 +26,7 @@ export class DetalleProductoComponent implements OnInit {
     recomendacion: null,
     stock: null,
   };
-
+  
   constructor(private router: ActivatedRoute,
     private getAllProductsService: GetAllProductsService,
     private getProductByIdService: GetProductByIdService) {
@@ -37,6 +38,7 @@ export class DetalleProductoComponent implements OnInit {
             response.record,
             this.productId
           );
+          this.isLoading = false;
           return response.record;
         })
       )

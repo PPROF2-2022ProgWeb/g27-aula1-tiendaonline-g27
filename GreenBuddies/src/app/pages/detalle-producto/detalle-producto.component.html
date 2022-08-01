@@ -1,5 +1,8 @@
 <main>
     <section>
+        <div *ngIf="isLoading" class="Loader">
+            <app-loader></app-loader>
+        </div>
         <div class="Section__content">
             <div *ngIf="productDetails && productDetails.id" class="pb-3">
                 <div class="container px-4 px-lg-5">
@@ -49,7 +52,7 @@
                     </div>
                 </div>
             </div>
-            <div *ngIf="!productDetails || !productDetails.id" class="d-flex justify-content-center align-content-center gap-4 row Product--Notfound">
+            <div *ngIf="!isLoading && (!productDetails || !productDetails.id)" class="d-flex justify-content-center align-content-center gap-4 row Product--Notfound">
                 <h2 class="text-center">Lo siento, no se ha encontrado ese artículo</h2>
                 <div class="d-flex gap-2 justify-content-center">
                     <a [routerLink]="'/'">
