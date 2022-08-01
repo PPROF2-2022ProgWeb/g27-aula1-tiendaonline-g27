@@ -20,14 +20,25 @@
     width: 60px;
 }
 
+.Product--Notfound {
+    margin: 115px auto 50px auto;
+    min-height: 35vh;
+}
+
 @media screen and (min-width: 650px) {
     .Section__content {
         margin: 190px auto 60px auto;
+    }
+    .Product--Notfound {
+        min-height: 30vh;
     }
 }
 
 @media screen and (min-width: 1400px) {
     .Section__content {
         margin: 200px auto 100px auto;
+    }
+    .Product--Notfound {
+        min-height: 10vh;
     }
 }

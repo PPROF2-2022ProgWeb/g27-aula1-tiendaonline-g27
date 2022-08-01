@@ -13,7 +13,7 @@ import { GetProductByIdService } from 'src/app/services/getProductById.service';
 export class DetalleProductoComponent implements OnInit {
 
   public productDetails: Product = {
-    id: 999,
+    id: NaN,
     nombre: null,
     categoria: null,
     descripcion: null,
