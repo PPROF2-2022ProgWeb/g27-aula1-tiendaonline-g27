@@ -5,7 +5,7 @@ import { Product } from "../models/product.model";
 
 @Injectable({providedIn: "root"})
 
-export class GetProductDetailService {
+export class GetProductByIdService {
     //private API_GET_PRODUCT_BY_ID = "https://nuestra-api/producto/";
     
     constructor(public http:HttpClient) {}
@@ -16,7 +16,7 @@ export class GetProductDetailService {
     } */
 
     // Simulación del endpoint
-    public getProductDetails (products: Product[], id: number) {
+    public getProductById (products: Product[], id: number) {
         return products.filter(product => product.id == id)[0];
     }
 }

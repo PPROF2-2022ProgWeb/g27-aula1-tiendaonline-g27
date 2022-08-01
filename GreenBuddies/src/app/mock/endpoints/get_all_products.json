@@ -307,12 +307,12 @@
         "stock": 20,
         "imagenes": [
             {
-                "src": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/champu-solido-para-perros-.jpg",
-                "alt": "Jabón y Champú sólido para perros con forma rectangular, vista frontal"
+                "src": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/cucha_perros.jpg",
+                "alt": "Cucha de perro de color blanco"
             },
             {
-                "src": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/champu-solido-para-perros-2.jpg",
-                "alt": "Jabón y Champú sólido para perros con forma rectangular, vista lateral"
+                "src": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/cucha_perro_2.jpg",
+                "alt": "Cucha de perro de color blanco con perro sonriente dentro"
             }
         ]
     }

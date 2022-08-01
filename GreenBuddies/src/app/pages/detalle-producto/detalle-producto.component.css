@@ -1,0 +1,33 @@
+.Section__content {
+    margin: 115px auto 50px auto;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+
+.Product__Img__Slider {
+    max-width: 350px;
+    display: flex;
+    align-items: center;
+}
+
+.Product__Buttons {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.inputQuantity {
+    width: 60px;
+}
+
+@media screen and (min-width: 650px) {
+    .Section__content {
+        margin: 190px auto 60px auto;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .Section__content {
+        margin: 200px auto 100px auto;
+    }
+}
