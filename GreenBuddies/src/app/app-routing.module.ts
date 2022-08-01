@@ -7,6 +7,7 @@ import { PoliticaDePrivacidadComponent } from "./pages/politica-de-privacidad/po
 import { ProductosComponent } from "./pages/productos/productos.component";
 import { RegistroComponent } from "./pages/registro/registro.component";
 import { TerminosYCondicionesComponent } from "./pages/terminos-y-condiciones/terminos-y-condiciones.component";
+import { AyudaComponent } from './pages/ayuda/ayuda.component';
 
 const routes: Routes = [
   { path: "", component: InicioComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: "productos", component: ProductosComponent },
   { path: "informacion-usuario-financiero", loadChildren: () => import("./pages/informacion-usuario-financiero/informacion-usuario-financiero.module").then(m => m.InformacionUsuarioFinancieroModule) },
   { path: "producto/:id", loadChildren: () => import("./pages/detalle-producto/detalle-producto.module").then(m => m.DetalleProductoModule) },
+  { path: "ayuda", component:AyudaComponent },
   { path: "**", component: InicioComponent }
 ];
 
