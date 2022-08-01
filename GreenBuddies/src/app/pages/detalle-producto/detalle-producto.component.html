@@ -1,0 +1,74 @@
+<main>
+    <section>
+        <div *ngIf="isLoading" class="Loader">
+            <app-loader></app-loader>
+        </div>
+        <div class="Section__content">
+            <div *ngIf="productDetails && productDetails.id" class="pb-3">
+                <div class="container px-4 px-lg-5">
+                    <div class="row gx-5 gx-lg-5 justify-content-center gap-3">
+                        <div class="col-lg-4 Product__Img__Slider ">
+                            <app-slider [images]="productDetails.imagenes" [sliderId]="'sliderDetalleProducto'"
+                                [hasPadding]="true" [backgroundColor]="'#fff'">
+                            </app-slider>
+                        </div>
+                        <div class="col-lg-7">
+                            <h1 class="display-6 fw-bolder mb-4">
+                                {{ productDetails.nombre }}
+                            </h1>
+                            <div class="fs-3 mb-4">
+                                <span class="text-decoration-line-through fw-lighter text-secondary me-2 fs-4" *ngIf="
+                      productDetails.precio_sin_descuento &&
+                      productDetails.precio_con_descuento
+                    ">${{ productDetails.precio_sin_descuento }}</span>
+                                <span>${{
+                                    productDetails.precio_con_descuento ||
+                                    productDetails.precio_sin_descuento
+                                    }}</span>
+                            </div>
+                            <p class="lead m-0 pb-3" *ngIf="productDetails.descripcion">
+                                {{ productDetails.descripcion }}
+                            </p>
+                            <div class="lead pb-3" *ngIf="productDetails.detalles">
+                                <li *ngFor="let detalle of productDetails.detalles">
+                                    {{ detalle }}
+                                </li>
+                            </div>
+                            <div class="d-flex mt-2 flex-wrap gap-2 Product__Buttons">
+                                <input class="form-control text-center inputQuantity" id="inputQuantity" type="number"
+                                    value="1" min="0" max="{{ productDetails.stock }}" />
+                                <div class="d-flex flex-wrap gap-2">
+                                    <button class="btn btn-outline-dark" type="button">
+                                        <i class="bi-cart-fill"></i>
+                                        Añadir al carrito
+                                    </button>
+                                    <button class="btn btn-success" type="button">
+                                        <i class="bi-cart-fill"></i>
+                                        Comprar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="!isLoading && (!productDetails || !productDetails.id)" class="d-flex justify-content-center align-content-center gap-4 row Product--Notfound">
+                <h2 class="text-center">Lo siento, no se ha encontrado ese artículo</h2>
+                <div class="d-flex gap-2 justify-content-center">
+                    <a [routerLink]="'/'">
+                        <button class="btn btn-outline-dark" type="button">
+                            <i class="bi-cart-fill"></i>
+                            Ir a inicio
+                        </button>
+                    </a>
+                    <a [routerLink]="'/productos'">
+                        <button class="btn btn-outline-success" type="button">
+                            <i class="bi-cart-fill"></i>
+                            Ver productos
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
