@@ -1,5 +1,8 @@
 <main>
         <app-header [title]="'Productos'" [isTop]="true"></app-header>
+        <div *ngIf="isLoading" class="Loader">
+                <app-loader></app-loader>
+        </div>
         <section>
                 <div class="container text-center" id="card_productos">
                         <div class="row">

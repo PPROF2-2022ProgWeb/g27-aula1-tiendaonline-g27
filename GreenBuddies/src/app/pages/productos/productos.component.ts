@@ -9,6 +9,7 @@ import { GetAllProductsService } from 'src/app/services/getAllProducts.service';
 })
 
 export class ProductosComponent implements OnInit {
+    public isLoading: boolean = true;
     public productos = [
         {
             id: NaN,
@@ -36,13 +37,14 @@ export class ProductosComponent implements OnInit {
             .pipe(
                 tap((response) => {
                     this.productos = response.record;
+                    this.isLoading = false;
                     return response.record;
                 })
             )
             .subscribe();
     }
 
-    ngOnInit(): void {}
+    ngOnInit(): void { }
 }
 
 
