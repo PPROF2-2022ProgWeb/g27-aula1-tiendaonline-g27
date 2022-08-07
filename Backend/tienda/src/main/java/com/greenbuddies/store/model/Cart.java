@@ -29,8 +29,11 @@ public class Cart {
     @JoinColumn(name = "factura_id", nullable = false)
     private Receipt receipt;
 
-
-    @ManyToMany(mappedBy = "carts")
+    @JoinTable(name = "products_cart",
+            joinColumns = {@JoinColumn(name = "product_id")},
+            inverseJoinColumns = {@JoinColumn(name = "cart_id", nullable = false)}
+    )
+    @ManyToMany
     @ToString.Exclude
     private List<Product> products = new ArrayList<>();
 

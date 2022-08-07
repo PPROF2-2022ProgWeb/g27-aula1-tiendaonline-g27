@@ -24,28 +24,28 @@ public class Product {
     private Long id;
     private String name;
     private Double price;
+    private Boolean discount;
+    private Double priceWithDiscount;
     private int quantity;
     private String description;
-
+    private String recommendation;
+    @OneToMany(cascade=CascadeType.ALL)
+    @JoinColumn(name="product_id")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    @ToString.Exclude
+    private List<Detail> details = new ArrayList<>();
 
     @ManyToOne//(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id", nullable = false)
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Category category;
 
-    @OneToMany(cascade=CascadeType.ALL)
+    @OneToMany
     @JoinColumn(name="product_id")
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     @ToString.Exclude
     private List<Image> images = new ArrayList<>();
 
-    @JoinTable(name = "products_cart",
-            joinColumns = {@JoinColumn(name = "product_id")},
-            inverseJoinColumns = {@JoinColumn(name = "cart_id", nullable = false)}
-    )
-    @ManyToMany(cascade = CascadeType.MERGE)
-    @ToString.Exclude
-    private List<Cart> carts = new ArrayList<>();
 
     @Override
     public boolean equals(Object o) {
