@@ -3,6 +3,8 @@ package com.greenbuddies.store.model;
 
 import lombok.*;
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Getter
@@ -19,4 +21,10 @@ public class Detail {
     private Long id;
     private String description;
 
+
+/*
+    @ManyToMany(mappedBy = "details")
+    @ToString.Exclude
+    private List<Product> products = new ArrayList<>();
+*/
 }

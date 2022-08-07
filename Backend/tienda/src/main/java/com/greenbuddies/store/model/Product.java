@@ -29,9 +29,13 @@ public class Product {
     private int quantity;
     private String description;
     private String recommendation;
-    @OneToMany(cascade=CascadeType.ALL)
-    @JoinColumn(name="product_id")
-    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+
+
+    @JoinTable(name = "products_details",
+            joinColumns = {@JoinColumn(name = "product_id")},
+            inverseJoinColumns = {@JoinColumn(name = "detail_id", nullable = false)}
+    )
+    @ManyToMany
     @ToString.Exclude
     private List<Detail> details = new ArrayList<>();
 
