@@ -1,0 +1,71 @@
+<main class="forms">
+
+    <form class="formulario_registro container">
+
+        <h3>Quieres contactarnos?</h3>
+        <h4>Envíanos tu consulta</h4><br>
+
+
+        <div class="flex-container1">
+            <div class="items">
+
+                <p>Elige una opción de contacto y completa el formulario que se encuentra a continuación: </p>
+                <select class="form-control" name="opcion-contacto" id="opcion-contacto" required>
+                    <option value="consultasgenerales">Consultas generales</option>
+                    <option value="envios">Envíos</option>
+                    <option value="consultascompras">Consultas sobre compras</option>
+                    <option value="reclamos">Reclamos</option>
+                    <option value="seller">Sumate como seller</option>
+                    <option value="franquicias">Franquicias</option>
+                </select>
+
+                <div class="columna1">
+                    <label for="nombreRegis" class="form-label">Nombre *</label>
+                    <input type="text" class="form-control" name="nombreRegis" id="nombreRegis" required minlength="2" maxlength="24">
+                </div>
+
+                <div class="columna2">
+                    <label for="apellidoRegis" class="form-label">Apellido *</label>
+                    <input type="text" class="form-control" name="apellidoRegis" id="apellidoRegis" value="" required minlength="2"
+                    maxlength="24">
+                </div>
+
+
+                <div class="columna3">
+                    <label for="correoRegis" class="form-label">Correo *</label>
+                    <input type="email" class="form-control" name="correoRegis" id="correoRegis" value="" required>
+                </div>
+
+
+                <div class="columna4">
+                    <label for="motivo" class="form-label">Motivo de consulta * </label>
+                    <select class="form-control" name="motivo-consultas"  id="motivo-consultas" required>
+                        <option value="vacio">-</option>
+                        <option value="nopuedoRegistrarme">No puedo registrarme en el Sitio Web</option>
+                        <option value="cambioTipofactura">Quiero cambiar el tipo de mi factura B por A</option>
+                        <option value="consultacompra">Quiero consultar sobre la compra que realicé</option>
+                        <option value="realizarreclamos">Quiero hacer un reclamo</option>
+                        <option value="consultaseller">Quiero sumarme como seller</option>
+                        <option value="consultafranquicias">Quiero consultar sobre Franquicias de GreenBuddies</option>
+                        <option value="consultarGarantias">Deseo recibir info sobre garantias</option>
+                        <option value="estadoEnvio">Solicito info sobre el envío de mi compra</option>
+                        <option value="otrosMotivos">Otros motivos de consulta</option>
+                    </select>
+                </div>
+
+                <div class="columna5">
+                    <label for="mensajeContacto" class="form-label">Descripción *</label>
+                    <textarea class="form-control" name="mensajeContacto" id="mensajeContacto" rows="4" required minlength="8"></textarea>
+                </div>
+
+
+                <button class="btn btn-success submitBtn" type="submit" name="regSubmit" id="regSubmit"
+                data-bs-target="#modalForm">Enviar</button>
+
+            </div>
+
+        </div>
+
+    </form>
+
+</main>

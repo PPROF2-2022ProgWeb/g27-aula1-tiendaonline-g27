@@ -13,6 +13,7 @@ import { GarantiaYDevolucionesComponent } from './garantia-y-devoluciones/garant
 import { ProductosComponent } from '../pages/productos/productos.component';
 import { CardsComponent } from './productos/cards/cards.component';
 import { AyudaComponent } from './ayuda/ayuda.component';
+import { ContactoComponent } from './contacto/contacto.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AyudaComponent } from './ayuda/ayuda.component';
     GarantiaYDevolucionesComponent,
     ProductosComponent,
     CardsComponent,
-    AyudaComponent
+    AyudaComponent,
+    ContactoComponent
   ],
   imports: [
     CommonModule,
