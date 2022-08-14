@@ -8,6 +8,7 @@ import { ProductosComponent } from "./pages/productos/productos.component";
 import { RegistroComponent } from "./pages/registro/registro.component";
 import { TerminosYCondicionesComponent } from "./pages/terminos-y-condiciones/terminos-y-condiciones.component";
 import { AyudaComponent } from './pages/ayuda/ayuda.component';
+import { CarritoComponent } from "./pages/carrito/carrito.component";
 import { ContactoComponent } from "./pages/contacto/contacto.component";
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: "producto/:id", loadChildren: () => import("./pages/detalle-producto/detalle-producto.module").then(m => m.DetalleProductoModule) },
   { path: "ayuda", component:AyudaComponent },
   { path: "contacto", component: ContactoComponent},
+  {path: "carrito", component: CarritoComponent},
   { path: "**", component: InicioComponent }
 ];
 
