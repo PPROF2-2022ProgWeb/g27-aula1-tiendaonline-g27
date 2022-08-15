@@ -14,6 +14,7 @@ import { ProductosComponent } from '../pages/productos/productos.component';
 import { CardsComponent } from './productos/cards/cards.component';
 import { AyudaComponent } from './ayuda/ayuda.component';
 import { ContactoComponent } from './contacto/contacto.component';
+import { CarritoComponent } from './carrito/carrito.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ContactoComponent } from './contacto/contacto.component';
     ProductosComponent,
     CardsComponent,
     AyudaComponent,
-    ContactoComponent
+    ContactoComponent,
+    CarritoComponent
   ],
   imports: [
     CommonModule,
