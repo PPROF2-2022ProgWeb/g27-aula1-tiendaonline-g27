@@ -54,7 +54,7 @@ public class ProductController {
             @ApiResponse(code = 400, message = "Bad Request", response = String.class),
             @ApiResponse(code = 500, message = "Unexpected error") })
     @GetMapping("/{name}")
-    public Optional<Product> busquedaProductoPorNombre(@PathVariable String name) {
+    public Optional<Product> findProductByName(@PathVariable String name) {
         logger.info("Search by name in Products entity");
         return productService.findProductByName(name);
     }
@@ -99,12 +99,12 @@ public class ProductController {
     //@PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @PostMapping("/save")
     public ResponseEntity save(@RequestBody Product p) {
-        ResponseEntity resp;
+        ResponseEntity<Product> resp;
         if (productService.findProductByName(p.getName()).isPresent()) {
             resp = new ResponseEntity("The product is already registered!", HttpStatus.CONFLICT);
             logger.info("The product is already registered!");
         } else {
-            resp = new ResponseEntity(productService.save(p), HttpStatus.CREATED);
+            resp = new ResponseEntity<Product>(productService.save(p), HttpStatus.CREATED);
             logger.info("Product registered correctly");
         }
         return resp;

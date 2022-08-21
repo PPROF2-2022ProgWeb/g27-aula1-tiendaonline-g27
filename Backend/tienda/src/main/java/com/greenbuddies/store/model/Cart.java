@@ -22,11 +22,11 @@ public class Cart {
     @Column(name= "idCart")
     private Long id;
 
-    @OneToOne(mappedBy = "cart")
+    @OneToOne
     private User user;
 
     @OneToOne
-    @JoinColumn(name = "factura_id", nullable = false)
+    @JoinColumn(name = "receipt_id", nullable = false)
     private Receipt receipt;
 
     @JoinTable(name = "products_cart",

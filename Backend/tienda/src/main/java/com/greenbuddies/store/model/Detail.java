@@ -20,11 +20,4 @@ public class Detail {
     @Column(name= "idDetail")
     private Long id;
     private String description;
-
-
-/*
-    @ManyToMany(mappedBy = "details")
-    @ToString.Exclude
-    private List<Product> products = new ArrayList<>();
-*/
 }

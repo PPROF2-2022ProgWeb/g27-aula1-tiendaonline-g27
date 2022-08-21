@@ -42,10 +42,6 @@ public class User {
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private ZipCode zipCode;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "cart_id", nullable = false)
-    private Cart cart;
-
 
     @Override
     public boolean equals(Object o) {
