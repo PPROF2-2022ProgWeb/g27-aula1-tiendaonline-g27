@@ -2,8 +2,7 @@
 # Tienda online: Green Buddies SA  
 Link de acceso al sitio: [greenbuddies.netlify.app](https://greenbuddies.netlify.app/)  
  
-## Integrantes 
-🌱 Barreyro, Liza Solange
+## Integrantes  
 
 🌱 Massimino, Iván
 
@@ -14,7 +13,6 @@ Link de acceso al sitio: [greenbuddies.netlify.app](https://greenbuddies.netlify
 🌱 Yorbandi, Selien Xavier
 
 🌱 Zamudia, Ana Carolina
-
 
 
 ### **Mapa del Sitio**

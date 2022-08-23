@@ -1,4 +1,5 @@
-export interface Image {
-    src: string,
-    alt: string | null
+export interface IImage {
+    id: number;
+    src: string;
+    alt: string | null;
 }

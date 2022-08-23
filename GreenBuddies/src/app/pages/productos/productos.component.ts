@@ -1,6 +1,7 @@
+import { IProduct } from 'src/app/models/product.model';
+import { ProductsService } from 'src/app/services/products.service';
 import { Component, OnInit } from '@angular/core';
 import { tap } from 'rxjs';
-import { GetAllProductsService } from 'src/app/services/getAllProducts.service';
 
 @Component({
     selector: 'app-productos',
@@ -10,29 +11,10 @@ import { GetAllProductsService } from 'src/app/services/getAllProducts.service';
 
 export class ProductosComponent implements OnInit {
     public isLoading: boolean = true;
-    public productos = [
-        {
-            id: NaN,
-            nombre: null,
-            categoria: null,
-            descripcion: null,
-            descuento: false,
-            detalles: [],
-            imagenes: [
-                {
-                    src: "http://via.placeholder.com/640x360",
-                    alt: "Placeholder"
-                }
-            ],
-            precio_con_descuento: null,
-            precio_sin_descuento: null,
-            recomendacion: null,
-            stock: null,
-        }
-    ]
+    public productos : IProduct[] | undefined;
 
-    constructor(private getAllProductsService: GetAllProductsService) {
-        this.getAllProductsService
+    constructor(private productsService: ProductsService) {
+        this.productsService
             .getAllProducts()
             .pipe(
                 tap((response) => {

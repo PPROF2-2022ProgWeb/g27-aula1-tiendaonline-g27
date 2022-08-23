@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { tap } from 'rxjs';
-import { Product } from 'src/app/models/product.model';
-import { GetAllProductsService } from 'src/app/services/getAllProducts.service';
-import { GetProductByIdService } from 'src/app/services/getProductById.service';
+import { IProduct } from 'src/app/models/product.model';
+import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'app-detalle-producto',
@@ -13,7 +12,7 @@ import { GetProductByIdService } from 'src/app/services/getProductById.service';
 export class DetalleProductoComponent implements OnInit {
 
   public isLoading : boolean = true;
-  public productDetails : Product = {
+  public productDetails : IProduct = {
     id: NaN,
     nombre: null,
     categoria: null,
@@ -28,13 +27,12 @@ export class DetalleProductoComponent implements OnInit {
   };
   
   constructor(private router: ActivatedRoute,
-    private getAllProductsService: GetAllProductsService,
-    private getProductByIdService: GetProductByIdService) {
-    this.getAllProductsService
+    private productsService: ProductsService) {
+    this.productsService
       .getAllProducts()
       .pipe(
         tap((response) => {
-          this.productDetails = this.getProductByIdService.getProductById(
+          this.productDetails = this.productsService.getProductById(
             response.record,
             this.productId
           );

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Image } from 'src/app/models/image.model';
+import { IImage } from 'src/app/models/image.model';
 
 @Component({
   selector: 'app-slider',
@@ -8,7 +8,7 @@ import { Image } from 'src/app/models/image.model';
 })
 
 export class SliderComponent implements OnInit {
-  @Input() images: Image[] = [];
+  @Input() images: IImage[] = [];
   @Input() sliderId: string = "carouselExampleDark";
   @Input() backgroundColor: string = "transparent";
   @Input() hasPadding: boolean = false;
