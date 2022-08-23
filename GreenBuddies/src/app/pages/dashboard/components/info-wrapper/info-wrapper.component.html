@@ -1,0 +1,7 @@
+<div class="card">
+    <app-filter-widget (dateRangeEvent)="setDateRange($event)"></app-filter-widget>
+    <div class="card-body">
+        <h5 class="card-title">{{title}} <span [innerText]="'| ' + [(dateRange)]"></span></h5>
+        <ng-content></ng-content>
+    </div>
+</div>

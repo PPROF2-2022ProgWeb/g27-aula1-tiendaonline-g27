@@ -25,7 +25,8 @@ const routes: Routes = [
   { path: "producto/:id", loadChildren: () => import("./pages/detalle-producto/detalle-producto.module").then(m => m.DetalleProductoModule) },
   { path: "ayuda", component:AyudaComponent },
   { path: "contacto", component: ContactoComponent},
-  {path: "carrito", component: CarritoComponent},
+  { path: "carrito", component: CarritoComponent},
+  { path: 'admin', loadChildren: () => import('./pages/dashboard/dashboard.module').then(m => m.DashboardModule) },
   { path: "**", component: InicioComponent }
 ];
 
@@ -34,4 +35,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-

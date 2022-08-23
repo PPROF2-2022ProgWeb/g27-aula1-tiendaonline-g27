@@ -1,6 +1,6 @@
-<div *ngIf="dataEntrante.nombre" class="card mb-5 pb-5">
+<div *ngIf="dataEntrante" class="card mb-5 pb-5">
     <div class="text-center">
-        <h6 class="card-title text-secondary mb-5 text-light p-3 bg-success"> {{truncatedName}}</h6>
+        <h6 class="card-title text-secondary mb-5 text-light p-3 bg-success"> {{dataEntrante.nombre | slice:0:35}}</h6>
         <a [routerLink]="'/producto/' + dataEntrante.id">
             <img class="card-img-top" [src]="dataEntrante.imagenes[0].src" [alt]="dataEntrante.imagenes[0].alt"
                 style="width: 45%;" />
