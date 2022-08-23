@@ -1,0 +1,12 @@
+  main {
+    max-width: 1400px;
+    margin: 120px auto 0 auto;
+    padding: 1rem;
+  }
+
+  .pagetitle h1 {
+    font-size: 1.75rem;
+    padding: 1rem 0;
+    font-weight: 600;
+    color: var(--main-font-color);
+  }

@@ -1,0 +1,109 @@
+<main id="main" class="main">
+  <div class="pagetitle">
+    <h1>Dashboard</h1>
+  </div>
+  <section class="section dashboard">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="row">
+          <div class="col-xxl-4 col-md-6">
+            <app-info-wrapper title="Ventas">
+              <app-numerical-summaries summaryType="sales" [data]="{quantity: 16, percentage_change: -3}">
+              </app-numerical-summaries>
+            </app-info-wrapper>
+          </div>
+          <div class="col-xxl-4 col-md-6">
+            <app-info-wrapper title="Ganancias">
+              <app-numerical-summaries summaryType="revenue" [data]="{quantity: 6000, percentage_change: 12}">
+              </app-numerical-summaries>
+            </app-info-wrapper>
+          </div>
+          <div class="col-xxl-4 col-md-6">
+            <app-info-wrapper title="Clientes">
+              <app-numerical-summaries summaryType="customers" [data]="{quantity: 5, percentage_change: 5}">
+              </app-numerical-summaries>
+            </app-info-wrapper>
+          </div>
+          <div class="col-12">
+            <app-info-wrapper title="Estadísticas">
+              <img
+                src="https://www.mdpi.com/sustainability/sustainability-11-04637/article_deploy/html/images/sustainability-11-04637-g001-550.jpg"
+                width="100%" />
+              <!-- TODO: Charts -->
+            </app-info-wrapper>
+          </div>
+          <div class="col-12">
+            <app-info-wrapper title="Ventas recientes">
+              <table class="table table-borderless datatable">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Cliente</th>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Precio</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row"><a href="#">#5004</a></th>
+                    <td>Juancito Perez</td>
+                    <td><a href="#" class="text-primary">Hilo dental</a></td>
+                    <td>$300</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><a href="#">#5003</a></th>
+                    <td>Mariana Gomez</td>
+                    <td><a href="#" class="text-primary">Portacepillo Meraki</a></td>
+                    <td>$400</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><a href="#">#5002</a></th>
+                    <td>Alejandra Martin</td>
+                    <td><a href="#" class="text-primary">Sorbetes reutilizables</a></td>
+                    <td>$1800</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><a href="#">#5001</a></th>
+                    <td>Rodolfo Benavidez</td>
+                    <td><a href="#" class="text-primar">Shampoo para perros</a></td>
+                    <td>$600</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><a href="#">#5000</a></th>
+                    <td>Raheem Lehner</td>
+                    <td><a href="#" class="text-primary">Envoltorios reutilizables</a></td>
+                    <td>$700</td>
+                  </tr>
+                </tbody>
+              </table>
+            </app-info-wrapper>
+          </div>
+          <div class="col-12">
+            <app-info-wrapper title="Más vendido">
+            </app-info-wrapper>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <app-info-wrapper title="Actividad reciente">
+          <ul>
+            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
+            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
+            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
+            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
+            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
+          </ul>
+        </app-info-wrapper>
+        <app-info-wrapper title="Presupuesto">
+          <img src="https://www.citizensbank.com/assets/CB_resources/images/content_2_0/2020_budget-101_graphic-2.svg"
+            width="100%" />
+        </app-info-wrapper>
+        <app-info-wrapper title="Tráfico del sitio">
+          <img
+            src="https://blog.hubspot.com/hs-fs/hubfs/Total%20monthly%20visitors.png?width=650&name=Total%20monthly%20visitors.png"
+            width="100%" />
+        </app-info-wrapper>
+      </div>
+    </div>
+  </section>
+</main>

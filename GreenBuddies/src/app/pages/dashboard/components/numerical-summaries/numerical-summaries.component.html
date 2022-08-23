@@ -1,0 +1,15 @@
+<div class="d-flex align-items-center">
+    <div
+        [ngClass]="'card-icon rounded-circle d-flex align-items-center justify-content-center '+ summaryType + '-card'">
+        <i [ngClass]="ico"></i>
+    </div>
+    <div class="ps-3">
+        <h6>{{summaryType === "revenue" ? '$' : ''}} {{ data.quantity | number }}</h6>
+        <span [ngClass]="(data.quantity >= 0 ? 'text-success' : 'text-danger' ) + ' small pt-1 fw-bold'">
+            {{ 12 | number }}%
+        </span>
+        <span class="text-muted small pt-2 ps-1">
+            {{(data.quantity >= 0 ? 'incremento' : 'decremento' )}}
+        </span>
+    </div>
+</div>
