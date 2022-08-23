@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: "ayuda", component:AyudaComponent },
   { path: "contacto", component: ContactoComponent},
   { path: "carrito", component: CarritoComponent},
-  { path: 'user/admin', loadChildren: () => import('./pages/dashboard/dashboard.module').then(m => m.DashboardModule) },
+  { path: 'admin', loadChildren: () => import('./pages/dashboard/dashboard.module').then(m => m.DashboardModule) },
   { path: "**", component: InicioComponent }
 ];
 
