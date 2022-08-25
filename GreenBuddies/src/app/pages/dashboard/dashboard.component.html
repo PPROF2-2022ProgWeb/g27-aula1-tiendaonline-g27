@@ -1,29 +1,12 @@
-<main id="main" class="main">
+<main class="main">
   <div class="pagetitle">
     <h1>Dashboard</h1>
   </div>
-  <section class="section dashboard">
+  <section class="section dashboard" *ngIf="reports">
     <div class="row">
       <div class="col-lg-8">
         <div class="row">
-          <div class="col-xxl-4 col-md-6">
-            <app-info-wrapper title="Ventas">
-              <app-numerical-summaries summaryType="sales" [data]="{quantity: 16, percentage_change: -3}">
-              </app-numerical-summaries>
-            </app-info-wrapper>
-          </div>
-          <div class="col-xxl-4 col-md-6">
-            <app-info-wrapper title="Ganancias">
-              <app-numerical-summaries summaryType="revenue" [data]="{quantity: 6000, percentage_change: 12}">
-              </app-numerical-summaries>
-            </app-info-wrapper>
-          </div>
-          <div class="col-xxl-4 col-md-6">
-            <app-info-wrapper title="Clientes">
-              <app-numerical-summaries summaryType="customers" [data]="{quantity: 5, percentage_change: 5}">
-              </app-numerical-summaries>
-            </app-info-wrapper>
-          </div>
+          <app-numerical-summaries-list [reports]="reports"></app-numerical-summaries-list>
           <div class="col-12">
             <app-info-wrapper title="Estadísticas">
               <img
@@ -85,15 +68,6 @@
         </div>
       </div>
       <div class="col-lg-4">
-        <app-info-wrapper title="Actividad reciente">
-          <ul>
-            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
-            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
-            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
-            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
-            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
-          </ul>
-        </app-info-wrapper>
         <app-info-wrapper title="Presupuesto">
           <img src="https://www.citizensbank.com/assets/CB_resources/images/content_2_0/2020_budget-101_graphic-2.svg"
             width="100%" />
@@ -106,4 +80,7 @@
       </div>
     </div>
   </section>
+  <div *ngIf="!reports" class="Loader">
+    <app-loader></app-loader>
+  </div>
 </main>

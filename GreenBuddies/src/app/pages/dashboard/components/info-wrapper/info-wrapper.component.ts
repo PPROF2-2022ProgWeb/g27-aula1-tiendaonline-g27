@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { IDateRange } from '../numerical-summaries/numerical-summaries.component';
 
 @Component({
   selector: 'app-info-wrapper',
@@ -8,15 +9,10 @@ import { Component, Input, OnInit } from '@angular/core';
 
 export class InfoWrapperComponent implements OnInit {
   @Input() title = "";
-  dateRange = "Hoy";
 
   constructor() { }
   
   ngOnInit(): void {
-  }
-
-  setDateRange(date : string) {
-    this.dateRange = date;
   }
 
 }

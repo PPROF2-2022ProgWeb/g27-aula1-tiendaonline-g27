@@ -2,7 +2,7 @@
     "sales": {
         "today": {
             "quantity": 16,
-            "percentage_change": -3
+            "percentage_change": 4
         },
         "this_month": {
             "quantity": 600,
@@ -78,7 +78,6 @@
             "percentage_change": 7
         }
     },
-    "activity": {},
     "budget": {},
     "website_traffic": {},
     "selling": {}

@@ -1,15 +1,21 @@
-<div class="d-flex align-items-center">
-    <div
-        [ngClass]="'card-icon rounded-circle d-flex align-items-center justify-content-center '+ summaryType + '-card'">
-        <i [ngClass]="ico"></i>
-    </div>
-    <div class="ps-3">
-        <h6>{{summaryType === "revenue" ? '$' : ''}} {{ data.quantity | number }}</h6>
-        <span [ngClass]="(data.quantity >= 0 ? 'text-success' : 'text-danger' ) + ' small pt-1 fw-bold'">
-            {{ 12 | number }}%
-        </span>
-        <span class="text-muted small pt-2 ps-1">
-            {{(data.quantity >= 0 ? 'incremento' : 'decremento' )}}
-        </span>
+<div class="card">
+    <app-filter-widget (dateRangeEvent)="setDateRange($event)"></app-filter-widget>
+    <div class="card-body">
+        <h5 class="card-title">{{title}} <span [innerText]="'| ' + [(dateRange.text)]"></span></h5>
+        <div class="d-flex align-items-center">
+            <div
+                [ngClass]="'card-icon rounded-circle d-flex align-items-center justify-content-center '+ summaryType + '-card'">
+                <i [ngClass]="ico"></i>
+            </div>
+            <div class="ps-3" *ngIf="data">
+                <h6>{{summaryType === "revenue" ? '$' : ''}} {{ data[summaryType][dateRange.key].quantity | number }}</h6>
+                <span [ngClass]="(data[summaryType][dateRange.key].percentage_change >= 0 ? 'text-success' : 'text-danger' ) + ' small pt-1 fw-bold'">
+                    {{ data[summaryType][dateRange.key].percentage_change | number }}%
+                </span>
+                <span class="text-muted small pt-2 ps-1">
+                    {{(data[summaryType][dateRange.key].percentage_change >= 0 ? 'incremento' : 'decremento' )}}
+                </span>
+            </div>
+        </div>
     </div>
 </div>

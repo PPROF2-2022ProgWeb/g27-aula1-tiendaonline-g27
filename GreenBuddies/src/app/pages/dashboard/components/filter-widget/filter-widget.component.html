@@ -4,8 +4,8 @@
         <li class="dropdown-header text-start">
             <h6>Filtro</h6>
         </li>
-        <li class="dropdown-item" (click)="setDateRange('Hoy')">Hoy</li>
-        <li class="dropdown-item" (click)="setDateRange('Este mes')">Este mes</li>
-        <li class="dropdown-item" (click)="setDateRange('Este año')">Este año</li>
+        <li class="dropdown-item" (click)="setDateRange({key: 'today', text: 'Hoy'})">Hoy</li>
+        <li class="dropdown-item" (click)="setDateRange({key:'this_month', text:'Este mes'})">Este mes</li>
+        <li class="dropdown-item" (click)="setDateRange({key:'this_year', text: 'Este año'})">Este año</li>
     </ul>
 </div>
