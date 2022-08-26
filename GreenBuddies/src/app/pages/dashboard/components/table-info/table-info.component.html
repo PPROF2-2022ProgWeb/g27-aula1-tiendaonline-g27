@@ -1,0 +1,36 @@
+<table class="table table-borderless datatable" *ngIf="data">
+    <thead>
+        <tr *ngIf="type === 'recent_sales' ">
+            <th scope="col">Nº</th>
+            <th scope="col">Cliente</th>
+            <th scope="col">Producto</th>
+            <th scope="col">Precio</th>
+        </tr>
+        <tr *ngIf="type === 'top_selling' ">
+            <th scope="col">#</th>
+            <th scope="col">Imagen</th>
+            <th scope="col">Producto</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Ingresos</th>
+        </tr>
+    </thead>
+    <tbody *ngIf="type === 'recent_sales'">
+        <tr *ngFor="let item of data.sales.recent_sales">
+            <th scope="row"><a href="#">{{item.id}}</a></th>
+            <td>{{item.customer}}</td>
+            <td><a [href]="'producto/'+item.product_id" target="_blank">{{item.product_name}}</a></td>
+            <td>${{item.price | number}}</td>
+        </tr>
+    </tbody>
+    <tbody *ngIf="type === 'top_selling'">
+        <tr *ngFor="let item of data.sales.top_selling">
+            <th scope="row"><a href="#">{{item.position}}</a></th>
+            <td><img [src]="item.thumb" [alt]="item.product_name" width="50px" /></td>
+            <td><a [href]="'producto/'+item.product_id" target="_blank">{{item.product_name}}</a></td>
+            <td>${{item.price | number}}</td>
+            <td>{{item.sold | number}}</td>
+            <td>${{item.revenue | number}}</td>
+        </tr>
+    </tbody>
+</table>

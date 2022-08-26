@@ -8,7 +8,7 @@ import { FilterWidgetComponent } from './components/filter-widget/filter-widget.
 import { NumericalSummariesComponent } from './components/numerical-summaries/numerical-summaries.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { NumericalSummariesListComponent } from './components/numerical-summaries-list/numerical-summaries-list.component';
-
+import { TableInfoComponent } from './components/table-info/table-info.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,8 @@ import { NumericalSummariesListComponent } from './components/numerical-summarie
     InfoWrapperComponent,
     FilterWidgetComponent,
     NumericalSummariesComponent,
-    NumericalSummariesListComponent
+    NumericalSummariesListComponent,
+    TableInfoComponent
   ],
   imports: [
     CommonModule,

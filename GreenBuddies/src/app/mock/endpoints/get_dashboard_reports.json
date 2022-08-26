@@ -12,9 +12,10 @@
             "quantity": 7400,
             "percentage_change": 12
         },
-        "last_sales": [
+        "recent_sales": [
             {
                 "id": 6000,
+                "product_id": 3,
                 "product_name": "Hilo dental | Orlando",
                 "price": 470,
                 "customer": "Celia Cuccittini",
@@ -22,6 +23,7 @@
             },
             {
                 "id": 5999,
+                "product_id": 11,
                 "product_name": "Comedero para mascotas | Eco-Pet",
                 "price": 380,
                 "customer": "Sergio Romero",
@@ -29,6 +31,7 @@
             },
             {
                 "id": 5998,
+                "product_id": 5,
                 "product_name": "Cepillo de dientes | Meraki",
                 "price": 220,
                 "customer": "Gerónimo Rulli",
@@ -36,6 +39,7 @@
             },
             {
                 "id": 5997,
+                "product_id": 8,
                 "product_name": "Pack de sorbetes reutilizables | Orlando",
                 "price": 1800,
                 "customer": "Mónica García",
@@ -43,9 +47,39 @@
             },
             {
                 "id": 5996,
+                "product_id": 1,
                 "product_name": "Esponja facial | Konjac",
                 "price": 749,
                 "customer": "Juan Cabral",
+                "thumb": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/esponja_konjac1.png"
+            }
+        ],
+        "top_selling": [
+            {
+                "position": 1,
+                "product_id": 5,
+                "product_name": "Cepillo de dientes | Meraki",
+                "price": 220,
+                "sold": 2500,
+                "revenue": 550000,
+                "thumb": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/cepillo_meraki.jpg"
+            },
+            {
+                "position": 2,
+                "product_id": 12,
+                "product_name": "Shampoo sólido | Zorro D'Avi",
+                "price": 390,
+                "sold": 1900,
+                "revenue": 741000,
+                "thumb": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/champu-solido-para-perros-.jpg"
+            },
+            {
+                "position": 3,
+                "product_id": 1,
+                "product_name": "Esponja facial | Konjac",
+                "price": 749,
+                "sold": 1300,
+                "revenue": 973700,
                 "thumb": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/esponja_konjac1.png"
             }
         ]
@@ -53,32 +87,31 @@
     "revenue": {
         "today": {
             "quantity": 8000,
-            "percentage_change": -5
+            "percentage_change": -10
         },
         "this_month": {
             "quantity": 300000,
-            "percentage_change": 4
+            "percentage_change": 9
         },
         "this_year": {
-            "quantity": 4125020,
+            "quantity": 3300000,
             "percentage_change": 11
         }
     },
     "customers": {
         "today": {
-            "quantity": 5,
-            "percentage_change": -2
+            "quantity": 15,
+            "percentage_change": -12
         },
         "this_month": {
-            "quantity": 300,
-            "percentage_change": 12
+            "quantity": 600,
+            "percentage_change": 9
         },
         "this_year": {
-            "quantity": 3500,
+            "quantity": 6600,
             "percentage_change": 7
         }
     },
     "budget": {},
-    "website_traffic": {},
-    "selling": {}
+    "website_traffic": {}
 }

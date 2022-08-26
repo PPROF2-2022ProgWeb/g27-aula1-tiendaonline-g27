@@ -33,11 +33,11 @@ export class NumericalSummariesComponent implements OnInit {
   setAttributes() {
     const type = this.summaryType;
     if (type === "sales") { this.ico = "bi bi-cart", this.title = "Ventas" }
-    else if (type === "revenue") { this.ico = "bi bi-currency-dollar", this.title = "Ganancias" }
+    else if (type === "revenue") { this.ico = "bi bi-currency-dollar", this.title = "Ingresos" }
     else if (type === "customers") { this.ico = "bi bi-people", this.title = "Clientes" }
     else { this.ico = "bi bi-easel" }
   }
-
+  
   setDateRange(date: any) {
     this.dateRange.key = date.key;
     this.dateRange.text = date.text;
