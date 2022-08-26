@@ -12,13 +12,23 @@ export interface IDashboardReports {
             quantity: number;
             percentage_change: number
         };
-        last_sales:
+        recent_sales:
         {
             id: number;
+            product_id: number;
             product_name: string;
             price: number;
             customer: string;
             thumb: string
+        }[];
+        top_selling: {
+            position: number;
+            product_id: number;
+            product_name: string;
+            price: number;
+            sold: number;
+            revenue: number;
+            thumb: string;
         }[]
     };
     revenue: {
@@ -50,7 +60,20 @@ export interface IDashboardReports {
         }
     };
     activity: {};
-    budget: {};
-    website_traffic: {};
-    selling: {}
+    budget: {
+        labels: string[],
+        data: number[]
+    },
+    website_traffic: {
+        labels: string[],
+        data: number[]
+    };
+    sales_customers: {
+        labels: string[];
+        datasets: { data: number[], label: string }[]
+    };
+    balance: {
+        labels: string[];
+        datasets: { data: number[], label: string }[]
+    };
 }

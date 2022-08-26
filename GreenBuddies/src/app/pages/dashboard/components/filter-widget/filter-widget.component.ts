@@ -8,15 +8,15 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 export class FilterWidgetComponent implements OnInit {
 
-  @Output() dateRangeEvent = new EventEmitter<string>();
-  
+  @Output() dateRangeEvent = new EventEmitter<any>();
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  setDateRange(value : string) {
-      this.dateRangeEvent.emit(value);
+  setDateRange(date : any) {
+    this.dateRangeEvent.emit(date);
   }
 
 }

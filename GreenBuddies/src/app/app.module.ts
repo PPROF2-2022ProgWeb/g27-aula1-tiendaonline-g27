@@ -7,6 +7,7 @@ import { LayoutModule } from './layout/layout.module';
 import { PagesModule } from './pages/pages.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { NgChartsModule } from 'ng2-charts';
 
 import localeES from "@angular/common/locales/es"
 import { registerLocaleData } from '@angular/common';
@@ -23,7 +24,8 @@ registerLocaleData(localeES);
     PagesModule,
     SharedModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+  NgChartsModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: "es" }

@@ -12,7 +12,7 @@ import { DashboardReportsService } from 'src/app/services/dashboard-reports.serv
 export class DashboardComponent implements OnInit {
   public isLoading: boolean = true;
   public reports: IDashboardReports | undefined;
-
+  
   constructor(private dashboardReportsService: DashboardReportsService) {
     this.dashboardReportsService
       .getReportsData()

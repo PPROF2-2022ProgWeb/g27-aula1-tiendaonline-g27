@@ -1,4 +1,10 @@
+import { IDashboardReports } from './../../../../models/dashboard-reports.model';
 import { Component, Input, OnInit } from '@angular/core';
+
+export interface IDateRange {
+  key: "today" | "this_month" | "this_year",
+  text: "Hoy" | "Este mes" | "Este año"
+}
 
 @Component({
   selector: 'app-numerical-summaries',
@@ -8,25 +14,33 @@ import { Component, Input, OnInit } from '@angular/core';
 
 export class NumericalSummariesComponent implements OnInit {
 
-  @Input() summaryType = "";
+  @Input() summaryType: 'sales' | 'revenue' | 'customers' = "sales";
+  @Input() data: IDashboardReports | undefined;
+
+  dateRange: IDateRange = {
+    key: "today",
+    text: "Hoy"
+  };
+  title = "";
   ico = "";
-  @Input() data = {
-    quantity: 16,
-    percentage_change: -3
-  }
 
   constructor() { }
 
   ngOnInit(): void {
-    this.setIco();
+    this.setAttributes();
   }
 
-  setIco() {
+  setAttributes() {
     const type = this.summaryType;
-    if (type === "sales") { this.ico = "bi bi-cart" }
-    else if (type === "revenue") { this.ico = "bi bi-currency-dollar" }
-    else if (type === "customers") { this.ico = "bi bi-people" }
+    if (type === "sales") { this.ico = "bi bi-cart", this.title = "Ventas" }
+    else if (type === "revenue") { this.ico = "bi bi-currency-dollar", this.title = "Ingresos" }
+    else if (type === "customers") { this.ico = "bi bi-people", this.title = "Clientes" }
     else { this.ico = "bi bi-easel" }
+  }
+  
+  setDateRange(date: any) {
+    this.dateRange.key = date.key;
+    this.dateRange.text = date.text;
   }
 
 }
