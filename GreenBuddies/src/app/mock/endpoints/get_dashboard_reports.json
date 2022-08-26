@@ -112,6 +112,36 @@
             "percentage_change": 7
         }
     },
-    "budget": {},
-    "website_traffic": {}
+    "budget": {
+        "labels": [
+            "Mercadería",
+            "Hosting y Dominio",
+            "Publicidad",
+            "Reinversión",
+            "Otros"
+        ],
+        "data": [
+            40000,
+            6000,
+            10000,
+            25000,
+            15000
+        ]
+    },
+    "website_traffic": {
+        "labels": [
+            "Búsquedas orgánicas",
+            "Ingreso directo",
+            "Referidos",
+            "Desde anuncios",
+            "Desde redes sociales"
+        ],
+        "data": [
+            1000,
+            400,
+            250,
+            100,
+            1300
+        ]
+    }
 }

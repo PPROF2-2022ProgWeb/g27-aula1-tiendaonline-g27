@@ -2,6 +2,11 @@
     vertical-align: middle;
     text-align: left;
     border-bottom: solid 1px rgba(128, 128, 128, 0.436);
+    font-size: calc(.4rem + 1vw);
+}
+
+.Th_Img {
+    display: none;
 }
 
 .table th a {
@@ -11,4 +16,14 @@
 
 .table td a {
     color: green;
+}
+
+@media screen and (min-width: 650px) {
+    .table tr {
+        font-size: 1rem;
+    }
+
+    .Th_Img {
+        display: block;
+    }
 }

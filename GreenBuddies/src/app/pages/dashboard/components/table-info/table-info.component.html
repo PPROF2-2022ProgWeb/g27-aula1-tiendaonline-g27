@@ -8,7 +8,7 @@
         </tr>
         <tr *ngIf="type === 'top_selling' ">
             <th scope="col">#</th>
-            <th scope="col">Imagen</th>
+            <th scope="col" class="Th_Img">Imagen</th>
             <th scope="col">Producto</th>
             <th scope="col">Precio</th>
             <th scope="col">Cantidad</th>
@@ -26,7 +26,7 @@
     <tbody *ngIf="type === 'top_selling'">
         <tr *ngFor="let item of data.sales.top_selling">
             <th scope="row"><a href="#">{{item.position}}</a></th>
-            <td><img [src]="item.thumb" [alt]="item.product_name" width="50px" /></td>
+            <td class="Th_Img"><img [src]="item.thumb" [alt]="item.product_name" width="50px" /></td>
             <td><a [href]="'producto/'+item.product_id" target="_blank">{{item.product_name}}</a></td>
             <td>${{item.price | number}}</td>
             <td>{{item.sold | number}}</td>

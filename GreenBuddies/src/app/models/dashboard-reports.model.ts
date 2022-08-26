@@ -60,6 +60,12 @@ export interface IDashboardReports {
         }
     };
     activity: {};
-    budget: {};
-    website_traffic: {};
+    budget: {
+        labels: string[],
+        data: number[]
+    },
+    website_traffic: {
+        labels: string[],
+        data: number[]
+    };
 }

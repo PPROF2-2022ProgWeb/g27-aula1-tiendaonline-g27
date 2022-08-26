@@ -1,3 +1,4 @@
+import { NgChartsModule } from 'ng2-charts';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -9,6 +10,7 @@ import { NumericalSummariesComponent } from './components/numerical-summaries/nu
 import { SharedModule } from 'src/app/shared/shared.module';
 import { NumericalSummariesListComponent } from './components/numerical-summaries-list/numerical-summaries-list.component';
 import { TableInfoComponent } from './components/table-info/table-info.component';
+import { PieChartComponent } from './pie-chart/pie-chart.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,14 @@ import { TableInfoComponent } from './components/table-info/table-info.component
     FilterWidgetComponent,
     NumericalSummariesComponent,
     NumericalSummariesListComponent,
-    TableInfoComponent
+    TableInfoComponent,
+    PieChartComponent
   ],
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    SharedModule
+    SharedModule,
+    NgChartsModule
   ]
 })
 export class DashboardModule { }
