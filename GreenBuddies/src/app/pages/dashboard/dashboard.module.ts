@@ -10,7 +10,8 @@ import { NumericalSummariesComponent } from './components/numerical-summaries/nu
 import { SharedModule } from 'src/app/shared/shared.module';
 import { NumericalSummariesListComponent } from './components/numerical-summaries-list/numerical-summaries-list.component';
 import { TableInfoComponent } from './components/table-info/table-info.component';
-import { PieChartComponent } from './pie-chart/pie-chart.component';
+import { PieChartComponent } from './components/pie-chart/pie-chart.component';
+import { BarChartComponent } from './components/bar-chart/bar-chart.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PieChartComponent } from './pie-chart/pie-chart.component';
     NumericalSummariesComponent,
     NumericalSummariesListComponent,
     TableInfoComponent,
-    PieChartComponent
+    PieChartComponent,
+    BarChartComponent
   ],
   imports: [
     CommonModule,

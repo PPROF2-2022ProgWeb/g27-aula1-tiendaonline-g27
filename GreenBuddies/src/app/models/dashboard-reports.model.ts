@@ -68,4 +68,12 @@ export interface IDashboardReports {
         labels: string[],
         data: number[]
     };
+    sales_customers: {
+        labels: string[];
+        datasets: { data: number[], label: string }[]
+    };
+    balance: {
+        labels: string[];
+        datasets: { data: number[], label: string }[]
+    };
 }
