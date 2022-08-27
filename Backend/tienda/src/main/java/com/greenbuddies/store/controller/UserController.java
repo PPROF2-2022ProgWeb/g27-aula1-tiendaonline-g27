@@ -11,6 +11,7 @@ import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -39,6 +40,7 @@ public class UserController {
             @ApiResponse(code = 200, message = "OK. The resource is obtained correctly", response = Product.class),
             @ApiResponse(code = 400, message = "Bad Request", response = String.class),
             @ApiResponse(code = 500, message = "Unexpected error")})
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @GetMapping("id/{id}")
     public User findById(@PathVariable Long id) {
         LOGGER.info("Search by Id in Users entity");
@@ -52,6 +54,7 @@ public class UserController {
             @ApiResponse(code = 200, message = "OK. The resource is obtained correctly", response = Product.class),
             @ApiResponse(code = 400, message = "Bad Request", response = String.class),
             @ApiResponse(code = 500, message = "Unexpected error")})
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @GetMapping("/completeName")
     public Optional<User> findUserByName(@RequestParam(required = true) String name, @RequestParam(required = true) String lastName) {
         LOGGER.info("Search by complete name in Users entity");
@@ -64,6 +67,7 @@ public class UserController {
             @ApiResponse(code = 200, message = "OK. The resource is obtained correctly", response = Product.class),
             @ApiResponse(code = 400, message = "Bad Request", response = String.class),
             @ApiResponse(code = 500, message = "Unexpected error")})
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @GetMapping("/{email}")
     public User findByEmail(@PathVariable String email) {
         LOGGER.info("Search by email in Users entity");
@@ -76,6 +80,8 @@ public class UserController {
             @ApiResponse(code = 200, message = "OK. The resource is obtained correctly", response = Product.class),
             @ApiResponse(code = 400, message = "Bad Request", response = String.class),
             @ApiResponse(code = 500, message = "Unexpected error")})
+
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @GetMapping()
     public List<User> findAll() {
         LOGGER.info("List of all Users");
@@ -88,6 +94,7 @@ public class UserController {
             @ApiResponse(code = 200, message = "OK. The resource is obtained correctly", response = Product.class),
             @ApiResponse(code = 400, message = "Bad Request", response = String.class),
             @ApiResponse(code = 500, message = "Unexpected error")})
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @GetMapping("country/{name}")
     public List<User> listUsersByCountry(@PathVariable String name) {
         LOGGER.info("List of all Users by country");
@@ -100,6 +107,7 @@ public class UserController {
             @ApiResponse(code = 200, message = "OK. The resource is obtained correctly", response = Product.class),
             @ApiResponse(code = 400, message = "Bad Request", response = String.class),
             @ApiResponse(code = 500, message = "Unexpected error")})
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @GetMapping("state/{name}")
     public List<User> listUsersByState(@PathVariable String name) {
         LOGGER.info("List of all Users by state");
@@ -112,6 +120,7 @@ public class UserController {
             @ApiResponse(code = 200, message = "OK. The resource is obtained correctly", response = Product.class),
             @ApiResponse(code = 400, message = "Bad Request", response = String.class),
             @ApiResponse(code = 500, message = "Unexpected error")})
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @GetMapping("zipcode/{code}")
     public List<User> listUsersByZipCode(@PathVariable String code) {
         LOGGER.info("List of all Users by zip code");
@@ -124,6 +133,7 @@ public class UserController {
             @ApiResponse(code = 200, message = "OK. The resource is obtained correctly", response = Product.class),
             @ApiResponse(code = 400, message = "Bad Request", response = String.class),
             @ApiResponse(code = 500, message = "Unexpected error")})
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @GetMapping("role/{name}")
     public List<User> listUsersByRole(@PathVariable String roleName) {
         LOGGER.info("List of all Users by role");
@@ -136,35 +146,13 @@ public class UserController {
             @ApiResponse(code = 200, message = "OK. The resource is obtained correctly", response = Product.class),
             @ApiResponse(code = 400, message = "Bad Request", response = String.class),
             @ApiResponse(code = 500, message = "Unexpected error")})
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @GetMapping("birthdate/{date}")
     public List<User> listUsersByBirthDate(@PathVariable String birthDate) {
         LOGGER.info("List of all Users by birth date");
         return userService.listUsersByBirthDate(birthDate);
     }
 
-
-
-    /* POST */
-
-    @ApiOperation(value = "Insertion of a new registry in Users entity"
-            , notes = "")
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "OK. The resource is obtained correctly", response = Product.class),
-            @ApiResponse(code = 400, message = "Bad Request", response = String.class),
-            @ApiResponse(code = 500, message = "Unexpected error")})
-    //@PreAuthorize("hasAuthority('ROLE_ADMIN')")
-    @PostMapping("/save")
-    public ResponseEntity save(@RequestBody User u) {
-        ResponseEntity<User> resp;
-        if (userService.findUserByEmail(u.getEmail()).isPresent()) {
-            resp = new ResponseEntity("User is already registered!", HttpStatus.CONFLICT);
-            LOGGER.info("The product is already registered!");
-        } else {
-            resp = new ResponseEntity<User>(userService.save(u), HttpStatus.CREATED);
-            LOGGER.info("User registered correctly");
-        }
-        return resp;
-    }
 
 
     /* PUT */
@@ -174,7 +162,7 @@ public class UserController {
             @ApiResponse(code = 200, message = "OK. The resource is obtained correctly", response = Product.class),
             @ApiResponse(code = 400, message = "Bad Request", response = String.class),
             @ApiResponse(code = 500, message = "Unexpected error")})
-    //@PreAuthorize("hasAuthority('ROLE_ADMIN')")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @PutMapping("/update")
     public ResponseEntity<User> updateUser(@RequestBody User newU) throws BadRequestException {
         ResponseEntity<User> resp = null;
@@ -197,8 +185,7 @@ public class UserController {
             @ApiResponse(code = 200, message = "OK. The resource is obtained correctly", response = Product.class),
             @ApiResponse(code = 400, message = "Bad Request", response = String.class),
             @ApiResponse(code = 500, message = "Unexpected error")})
-    //@PreAuthorize("hasAuthority('ROLE_ADMIN')")
-
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @DeleteMapping("/delete/{id}")
     public ResponseEntity deleteUser(@PathVariable Long id) {
         ResponseEntity resp;
@@ -213,5 +200,4 @@ public class UserController {
         }
         return resp;
     }
-
 }

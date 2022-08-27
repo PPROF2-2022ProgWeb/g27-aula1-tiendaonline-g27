@@ -46,6 +46,9 @@ public class User {
     @JoinColumn(name = "role_id")
     private Role role;
 
+    public User(String name, String lastName, String email, String encode) {
+    }
+
 
     @Override
     public boolean equals(Object o) {
