@@ -65,26 +65,27 @@ public class ProductServiceTest {
     }
 
     @Test
-    void findAll() throws IOException {
+    void shouldFindAllProducts() throws IOException {
         List<Product> products = productServiceTest.findAll();
         assertTrue(products.size() > 0);
     }
 
     @Test
-    void findProductByName() {
+    void shouldFindProductByName() {
         Optional<Product> product = productServiceTest.findProductByName("Porta Cepillo | Meraki");
         assertTrue(product.isPresent());
         Assertions.assertEquals("Porta Cepillo | Meraki", product.get().getName());
+        System.out.println(product);
     }
 
     @Test
-    void findById() {
+    void shouldFindProductById() {
         Optional<Product> product = productServiceTest.findById(2L);
         Assertions.assertEquals(2L, product.get().getId());
     }
 
     @Test
-    void listProductsByCategory() {
+    void shouldListProductsByCategory() {
         List<Product> personalCareProducts = productServiceTest.listProductsByCategory("Cuidado personal");
         assertTrue(personalCareProducts.size() == 6);
         personalCareProducts.forEach(System.out::println);
