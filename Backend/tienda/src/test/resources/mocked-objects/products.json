@@ -1,0 +1,475 @@
+[
+  {
+    "id": 1,
+    "name": "Esponja facial | Konjac",
+    "price": 749,
+    "discount": false,
+    "priceWithDiscount": null,
+    "quantity": 20,
+    "description": null,
+    "recommendation": "Se recomienda cambiar la esponja cada 2 o 3 meses segun su uso y cuidado.",
+    "details": [
+      {
+        "id": 21,
+        "description": "Lavanda: para todo tipo de piel"
+      },
+      {
+        "id": 22,
+        "description": "Antiinflamatorio y relajante"
+      },
+      {
+        "id": 23,
+        "description": "Balancea tu PH"
+      },
+      {
+        "id": 24,
+        "description": "Exfoliacion natural"
+      },
+      {
+        "id": 25,
+        "description": "Deja tu piel radiante y rejuvenecida"
+      }
+    ],
+    "category": {
+      "id": 1,
+      "name": "Cuidado personal",
+      "description": "Articulos para el cuidado personal"
+    },
+    "images": [
+      {
+        "id": 1,
+        "url": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/esponja_konjac1.png",
+        "alt": "Esponja facial"
+      },
+      {
+        "id": 2,
+        "url": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/esponja_konjac3.png",
+        "alt": "Esponja Konjac"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Porta Cepillo | Meraki",
+    "price": 450,
+    "discount": false,
+    "priceWithDiscount": null,
+    "quantity": 20,
+    "description": null,
+    "recommendation": null,
+    "details": [
+      {
+        "id": 1,
+        "description": "100% Bambu Moso"
+      },
+      {
+        "id": 2,
+        "description": "Biodegradable"
+      },
+      {
+        "id": 3,
+        "description": "Ideal para viajar"
+      },
+      {
+        "id": 4,
+        "description": "Orificio superior e inferior para drenar agua"
+      },
+      {
+        "id": 5,
+        "description": "Packaging Biodegradable"
+      }
+    ],
+    "category": {
+      "id": 1,
+      "name": "Cuidado personal",
+      "description": "Articulos para el cuidado personal"
+    },
+    "images": [
+      {
+        "id": 3,
+        "url": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/estuche_meraki.jpg",
+        "alt": "Estuche de cepillo de dientes"
+      },
+      {
+        "id": 4,
+        "url": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/estuche_meraki2.png",
+        "alt": "Estuche de cepillo de dientes Meraki"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Hilo dental | Orlando",
+    "price": 550,
+    "discount": true,
+    "priceWithDiscount": 470,
+    "quantity": 20,
+    "description": null,
+    "recommendation": null,
+    "details": [
+      {
+        "id": 6,
+        "description": "100% vegano"
+      },
+      {
+        "id": 2,
+        "description": "Biodegradable"
+      },
+      {
+        "id": 7,
+        "description": "Carbon activado"
+      },
+      {
+        "id": 8,
+        "description": "Sabor menta"
+      },
+      {
+        "id": 9,
+        "description": "30 metros"
+      },
+      {
+        "id": 5,
+        "description": "Packaging Biodegradable"
+      }
+    ],
+    "category": {
+      "id": 1,
+      "name": "Cuidado personal",
+      "description": "Articulos para el cuidado personal"
+    },
+    "images": [
+      {
+        "id": 5,
+        "url": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/hilodental_orlando.jpg",
+        "alt": "Hilo dental de carbón activado"
+      },
+      {
+        "id": 6,
+        "url": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/hilodental_Orlando2.png",
+        "alt": "Hilo dental vegano"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Toallitas Femeninas de Tela | BeeGreen",
+    "price": 455,
+    "discount": false,
+    "priceWithDiscount": null,
+    "quantity": 20,
+    "description": "Permiten un cuidado integral durante todo tu ciclo: garantizan una correcta respiracion de la zona sin exponerla a quimicos perjudiciales. Son reutilizables y compostables, con una unica inversion ahorras en gastos mensuales en productos desechables.",
+    "recommendation": null,
+    "details": [
+      {
+        "id": 10,
+        "description": "100% algodón"
+      },
+      {
+        "id": 11,
+        "description": "95% biodegradable y compostable"
+      },
+      {
+        "id": 12,
+        "description": "Con alas para un mejor ajuste"
+      },
+      {
+        "id": 14,
+        "description": "20 cm de largo"
+      },
+      {
+        "id": 15,
+        "description": "Durabilidad mínima 2 años"
+      },
+      {
+        "id": 20,
+        "description": "5% reciclable (hilos)"
+      }
+    ],
+    "category": {
+      "id": 1,
+      "name": "Cuidado personal",
+      "description": "Articulos para el cuidado personal"
+    },
+    "images": [
+      {
+        "id": 7,
+        "url": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/toallitas-femeninas-de-tela-normal-natural.jpg",
+        "alt": "Toallitas Femeninas de Tela color blanco"
+      },
+      {
+        "id": 8,
+        "url": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/toallitas_tela.png",
+        "alt": "Toallitas femeninas de color azul y blanco"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Cepillo de dientes | Meraki",
+    "price": 310,
+    "discount": true,
+    "priceWithDiscount": 220,
+    "quantity": 20,
+    "description": "Fabricado con bambú. Tanto el mango de los cepillos como sus cajas son biodegradables y vuelven a formar parte del suelo de manera natural. El único componente no biodegradable son las cerdas, 3% del total del producto.",
+    "recommendation": "El tiempo recomendado de reemplazo del cepillo es de 2-3 meses.",
+    "details": [],
+    "category": {
+      "id": 1,
+      "name": "Cuidado personal",
+      "description": "Articulos para el cuidado personal"
+    },
+    "images": [
+      {
+        "id": 9,
+        "url": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/cepillo_meraki.jpg",
+        "alt": "Cepillo de dientes, vista frontal"
+      },
+      {
+        "id": 10,
+        "url": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/cepillo_meraki_2.png",
+        "alt": "Cepillo de dientes, vista lateral"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Afeitadora ecológica biodegradable | Eco Sustentable",
+    "price": 120,
+    "discount": true,
+    "priceWithDiscount": 100,
+    "quantity": 20,
+    "description": null,
+    "recommendation": null,
+    "details": [
+      {
+        "id": 16,
+        "description": "Máquina de afeitar biodegradable"
+      },
+      {
+        "id": 17,
+        "description": "Material: ecológico de paja de trigo"
+      },
+      {
+        "id": 18,
+        "description": "Se descompone despues de 90 dias"
+      },
+      {
+        "id": 19,
+        "description": "No incluye banda lubricante"
+      }
+    ],
+    "category": {
+      "id": 1,
+      "name": "Cuidado personal",
+      "description": "Articulos para el cuidado personal"
+    },
+    "images": [
+      {
+        "id": 11,
+        "url": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/afeitadora_trigo.png",
+        "alt": "Afeitadora de paja de trigo"
+      },
+      {
+        "id": 12,
+        "url": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/afeitadora_trigo2.png",
+        "alt": "Afeitadora de paja de trigo"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Juego de vajilla biodegradable 6 piezas | Oregon",
+    "price": 2000,
+    "discount": true,
+    "priceWithDiscount": 1299,
+    "quantity": 20,
+    "description": "Set de vajilla de paja de trigo biodegradable, ecológica e irrompible de 5,7 pulgadas ideal para la comida de los niños. Contiene 6 piezas de colores surtidos, es muy ligera, resistente, duradera y apta para microondas.",
+    "recommendation": null,
+    "details": [],
+    "category": {
+      "id": 2,
+      "name": "Hogar",
+      "description": "Articulos para el hogar"
+    },
+    "images": [
+      {
+        "id": 13,
+        "url": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/juego_vajilla.png",
+        "alt": "Juego de vajilla biodegradable de 6 piezas, color verde pastel"
+      },
+      {
+        "id": 14,
+        "url": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/juego_vajilla_2.png",
+        "alt": "Juego de vajilla biodegradable de 6 piezas, color salmón"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Pack de sorbetes reutilizables | Oregon",
+    "price": 1800,
+    "discount": false,
+    "priceWithDiscount": null,
+    "quantity": 20,
+    "description": "Diseño moderno y elegante con estuche para llevar a donde quieras y lucirte! Libres de BPA, hechas de acero inoxidable, no tienen sabor a metal, apto para lavavajillas, reutilizables y respetuosos con el medio ambiente.",
+    "recommendation": "Modo de uso: Sacar del estuche e insertar en tu bebida favorita, luego de usar lavar con abundante agua y jabón, dejar secar en su totalidad en ambiente fresco y ventilado.",
+    "details": [],
+    "category": {
+      "id": 2,
+      "name": "Hogar",
+      "description": "Articulos para el hogar"
+    },
+    "images": [
+      {
+        "id": 15,
+        "url": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/sorbetereutilizable_oregon.jp",
+        "alt": "Pack de sorbetes reutilizables en envase 100% biodegradable"
+      },
+      {
+        "id": 16,
+        "url": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/sorbetesreutilizable_2.jpeg",
+        "alt": "Pack de sorbetes reutilizables en envase 100% biodegradable"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Envoltorios Reutilizables de alimentos - X 4 | BeeGreen",
+    "price": 2000,
+    "discount": true,
+    "priceWithDiscount": 1299,
+    "quantity": 20,
+    "description": "Mezclando tela 100% algodón, con cera de abeja, aceite de jojoba orgánico y resina de árbol, se crea una tela lavable, REUTILIZABLE y una alternativa al plástico.",
+    "recommendation": "Lavar en agua fría con un jabón suave. Evita las fuentes de calor, como agua caliente, sol y microondas. Secar al aire libre, y guardar en un lugar fresco.",
+    "details": [],
+    "category": {
+      "id": 2,
+      "name": "Hogar",
+      "description": "Articulos para el hogar"
+    },
+    "images": [
+      {
+        "id": 17,
+        "url": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/envoltorio_beegreen.jpg",
+        "alt": "Envoltura sustentable de alimentos con estampado blanco y celeste"
+      },
+      {
+        "id": 18,
+        "url": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/envoltorio-sustentable.png",
+        "alt": "Envoltura sustentable de alimentos con estampado de hojas"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Bolsas de residuos biodegradables | Eco-Clean",
+    "price": 300,
+    "discount": false,
+    "priceWithDiscount": null,
+    "quantity": 20,
+    "description": "Incluyen 24 rollos/360 bolsas con 1 dispensador que se adapta a todas los tamaños. Son muy duraderas y no se fugan o rompen. Son suaves al tacto y no se pegan entre sí, lo que hace que sea fácil de abrir.",
+    "recommendation": null,
+    "details": [],
+    "category": {
+      "id": 3,
+      "name": "Mascotas",
+      "description": "Articulos para mascotas"
+    },
+    "images": [
+      {
+        "id": 19,
+        "url": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/bolsa_mascota.png",
+        "alt": "Bolsas de residuos biodegradables, su caja contenedora de cartón y el dispensador con forma de hueso"
+      },
+      {
+        "id": 20,
+        "url": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/bolsas-residuos-2.jp",
+        "alt": "Dispensador bolsas de residuos con forma de hueso"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Comedero para mascotas | Eco-Pet",
+    "price": 450,
+    "discount": true,
+    "priceWithDiscount": 380,
+    "quantity": 20,
+    "description": "Biodegradable para perros y gatos. Fabricado con fibras de bambú y almidón de maíz. Con base antideslizante para ofrecer la máxima fijación. Sin plásticos, 100% natural y disponible en 2 formatos.",
+    "recommendation": null,
+    "details": [],
+    "category": {
+      "id": 3,
+      "name": "Mascotas",
+      "description": "Articulos para mascotas"
+    },
+    "images": [
+      {
+        "id": 21,
+        "url": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/plato_mascota.png",
+        "alt": "Plato para mascotas color rojo"
+      },
+      {
+        "id": 22,
+        "url": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/plato_mascotas_2.jpg",
+        "alt": "Plato para mascotas color azul"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Shampoo sólido | Zorro D'Avi",
+    "price": 390,
+    "discount": true,
+    "priceWithDiscount": 300,
+    "quantity": 20,
+    "description": "Shampoo sólido para perros, 100% vegano, libre de tóxicos y no testado en animales. Evita picores y descamaciones, gracias a los efectos hidratantes y calmantes del aceite de oliva y la lavanda.",
+    "recommendation": null,
+    "details": [],
+    "category": {
+      "id": 3,
+      "name": "Mascotas",
+      "description": "Articulos para mascotas"
+    },
+    "images": [
+      {
+        "id": 23,
+        "url": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/champu-solido-para-perros-.jpg",
+        "alt": "Jabón y Champú sólido para perros con forma rectangular, vista frontal"
+      },
+      {
+        "id": 24,
+        "url": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/champu-solido-para-perros-2.jpg",
+        "alt": "Jabón y Champú sólido para perros con forma rectangular, vista lateral"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Cucha de perro mediano | Eco-cucha",
+    "price": 4999,
+    "discount": false,
+    "priceWithDiscount": null,
+    "quantity": 20,
+    "description": "Cucha de Perro de polialuminio reciclado. Proceso de fabricación en altas temperaturas, libre de hongos y bacterias. 100% lavable y de fácil mantenimiento. Su montaje es simple y rápido. Producto 100% lavable, de fácil mantenimiento y armado.",
+    "recommendation": null,
+    "details": [],
+    "category": {
+      "id": 3,
+      "name": "Mascotas",
+      "description": "Articulos para mascotas"
+    },
+    "images": [
+      {
+        "id": 25,
+        "url": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/cucha_perros.jpg",
+        "alt": "Cucha de perro de color blanco"
+      },
+      {
+        "id": 26,
+        "url": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/cucha_perro_2.jp",
+        "alt": "Cucha de perro de color blanco con perro sonriente dentro"
+      }
+    ]
+  }
+]
