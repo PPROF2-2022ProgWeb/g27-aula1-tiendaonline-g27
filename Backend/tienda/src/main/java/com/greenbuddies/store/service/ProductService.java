@@ -1,5 +1,6 @@
 package com.greenbuddies.store.service;
 
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.greenbuddies.store.model.Product;
 import com.greenbuddies.store.repository.IProductRepository;
@@ -18,24 +19,27 @@ public class ProductService {
     /* Attributes*/
     @Autowired
     private IProductRepository productRepository;
-    Logger logger = Logger.getLogger(String.valueOf(ProductService.class));
+    private final Logger LOGGER = Logger.getLogger((String.valueOf(ProductService.class)));
     private ObjectMapper mapper;
 
+    public ProductService(IProductRepository productRepository) {
+        this.productRepository = productRepository;
+    }
 
     public Product save(Product product)  {
         productRepository.save(mapper.convertValue(product, Product.class));
-        logger.info("Product saved successfully");
+        LOGGER.info("Product saved successfully");
         return product;
     }
 
 
     public Optional<Product> findById(Long id) {
-        logger.info("Search by id in Products entity");
+        LOGGER.info("Search by id in Products entity");
         Optional<Product> p = productRepository.findById(id);
         if(p.isPresent()) {
-           logger.info("Product founded");
+           LOGGER.info("Product founded");
         } else {
-            logger.info("The id does not match with any existing product");
+            LOGGER.info("The id does not match with any existing product");
         }
         return p;
     }
@@ -43,7 +47,7 @@ public class ProductService {
 
     public List<Product> findAll() {
         List<Product> products = productRepository.findAll();
-        logger.info("List of all available products");
+        LOGGER.info("List of all available products");
         return products;
     }
 
@@ -56,7 +60,7 @@ public class ProductService {
         prod.setPrice(newProduct.getPrice());
         prod.setImages(newProduct.getImages());
 
-        logger.info("Product with ID: "+ prod.getId() + " has been updated");
+        LOGGER.info("Product with ID: "+ prod.getId() + " has been updated");
         productRepository.save(prod);
         return prod;
     }
@@ -65,26 +69,25 @@ public class ProductService {
     public void delete(Long id) {
         if(productRepository.findById(id).isPresent()){
             productRepository.deleteById(id);
-            logger.info("Product deleted correctly!");
+            LOGGER.info("Product deleted correctly!");
         } else {
-            logger.info("Product was not found!");
+            LOGGER.info("Product was not found!");
         }
     }
 
 
     public Optional<Product> findProductByName(String name) {
-        logger.info("Search by name in Product entity");
+        LOGGER.info("Search by name in Product entity");
         Optional<Product> prod = productRepository.findProductByName(name);
         if(prod.isEmpty()) {
-            logger.info("Product not found");
+            LOGGER.info("Product not found");
         }
         return prod;
     }
 
 
     public List<Product> listProductsByCategory(String name){
-        logger.info("List of all products by category");
+        LOGGER.info("List of all products by category");
         return productRepository.listProductsByCategory(name);
     }
-
 }

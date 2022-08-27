@@ -42,6 +42,10 @@ public class User {
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private ZipCode zipCode;
 
+    @ManyToOne()
+    @JoinColumn(name = "role_id")
+    private Role role;
+
 
     @Override
     public boolean equals(Object o) {

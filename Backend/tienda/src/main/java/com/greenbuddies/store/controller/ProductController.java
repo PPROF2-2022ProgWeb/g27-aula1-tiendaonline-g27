@@ -27,7 +27,7 @@ public class ProductController {
     /* Attributes */
     @Autowired
     private ProductService productService;
-    Logger logger = Logger.getLogger(String.valueOf(ProductController.class));
+    private final Logger LOGGER = Logger.getLogger(String.valueOf(ProductController.class));
 
 
     /* Methods */
@@ -41,7 +41,7 @@ public class ProductController {
             @ApiResponse(code = 500, message = "Unexpected error") })
     @GetMapping("id/{id}")
     public Product findById(@PathVariable Long id) {
-        logger.info("Search by Id in Products entity");
+        LOGGER.info("Search by Id in Products entity");
         return productService.findById(id).orElse(null);
     }
 
@@ -55,7 +55,7 @@ public class ProductController {
             @ApiResponse(code = 500, message = "Unexpected error") })
     @GetMapping("/{name}")
     public Optional<Product> findProductByName(@PathVariable String name) {
-        logger.info("Search by name in Products entity");
+        LOGGER.info("Search by name in Products entity");
         return productService.findProductByName(name);
     }
 
@@ -70,7 +70,7 @@ public class ProductController {
             @ApiResponse(code = 500, message = "Unexpected error") })
     @GetMapping("category/{name}")
     public List<Product> listProductsByCategory(@PathVariable String name) {
-        logger.info("List of all Products by category");
+        LOGGER.info("List of all Products by category");
         return productService.listProductsByCategory(name);
     }
 
@@ -83,7 +83,7 @@ public class ProductController {
             @ApiResponse(code = 500, message = "Unexpected error") })
     @GetMapping()
     public List<Product> findAll() {
-        logger.info("List of all Products");
+        LOGGER.info("List of all Products");
         return productService.findAll();
     }
 
@@ -102,10 +102,10 @@ public class ProductController {
         ResponseEntity<Product> resp;
         if (productService.findProductByName(p.getName()).isPresent()) {
             resp = new ResponseEntity("The product is already registered!", HttpStatus.CONFLICT);
-            logger.info("The product is already registered!");
+            LOGGER.info("The product is already registered!");
         } else {
             resp = new ResponseEntity<Product>(productService.save(p), HttpStatus.CREATED);
-            logger.info("Product registered correctly");
+            LOGGER.info("Product registered correctly");
         }
         return resp;
     }
@@ -125,10 +125,10 @@ public class ProductController {
 
         if(productService.findById(newP.getId()).isPresent()) {
             resp = new ResponseEntity(productService.update(newP), HttpStatus.OK);
-            logger.info("Product updated successfully");
+            LOGGER.info("Product updated successfully");
         }else{
             resp = new ResponseEntity("Product not found!", HttpStatus.NOT_FOUND);
-            logger.info("Product not found!");
+            LOGGER.info("Product not found!");
         }
         return resp;
     }
@@ -151,10 +151,10 @@ public class ProductController {
         if (productService.findById(id).isPresent()) {
             productService.delete(id);
             resp = new ResponseEntity(HttpStatus.NO_CONTENT);
-            logger.info("Product deleted successfully");
+            LOGGER.info("Product deleted successfully");
         } else {
             resp = new ResponseEntity("Product not found!", HttpStatus.NOT_FOUND);
-            logger.info("Product not found!");
+            LOGGER.info("Product not found!");
         }
         return resp;
     }

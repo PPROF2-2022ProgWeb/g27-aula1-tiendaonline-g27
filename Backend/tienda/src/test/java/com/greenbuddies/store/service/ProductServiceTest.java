@@ -1,5 +1,6 @@
 package com.greenbuddies.store.service;
 
+
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.greenbuddies.store.model.Product;
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -62,6 +64,10 @@ public class ProductServiceTest {
             }
         }
         when(iProductRepositoryMock.listProductsByCategory("Cuidado personal")).thenReturn(byCategoryProducts);
+
+        Product newProduct = new Product();
+        when(iProductRepositoryMock.save(newProduct)).thenReturn(newProduct);
+
     }
 
     @Test
@@ -93,7 +99,8 @@ public class ProductServiceTest {
     }
 
     @Test
-    void save() {
+    void shouldSaveNewProduct() {
+
 
     }
 
