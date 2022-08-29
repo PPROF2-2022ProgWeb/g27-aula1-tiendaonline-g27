@@ -25,11 +25,12 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
+    /*
     public User save(User user)  {
         userRepository.save(mapper.convertValue(user, User.class));
         LOGGER.info("User saved successfully");
         return user;
-    }
+    }*/
 
     public Optional<User> findById(Long id) {
         LOGGER.info("Search by id in Users entity");

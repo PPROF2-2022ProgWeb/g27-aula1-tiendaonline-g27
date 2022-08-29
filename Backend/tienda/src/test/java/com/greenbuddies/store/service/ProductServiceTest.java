@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -67,7 +66,6 @@ public class ProductServiceTest {
 
         Product newProduct = new Product();
         when(iProductRepositoryMock.save(newProduct)).thenReturn(newProduct);
-
     }
 
     @Test
@@ -95,13 +93,10 @@ public class ProductServiceTest {
         List<Product> personalCareProducts = productServiceTest.listProductsByCategory("Cuidado personal");
         assertTrue(personalCareProducts.size() == 6);
         personalCareProducts.forEach(System.out::println);
-
     }
 
     @Test
     void shouldSaveNewProduct() {
-
-
     }
 
     @Test
