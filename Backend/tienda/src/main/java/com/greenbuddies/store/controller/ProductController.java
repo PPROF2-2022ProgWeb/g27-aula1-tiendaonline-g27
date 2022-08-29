@@ -11,7 +11,6 @@ import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -93,7 +92,7 @@ public class ProductController {
             @ApiResponse(code = 200, message = "OK. The resource is obtained correctly", response = Product.class ),
             @ApiResponse(code = 400, message = "Bad Request", response = String.class),
             @ApiResponse(code = 500, message = "Unexpected error") })
-    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
+    //@PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @PostMapping("/save")
     public ResponseEntity save(@RequestBody Product p) {
         ResponseEntity<Product> resp;
@@ -115,7 +114,7 @@ public class ProductController {
             @ApiResponse(code = 200, message = "OK. The resource is obtained correctly", response = Product.class ),
             @ApiResponse(code = 400, message = "Bad Request", response = String.class),
             @ApiResponse(code = 500, message = "Unexpected error") })
-    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
+    //@PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @PutMapping("/update")
     public ResponseEntity<Product> updateProduct(@RequestBody Product newP) throws BadRequestException {
         ResponseEntity<Product> resp = null;
@@ -139,7 +138,7 @@ public class ProductController {
             @ApiResponse(code = 200, message = "OK. The resource is obtained correctly", response = Product.class ),
             @ApiResponse(code = 400, message = "Bad Request", response = String.class),
             @ApiResponse(code = 500, message = "Unexpected error") })
-    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
+    //@PreAuthorize("hasAuthority('ROLE_ADMIN')")
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity deleteProduct(@PathVariable Long id) {

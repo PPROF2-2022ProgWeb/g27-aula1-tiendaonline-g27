@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Green",
+    "lastName": "Buddy",
+    "email": "greenbuddies@gmail.com",
+    "password": "GreenBuddiesAdmin",
+    "birthDate": "1/1/2000",
+    "country": {
+      "id": 1,
+      "name": "Argentina"
+    },
+    "state": {
+      "id": 2,
+      "name": "Córdoba"
+    },
+    "zipCode": {
+      "id": 2,
+      "code": "5000"
+    },
+    "role": {
+      "id": 2,
+      "name": "ROLE_ADMIN"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Juan",
+    "lastName": "Pérez",
+    "email": "cliente_green_buddies@gmail.com",
+    "password": "juanperez123",
+    "birthDate": "1/4/2000",
+    "country": {
+      "id": 1,
+      "name": "Argentina"
+    },
+    "state": {
+      "id": 2,
+      "name": "Córdoba"
+    },
+    "zipCode": {
+      "id": 2,
+      "code": "5000"
+    },
+    "role": {
+      "id": 1,
+      "name": "ROLE_USER"
+    }
+  }
+]

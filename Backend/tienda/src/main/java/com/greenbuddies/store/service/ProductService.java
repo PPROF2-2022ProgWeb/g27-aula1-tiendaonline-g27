@@ -20,6 +20,8 @@ public class ProductService {
     @Autowired
     private IProductRepository productRepository;
     private final Logger LOGGER = Logger.getLogger((String.valueOf(ProductService.class)));
+
+    @Autowired
     private ObjectMapper mapper;
 
     public ProductService(IProductRepository productRepository) {
