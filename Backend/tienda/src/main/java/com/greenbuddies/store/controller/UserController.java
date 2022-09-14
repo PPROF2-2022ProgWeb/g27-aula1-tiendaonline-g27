@@ -133,7 +133,7 @@ public class UserController {
             @ApiResponse(code = 400, message = "Bad Request", response = String.class),
             @ApiResponse(code = 500, message = "Unexpected error")})
     //@PreAuthorize("hasAuthority('ROLE_ADMIN')")
-    @GetMapping("role/{name}")
+    @GetMapping("role/{roleName}")
     public List<User> listUsersByRole(@PathVariable String roleName) {
         LOGGER.info("List of all Users by role");
         return userService.listUsersByRole(roleName);
@@ -147,9 +147,9 @@ public class UserController {
             @ApiResponse(code = 500, message = "Unexpected error")})
     //@PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @GetMapping("birthdate/{date}")
-    public List<User> listUsersByBirthDate(@PathVariable String birthDate) {
+    public List<User> listUsersByBirthDate(@PathVariable String date) {
         LOGGER.info("List of all Users by birth date");
-        return userService.listUsersByBirthDate(birthDate);
+        return userService.listUsersByBirthDate(date);
     }
 
 

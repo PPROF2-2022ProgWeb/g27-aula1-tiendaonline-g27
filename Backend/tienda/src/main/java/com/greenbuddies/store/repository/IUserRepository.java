@@ -15,8 +15,8 @@ public interface IUserRepository extends JpaRepository<User, Long> {
     @Query("SELECT u FROM User u WHERE u.email = ?1")
     Optional<User> findUserByEmail(String email);
 
-    @Query("SELECT u FROM User u WHERE u.role.name = ?1")
-    List<User> listUsersByRole(String name);
+    @Query("SELECT u FROM User u WHERE u.role.roleName = ?1")
+    List<User> listUsersByRole(String roleName);
 
     @Query("SELECT u FROM User u WHERE u.country.name = ?1")
     List<User> listUsersByCountry(String name);

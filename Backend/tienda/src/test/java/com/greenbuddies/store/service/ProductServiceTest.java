@@ -26,6 +26,7 @@ public class ProductServiceTest {
 
     private final Jackson2ObjectMapperBuilder JSON_BUILDER = Jackson2ObjectMapperBuilder.json();
     private final ObjectMapper MAPPER = JSON_BUILDER.build();
+
     List<Product> products = (MAPPER.readValue(new File("src/test/resources/mocked-objects/products.json"), new TypeReference<>() {
     }));
     IProductRepository iProductRepositoryMock = mock(IProductRepository.class);
@@ -69,10 +70,12 @@ public class ProductServiceTest {
     }
 
     @Test
-    void shouldFindAllProducts() throws IOException {
+    void shouldReturnNonEmptyListOfProducts() throws IOException {
         List<Product> products = productServiceTest.findAll();
         assertTrue(products.size() > 0);
+        //assertFalse(products.size()==0);
     }
+
 
     @Test
     void shouldFindProductByName() {
