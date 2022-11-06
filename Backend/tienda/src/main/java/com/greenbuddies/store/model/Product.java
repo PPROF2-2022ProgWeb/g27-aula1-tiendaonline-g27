@@ -46,7 +46,7 @@ public class Product {
 
     @OneToMany
     @JoinColumn(name="product_id")
-    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    //@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     @ToString.Exclude
     private List<Image> images = new ArrayList<>();
 

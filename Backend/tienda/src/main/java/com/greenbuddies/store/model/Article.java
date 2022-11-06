@@ -26,12 +26,18 @@ public class Article {
     private String title;
     private String content;
 
-    //revisar si no es many to many
+
     @OneToMany(cascade=CascadeType.ALL)
     @JoinColumn(name="blog_article_id")
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     @ToString.Exclude
     private List<Image> images = new ArrayList<>();
+
+    @OneToMany(cascade=CascadeType.ALL)
+    @JoinColumn(name="blog_article_id")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    @ToString.Exclude
+    private List<Label> labels = new ArrayList<>();
 
     @Override
     public boolean equals(Object o) {
