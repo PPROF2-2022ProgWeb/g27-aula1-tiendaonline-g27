@@ -1,14 +1,16 @@
+import { adaptProducts } from 'src/app/adapters/products.adapter';
+import { DOMAIN, PORT, PROTOCOL } from './infrastructure.properties';
 import { IProduct } from './../models/product.model';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
 @Injectable({
   providedIn: 'root'
 })
 
 export class ProductsService {
-  private API_GET_ALL_PRODUCTS = "https://api.jsonbin.io/v3/b/62e534f160c3536f3fc96d65/latest";
+  private API_GET_ALL_PRODUCTS = `${PROTOCOL}://${DOMAIN}:${PORT}/products`;
+  private API_GET_PRODUCT_BY_ID = `${PROTOCOL}://${DOMAIN}:${PORT}/products/id`;
 
   constructor(public http: HttpClient) { }
 
@@ -16,8 +18,8 @@ export class ProductsService {
     return this.http.get<any>(this.API_GET_ALL_PRODUCTS);
   }
 
-  public getProductById(products: IProduct[], id: number) {
-    return products.filter(product => product.id == id)[0];
+  public getProductById(id: number | string ): Observable<any> {
+    return this.http.get<any>(`${this.API_GET_PRODUCT_BY_ID}/${id}`);
   }
 
 }

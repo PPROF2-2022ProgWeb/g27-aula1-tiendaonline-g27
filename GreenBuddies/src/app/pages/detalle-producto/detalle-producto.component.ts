@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { adaptProduct } from 'src/app/adapters/products.adapter';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { tap } from 'rxjs';
 import { IProduct } from 'src/app/models/product.model';
@@ -11,8 +12,8 @@ import { ProductsService } from 'src/app/services/products.service';
 })
 export class DetalleProductoComponent implements OnInit {
 
-  public isLoading : boolean = true;
-  public productDetails : IProduct = {
+  public isLoading: boolean = true;
+  public productDetails: IProduct = {
     id: NaN,
     nombre: null,
     categoria: null,
@@ -25,30 +26,32 @@ export class DetalleProductoComponent implements OnInit {
     recomendacion: null,
     stock: null,
   };
-  
+  public productId: number = 5;
+
   constructor(private router: ActivatedRoute,
-    private productsService: ProductsService) {
+    private productsService: ProductsService) { }
+
+
+  ngOnInit(): void {
+    this.router.params.subscribe((e) => {
+      this.productId = parseInt(e["id"]);
+      console.log("Id desde ngOninit:" + this.productId);
+    });
+    
     this.productsService
-      .getAllProducts()
+      .getProductById(this.productId)
       .pipe(
         tap((response) => {
-          this.productDetails = this.productsService.getProductById(
-            response.record,
-            this.productId
-          );
+          console.log("Id desde el consctructor:" + this.productId);
+          this.productDetails = adaptProduct(response);
           this.isLoading = false;
-          return response.record;
+          console.log(response);
+          return adaptProduct(response);
         })
       )
       .subscribe();
   }
 
-  public productId: number = 0;
-
-  ngOnInit(): void {
-    this.router.params.subscribe((e) => {
-      this.productId = parseInt(e['id']);
-    });
-  }
+  ngOnChange(): void { }
 
 }

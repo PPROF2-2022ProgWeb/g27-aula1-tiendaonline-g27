@@ -12,3 +12,32 @@ export interface IProduct {
   recomendacion: string | null;
   stock: number | null;
 }
+
+export interface IApiProduct {
+  category: {
+    description: string,
+    id: number,
+    name: string
+  },
+  description: string,
+  details: [
+    {
+      description: string,
+      id: number
+    }
+  ],
+  discount: true,
+  id: number,
+  images: [
+    {
+      alt: string,
+      id: number,
+      url: string
+    }
+  ],
+  name: string,
+  price: number,
+  priceWithDiscount: number,
+  quantity: number,
+  recommendation: string
+}

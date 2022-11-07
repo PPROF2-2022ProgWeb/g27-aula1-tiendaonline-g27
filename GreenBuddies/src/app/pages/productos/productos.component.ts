@@ -2,6 +2,7 @@ import { IProduct } from 'src/app/models/product.model';
 import { ProductsService } from 'src/app/services/products.service';
 import { Component, OnInit } from '@angular/core';
 import { tap } from 'rxjs';
+import { adaptProducts } from 'src/app/adapters/products.adapter';
 
 @Component({
     selector: 'app-productos',
@@ -18,9 +19,9 @@ export class ProductosComponent implements OnInit {
             .getAllProducts()
             .pipe(
                 tap((response) => {
-                    this.productos = response.record;
+                    this.productos = adaptProducts(response);
                     this.isLoading = false;
-                    return response.record;
+                    return response;
                 })
             )
             .subscribe();
