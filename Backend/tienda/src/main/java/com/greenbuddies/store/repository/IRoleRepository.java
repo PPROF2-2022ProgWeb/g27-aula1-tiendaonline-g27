@@ -1,7 +1,7 @@
 package com.greenbuddies.store.repository;
 
 
-;
+
 import com.greenbuddies.store.model.Role;
 import com.greenbuddies.store.model.RoleName;
 import org.springframework.data.jpa.repository.JpaRepository;

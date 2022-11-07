@@ -1,6 +1,7 @@
 package com.greenbuddies.store.controller;
 
 import com.greenbuddies.store.exceptions.BadRequestException;
+import com.greenbuddies.store.model.Article;
 import com.greenbuddies.store.model.Product;
 import com.greenbuddies.store.model.User;
 import com.greenbuddies.store.service.UserService;
@@ -152,7 +153,25 @@ public class UserController {
         return userService.listUsersByBirthDate(date);
     }
 
-
+    /* POST */
+    @ApiOperation(value = "Insertion of a new registry in Users entity"
+            ,notes = "")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "OK. The resource is obtained correctly", response = User.class ),
+            @ApiResponse(code = 400, message = "Bad Request", response = String.class),
+            @ApiResponse(code = 500, message = "Unexpected error") })
+    @PostMapping("/save")
+    public ResponseEntity save(@RequestBody User user) {
+        ResponseEntity<User> resp;
+        if (userService.findUserByEmail(user.getEmail()).isPresent()) {
+            resp = new ResponseEntity("The user is already registered", HttpStatus.CONFLICT);
+            LOGGER.info("The user is already registered");
+        } else {
+            resp = new ResponseEntity<User>(userService.save(user), HttpStatus.CREATED);
+            LOGGER.info("User registered successfully");
+        }
+        return resp;
+    }
 
     /* PUT */
     @ApiOperation(value = "Update by id of a record in Users entity"

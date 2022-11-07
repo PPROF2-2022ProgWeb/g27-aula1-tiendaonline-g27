@@ -1,6 +1,7 @@
 package com.greenbuddies.store.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.greenbuddies.store.model.Product;
 import com.greenbuddies.store.model.User;
 import com.greenbuddies.store.repository.IUserRepository;
 import lombok.Data;
@@ -19,18 +20,18 @@ public class UserService {
     @Autowired
     private IUserRepository userRepository;
     private final Logger LOGGER = Logger.getLogger((String.valueOf(UserService.class)));
+    @Autowired
     private ObjectMapper mapper;
 
     public UserService(IUserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
-    /*
     public User save(User user)  {
         userRepository.save(mapper.convertValue(user, User.class));
         LOGGER.info("User saved successfully");
         return user;
-    }*/
+    }
 
     public Optional<User> findById(Long id) {
         LOGGER.info("Search by id in Users entity");
