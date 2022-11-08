@@ -16,6 +16,8 @@ import { CardsComponent } from './productos/cards/cards.component';
 import { AyudaComponent } from './ayuda/ayuda.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { CarritoComponent } from './carrito/carrito.component';
+import { PerfilComponent } from './perfil/perfil.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { CarritoComponent } from './carrito/carrito.component';
     CardsComponent,
     AyudaComponent,
     ContactoComponent,
-    CarritoComponent
+    CarritoComponent,
+    PerfilComponent,
+    CheckoutComponent
   ],
   imports: [
     CommonModule,
@@ -45,7 +49,8 @@ import { CarritoComponent } from './carrito/carrito.component';
     LoginComponent,
     RegistroComponent,
     MinilistadoComponent,
-    ProductosComponent
+    ProductosComponent,
+    PerfilComponent
   ]
 })
 

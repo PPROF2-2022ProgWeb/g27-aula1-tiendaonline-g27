@@ -1,0 +1,16 @@
+.Section__content {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media screen and (min-width: 650px) {
+    .Section__content {
+        font-size: 1.7rem;
+        margin: 130px auto 50px auto;
+        padding: 2rem 2rem 0 2rem;
+    }
+}

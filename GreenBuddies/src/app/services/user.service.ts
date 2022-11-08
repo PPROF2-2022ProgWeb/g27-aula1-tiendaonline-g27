@@ -4,6 +4,7 @@ import { PROTOCOL, DOMAIN, PORT } from './infrastructure.properties';
 import { Injectable } from "@angular/core";
 import { IUser } from '../models/user.model';
 import { hash } from '../utils/hash';
+import { Router } from '@angular/router';
 
 export function saveSession(user: IUser) {
     const userSession = {
@@ -12,7 +13,7 @@ export function saveSession(user: IUser) {
         lastname: user.lastName,
         role: user.role.roleName
     }
-    sessionStorage.setItem("green_buddies_user", userSession.toString());
+    sessionStorage.setItem("green_buddies_user", JSON.stringify(userSession));
 }
 
 @Injectable({
@@ -26,7 +27,7 @@ export class UserService {
     private API_PUT_USER_UPDATE_BY_ID = `${PROTOCOL}://${DOMAIN}:${PORT}/users/update/`;
     private API_POST_USER = `${PROTOCOL}://${DOMAIN}:${PORT}/users/save/`;
 
-    constructor(public http: HttpClient) { }
+    constructor(public http: HttpClient, private router: Router) { }
 
     public getAllUsers(): Observable<any> {
         return this.http.get<any>(this.API_GET_ALL_USERS);
@@ -52,6 +53,15 @@ export class UserService {
 
     public async register(user: IUser) {
         return this.http.post(this.API_POST_USER, user)
+    }
+
+    public getUserSession() {
+        const user = sessionStorage.getItem("green_buddies_user");
+        if (user){
+            return JSON.parse(user);
+        } else {
+            return null;
+        }
     }
 
 }

@@ -4,11 +4,25 @@
     padding: 1rem;
   }
 
+  .pagetitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   .pagetitle h1 {
     font-size: 1.75rem;
     padding: 1rem 0;
     font-weight: 600;
     color: var(--main-font-color);
+  }
+
+  .pagetitle button {
+    width: 100px;
+    height: 40px;
+    font-size: .8rem;
+    margin: 0;
+    padding: 0;
   }
 
   .Loader {

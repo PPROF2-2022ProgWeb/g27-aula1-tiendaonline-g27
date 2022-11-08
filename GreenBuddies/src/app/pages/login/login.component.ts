@@ -11,7 +11,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   error: string | undefined;
-  
+
   formLogin: FormGroup = new FormGroup({});
 
   constructor(private userService: UserService, private formBuilder: FormBuilder, private router: Router) { }
@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
     return this.password?.touched && !this.password?.valid;
   }
 
-  setError(message : string) {
+  setError(message: string) {
     this.error = message;
     setTimeout(() => {
       this.error = undefined;
