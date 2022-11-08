@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LayoutModule } from '../layout/layout.module';
@@ -35,7 +36,9 @@ import { CarritoComponent } from './carrito/carrito.component';
     CommonModule,
     LayoutModule,
     RouterModule,
-    SharedModule
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     InicioComponent,

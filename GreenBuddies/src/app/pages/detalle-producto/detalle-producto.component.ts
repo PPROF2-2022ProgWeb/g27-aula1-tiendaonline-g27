@@ -35,17 +35,14 @@ export class DetalleProductoComponent implements OnInit {
   ngOnInit(): void {
     this.router.params.subscribe((e) => {
       this.productId = parseInt(e["id"]);
-      console.log("Id desde ngOninit:" + this.productId);
     });
     
     this.productsService
       .getProductById(this.productId)
       .pipe(
         tap((response) => {
-          console.log("Id desde el consctructor:" + this.productId);
           this.productDetails = adaptProduct(response);
           this.isLoading = false;
-          console.log(response);
           return adaptProduct(response);
         })
       )
