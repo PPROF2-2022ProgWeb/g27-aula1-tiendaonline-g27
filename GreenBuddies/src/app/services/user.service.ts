@@ -3,16 +3,17 @@ import { HttpClient } from '@angular/common/http';
 import { PROTOCOL, DOMAIN, PORT } from './infrastructure.properties';
 import { Injectable } from "@angular/core";
 import { IUser } from '../models/user.model';
+import { hash } from '../utils/hash';
 
-async function hash(string : string) {
-    const utf8 = new TextEncoder().encode(string);
-    const hashBuffer = await crypto.subtle.digest('SHA-256', utf8);
-    const hashArray = Array.from(new Uint8Array(hashBuffer));
-    const hashHex = hashArray
-      .map((bytes) => bytes.toString(16).padStart(2, '0'))
-      .join('');
-    return hashHex;
-  }
+export function saveSession(user: IUser) {
+    const userSession = {
+        email: user.email,
+        name: user.name,
+        lastname: user.lastName,
+        role: user.role.roleName
+    }
+    sessionStorage.setItem("green_buddies_user", userSession.toString());
+}
 
 @Injectable({
     providedIn: 'root'
@@ -30,22 +31,15 @@ export class UserService {
     public getAllUsers(): Observable<any> {
         return this.http.get<any>(this.API_GET_ALL_USERS);
     }
-    
-    public getUserByEmail(email: string) : Observable<any> {
+
+    public getUserByEmail(email: string): Observable<any> {
         return this.http.get<any>(this.API_GET_USER_BY_EMAIL + email);
     }
 
-    public async login(user : IUser, password: string) {
-        /* const hashPassword = await hash(password); */
-        if (user.password === password /* hashPassword */) {
-            const userSession = {
-                id: user.id,
-                email: user.email,
-                name: user.name,
-                user: user.lastName,
-                role: user.role.roleName
-            }
-            sessionStorage.setItem("green_buddies_user", userSession.toString());
+    public async login(user: IUser, password: string) {
+        const hashPassword = await hash(password);
+        if (user.password ===  hashPassword) {
+            saveSession(user);
             return true;
         } else {
             return false;
@@ -54,6 +48,10 @@ export class UserService {
 
     public logout() {
         sessionStorage.removeItem("green_buddies_user");
+    }
+
+    public async register(user: IUser) {
+        return this.http.post(this.API_POST_USER, user)
     }
 
 }

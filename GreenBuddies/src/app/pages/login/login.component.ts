@@ -1,5 +1,5 @@
-import { ActivatedRoute, Router } from '@angular/router';
-import { map, switchMap, tap } from 'rxjs';
+import { Router } from '@angular/router';
+import { map } from 'rxjs';
 import { UserService } from 'src/app/services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -50,7 +50,6 @@ export class LoginComponent implements OnInit {
   }
 
   handleLogin() {
-    console.log(this.formLogin);
     if (this.formLogin.valid) {
       this.userService
         .getUserByEmail(this.formLogin.value.email)
@@ -60,7 +59,7 @@ export class LoginComponent implements OnInit {
               this.userService.login(res, this.formLogin.value.password)
                 .then(response => {
                   if (response) {
-                    this.router.navigate(["/"])
+                    this.router.navigate(["/"]);
                   } else {
                     this.setError("Contraseña incorrecta");
                   }
