@@ -85,6 +85,17 @@ button:hover {
   width: 100%;
 }
 
+.modal-header {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+}
+
+
 @media screen  and (min-width:650px) {
   .forms {
     margin: 130px auto 0 auto;

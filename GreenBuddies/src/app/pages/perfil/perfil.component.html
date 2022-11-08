@@ -1,0 +1,32 @@
+<main>
+    <section>
+        <div class="Section__content">
+            <h1>{{userActive.name + " " + userActive.lastname}}</h1>
+            <div class="Profile__Menu">
+                <app-sm-horizontal-card>
+                    <i class="bi bi-bag fs-1"></i>
+                    <div class="Profile__Menu__Content">
+                        <h2>Mis compras</h2>
+                        <p>Seguí tus pedidos</p>
+                    </div>
+                </app-sm-horizontal-card>
+                <app-sm-horizontal-card>
+                    <i class="bi bi-person-square fs-1"></i>
+                    <div class="Profile__Menu__Content">
+                        <h2>Mis datos</h2>
+                        <p>Gestioná tus datos personales</p>
+                    </div>
+                </app-sm-horizontal-card>
+                <app-sm-horizontal-card>
+                    <i class="bi bi-newspaper fs-1"></i>
+                    <div class="Profile__Menu__Content">
+                        <h2>Suscripciones</h2>
+                        <p>Gestioná tus suscripciones</p>
+                    </div>
+                </app-sm-horizontal-card>
+            </div>
+            <button type="button" class="btn btn-outline-danger m-2 w-50" (click)="handleLogout()"> Cerrar sesión
+            </button>
+        </div>
+    </section>
+</main>

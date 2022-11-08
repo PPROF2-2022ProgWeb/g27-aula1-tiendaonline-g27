@@ -1,6 +1,6 @@
 <main class="forms">
 
-  <form class="contenedor">
+  <form class="contenedor" [formGroup]="formLogin" (ngSubmit)="handleLogin()">
 
     <div class="mensajebienvenida">
       <h2>¡Hola!</h2>
@@ -13,17 +13,40 @@
 
         <div class="columna1">
           <label for="correoRegis" class="form-label">Correo *</label><br>
-          <input type="email" class="form-control" id="correoRegis" value="" required><br>
+          <input type="email" name="email" formControlName="email" class="form-control" id="correoRegis" required autocomplete="on"><br>
+        
+          <div *ngIf="email?.errors?.['required'] && email?.touched">
+            <p [ngStyle]="{color:'tomato'}">El email es requerido.
+            </p>
+          </div>
+          <div *ngIf="email?.errors?.['email'] && email?.touched">
+            <p [ngStyle]="{color:'tomato'}">El formato del email debe ser válido.
+            </p>
+          </div>
         </div>
 
         <div class="columna2">
           <label for="contraseniaRegis" class="form-label">Contraseña *</label><br>
-          <input type="password" class="form-control" id="contraseniaRegis" value="" required minlength="8"><br>
+          <input type="password" name="password" formControlName="password" class="form-control" id="contraseniaRegis" required minlength="8" autocomplete="on"><br>
+          
+          <div *ngIf="password?.errors?.['required'] && password?.touched">
+            <p [ngStyle]="{color:'tomato'}">La contraseña es requerida.
+            </p>
+          </div>
+          
+          <div *ngIf="password?.errors?.['pattern'] && password?.touched">
+            <p [ngStyle]="{color:'tomato'}">La contraseña debe ser de 8 o más caracteres y estar compuesta por letras y/o números
+            </p>
+          </div>
+        </div>
+        <div *ngIf="error">
+          <p [ngStyle]="{color:'tomato'}">{{error}}
+          </p>
         </div>
       </div>
     </div>
 
-    <button class="btn btn" type="submit" id="ingreso">Ingresar</button>
+    <button class="btn btn" type="submit" id="ingreso" >Ingresar</button>
 
     <a href="https://www.greenbuddies.netlify.app/auth/facebook" class="btn btn-facebook">
       <span>Continuar con Facebook</span>

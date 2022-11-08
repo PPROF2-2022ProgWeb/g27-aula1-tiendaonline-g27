@@ -1,3 +1,5 @@
+import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { IsLoggedGuard } from './guards/is-logged.guard';
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { GarantiaYDevolucionesComponent } from "./pages/garantia-y-devoluciones/garantia-y-devoluciones.component";
@@ -10,28 +12,32 @@ import { TerminosYCondicionesComponent } from "./pages/terminos-y-condiciones/te
 import { AyudaComponent } from './pages/ayuda/ayuda.component';
 import { CarritoComponent } from "./pages/carrito/carrito.component";
 import { ContactoComponent } from "./pages/contacto/contacto.component";
+import { AuthGuard } from "./guards/auth.guard";
+import { PerfilComponent } from './pages/perfil/perfil.component';
 
 const routes: Routes = [
   { path: "", component: InicioComponent },
   { path: "nosotros", loadChildren: () => import("./pages/nosotros/nosotros.module").then(m => m.NosotrosModule) },
-  { path: "perfil", component: LoginComponent },
-  { path: "login", component: LoginComponent },
-  { path: "registro", component: RegistroComponent },
+  { path: "perfil", component: PerfilComponent, canActivate: [AuthGuard], data: { role: "any" } },
+  { path: "login", component: LoginComponent, canActivate: [IsLoggedGuard] },
+  { path: "registro", component: RegistroComponent, canActivate: [IsLoggedGuard] },
   { path: "terminos-y-condiciones", component: TerminosYCondicionesComponent },
   { path: "politica-de-privacidad", component: PoliticaDePrivacidadComponent },
   { path: "garantia-y-devoluciones", component: GarantiaYDevolucionesComponent },
   { path: "productos", component: ProductosComponent },
   { path: "informacion-usuario-financiero", loadChildren: () => import("./pages/informacion-usuario-financiero/informacion-usuario-financiero.module").then(m => m.InformacionUsuarioFinancieroModule) },
   { path: "producto/:id", loadChildren: () => import("./pages/detalle-producto/detalle-producto.module").then(m => m.DetalleProductoModule) },
-  { path: "ayuda", component:AyudaComponent },
-  { path: "contacto", component: ContactoComponent},
-  { path: "carrito", component: CarritoComponent},
-  { path: 'admin', loadChildren: () => import('./pages/dashboard/dashboard.module').then(m => m.DashboardModule) },
+  { path: "ayuda", component: AyudaComponent },
+  { path: "contacto", component: ContactoComponent },
+  { path: "carrito", component: CarritoComponent },
+  { path: "admin", loadChildren: () => import('./pages/dashboard/dashboard.module').then(m => m.DashboardModule), canActivate: [AuthGuard], data: { role: "ROLE_ADMIN" } },
+  { path: "checkout", component: CheckoutComponent, canActivate: [AuthGuard], data: { role: "any" } },
   { path: "**", component: InicioComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [AuthGuard, IsLoggedGuard]
 })
 export class AppRoutingModule { }

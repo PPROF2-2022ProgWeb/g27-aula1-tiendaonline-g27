@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LayoutModule } from '../layout/layout.module';
@@ -15,6 +16,8 @@ import { CardsComponent } from './productos/cards/cards.component';
 import { AyudaComponent } from './ayuda/ayuda.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { CarritoComponent } from './carrito/carrito.component';
+import { PerfilComponent } from './perfil/perfil.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -29,20 +32,25 @@ import { CarritoComponent } from './carrito/carrito.component';
     CardsComponent,
     AyudaComponent,
     ContactoComponent,
-    CarritoComponent
+    CarritoComponent,
+    PerfilComponent,
+    CheckoutComponent
   ],
   imports: [
     CommonModule,
     LayoutModule,
     RouterModule,
-    SharedModule
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     InicioComponent,
     LoginComponent,
     RegistroComponent,
     MinilistadoComponent,
-    ProductosComponent
+    ProductosComponent,
+    PerfilComponent
   ]
 })
 

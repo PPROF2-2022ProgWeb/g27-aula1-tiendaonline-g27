@@ -1,92 +1,127 @@
 <main class="forms">
-
-  <form class="formulario_registro container">
-
+  <form [formGroup]="form" class="formulario_registro container" (ngSubmit)="handleSignIn($event)">
     <h3>Crear una cuenta</h3>
 
     <div class="flex-container1">
       <div class="items">
-
         <div class="columna1">
           <label for="nombreRegis" class="form-label">Nombre *</label>
-          <input type="text" class="form-control" id="nombreRegis" required minlength="2" maxlength="24">
+          <input type="text" class="form-control" formControlName="name" id="nombreRegis" autocomplete="on">
+          <div *ngIf="name?.errors?.['required'] && name?.touched">
+            <p [ngStyle]="{color:'tomato'}">El nombre es requerido.</p>
+          </div>
+          <div *ngIf="name?.errors?.['minlength'] && name?.touched">
+            <p [ngStyle]="{color:'tomato'}"> Se requiere un mínimo de 3 letras.</p>
+          </div>
+          <div *ngIf="name?.errors?.['maxlength'] && name?.touched">
+            <p [ngStyle]="{color:'tomato'}">La longitud máxima es hasta 14 letras.</p>
+          </div>
+          <div *ngIf="name?.errors?.['pattern'] && name?.touched">
+            <p [ngStyle]="{color:'tomato'}">Este campo solo admite letras.</p>
+          </div>
         </div>
 
         <div class="columna2">
           <label for="apellidoRegis" class="form-label">Apellido *</label>
-          <input type="text" class="form-control" id="apellidoRegis" value="" required minlength="2" maxlength="24">
+          <input type="text" class="form-control" formControlName="lastName" id="apellidoRegis" autocomplete="on">
+          <div *ngIf="lastName?.errors?.['required'] && lastName?.touched">
+            <p [ngStyle]="{color:'tomato'}">El apellido es requerido.</p>
+          </div>
+          <div *ngIf="lastName?.errors?.['minlength'] && lastName?.touched">
+            <p [ngStyle]="{color:'tomato'}"> Se requiere un mínimo de 3 letras.</p>
+          </div>
+          <div *ngIf="lastName?.errors?.['maxlength'] && lastName?.touched">
+            <p [ngStyle]="{color:'tomato'}">La longitud máxima es hasta 14 letras.</p>
+          </div>
+          <div *ngIf="lastName?.errors?.['pattern'] && lastName?.touched">
+            <p [ngStyle]="{color:'tomato'}">Este campo solo admite letras.</p>
+          </div>
         </div>
 
         <div class="columna3">
           <label for="contraseniaRegis" class="form-label">Contraseña *</label>
-          <input type="password" class="form-control" id="contraseniaRegis" value="" required minlength="8">
+          <input type="password" class="form-control" placeholder="Contraseña" formControlName="password"
+            [class.border-danger]="passwordValid" id="contraseniaRegis" autocomplete="on">
+          <div *ngIf="password?.errors?.['required'] && password?.touched">
+            <p [ngStyle]="{color:'tomato'}">La contraseña es requerida.</p>
+          </div>
+          <div *ngIf="password?.errors?.['pattern'] && password?.touched">
+            <p [ngStyle]="{color:'tomato'}">Este campo solo admite letras y números.</p>
+          </div>
+          <div *ngIf="password?.errors?.['minlength'] && password?.touched">
+            <p [ngStyle]="{color:'tomato'}">La contraseña debe contener un mínimo de 8 caracteres.</p>
+          </div>
         </div>
 
         <div class="columna4">
           <label for="correoRegis" class="form-label">Correo *</label>
-          <input type="email" class="form-control" id="correoRegis" value="" required>
-        </div>
-      </div>
-    
-      
-    <div class="flex-container2">
+          <input type="email" class="form-control" placeholder="Correo" formControlName="email" id="correoRegis"
+            [class.border-danger]="emailValid" autocomplete="on">
 
-      <div class="FLEXfila1">
-        <div class="columna">
-          <label for="nacimientoRegis" class="form-label">Fecha de nacimiento</label>
-          <input type="date" class="form-control" id="nacimientoRegis" min="1930-01-01" max="2018-01-01" required>
-        </div>
-
-        <div class="columna">
-          <label for="paisRegis" class="form-label">País</label>
-          <input type="text" class="form-control" id="paisRegis">
+          <div *ngIf="email?.errors?.['required'] && email?.touched">
+            <p [ngStyle]="{color:'tomato'}">El email es requerido. </p>
+          </div>
+          <div *ngIf="email?.errors?.['email'] && email?.touched">
+            <p [ngStyle]="{color:'tomato'}">El formato del email debe ser válido.</p>
+          </div>
         </div>
       </div>
 
-      <div class="FLEXfila2">
-        <div class="columna">
-          <label for="provinciaRegis" class="form-label">Provincia</label>
-          <input type="text" class="form-control" id="provinciaRegis">
-        </div>
+      <div class="flex-container2">
+        <div class="FLEXfila1">
+          <div class="columna">
+            <label for="nacimientoRegis" class="form-label">Fecha de nacimiento *</label>
+            <input type="date" class="form-control" formControlName="birthDate" id="nacimientoRegis" autocomplete="on">
 
-        <div class="columna">
-          <label for="cpRegis" class="form-label">Código Postal</label>
-          <input type="number" class="form-control" id="cpRegis" maxlength="6">
+            <div *ngIf="birthDate?.errors?.['required'] && birthDate?.touched">
+              <p [ngStyle]="{color:'tomato'}">El campo es requerido.</p>
+            </div>
+            <div *ngIf="birthDate?.errors?.['min'] && birthDate?.touched">
+              <p [ngStyle]="{color:'tomato'}">La fecha de nacimiento debe ser válida.</p>
+            </div>
+            <div *ngIf="birthDate?.errors?.['max'] && birthDate?.touched">
+              <p [ngStyle]="{color:'tomato'}">Si eres mayor de 18 años podrás registrarte.</p>
+            </div>
+          </div>
+
+          <div class="columna">
+            <label for="paisRegis" class="form-label">País *</label>
+            <select formControlName="country" class="form-control" id="paisRegis">
+              <option value='{"id": 1,"name": "Argentina"}'>Argentina</option>
+              <option value='{"id": 2,"name": "Brasil"}'>Brasil</option>
+              <option value='{"id": 3,"name": "Uruguay"}'>Uruguay</option>
+              <option value='{"id": 1,"name": "Argentina"}'>Otro</option>
+            </select>
+          </div>
+        </div>
+        <div class="FLEXfila2">
+          <div class="columna">
+            <label for="provinciaRegis" class="form-label">Provincia</label>
+            <select class="form-control" formControlName="state" id="provinciaRegis">
+              <optgroup label="Argentina">
+                <option value='{"id": 1,"name": "Córdoba"}'>Córdoba</option>
+                <option value='{"id": 2,"name": "Buenos Aires"}'>Buenos Aires</option>
+              </optgroup>
+              <optgroup label="Otros">
+                <option value='{"id": 1,"name": "Córdoba"}'> - </option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="columna">
+            <label for="cpRegis" class="form-label">Código Postal</label>
+            <input type="number" class="form-control" formControlName="zipCode" id="cpRegis" autocomplete="on">
+          </div>
         </div>
       </div>
-    </div>
 
+      <button class="btn btn-success submitBtn" type="submit" [disabled]="form.invalid" id="regSubmit"
+        data-bs-target="#modalForm">Registrarse</button>
 
-
-    <button class="btn btn-success submitBtn" type="submit" id="regSubmit"
-      data-bs-target="#modalForm">Registrarse</button>
     </div>
 
     <div class="cuenta">
       <p><a routerLink="/login">Ya tengo una cuenta</a></p>
     </div>
-
+    
   </form>
-
-  <!-- Modal
-  <div>
-    <div class="modal fade" id="modalForm" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-      aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">¿Está seguro que sus datos son correctos?</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
-            <button type="button" class="btn btn-success" id="regisConfirm">Confirmar y enviar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
 </main>
