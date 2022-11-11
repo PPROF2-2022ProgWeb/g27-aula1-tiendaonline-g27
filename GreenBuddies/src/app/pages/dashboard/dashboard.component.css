@@ -1,34 +1,42 @@
-  main {
-    max-width: 1400px;
-    margin: 120px auto 0 auto;
-    padding: 1rem;
-  }
+.Section__content {
+  max-width: 1200px;
+  margin: 130px auto 50px auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
 
-  .pagetitle {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+.Profile__Menu {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: center;
+  gap: 1rem;
+  cursor: pointer;
+  width: 100%;
+  max-width: 600px;
+}
 
-  .pagetitle h1 {
-    font-size: 1.75rem;
-    padding: 1rem 0;
-    font-weight: 600;
-    color: var(--main-font-color);
-  }
+li {
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-size: 1.5rem;
+}
 
-  .pagetitle button {
-    width: 100px;
-    height: 40px;
-    font-size: .8rem;
-    margin: 0;
-    padding: 0;
-  }
+li:hover, li:active {
+  background: var(--main-color);
+  color: #fff;
+}
 
-  .Loader {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    min-height: 80vh;
-    margin-top: 3rem;
+@media screen and (min-width: 650px) {
+  .Section__content {
+      padding: 2rem 2rem 0 2rem;
   }
+}

@@ -1,43 +1,25 @@
-<main class="main">
-  <div class="pagetitle">
-    <h1>Panel de Control</h1>
-    <button type="button" class="btn btn-outline-danger" (click)="handleLogout()"> Cerrar sesión
-    </button>
-  </div>
-  <section class="section dashboard" *ngIf="reports">
-    <div class="row">
-      <div class="col-lg-7">
-        <div class="row">
-          <app-numerical-summaries-list [reports]="reports"></app-numerical-summaries-list>
-          <div class="col-12">
-            <app-info-wrapper title="Estadísticas">
-              <app-bar-chart type="sales_customers" [reports]="reports"></app-bar-chart>
-            </app-info-wrapper>
-            <app-info-wrapper title="Balance anual">
-              <app-bar-chart type="balance" [reports]="reports"></app-bar-chart>
-            </app-info-wrapper>
-          </div>
-          <div class="col-12">
-            <app-info-wrapper title="Más vendido">
-              <app-table-info [data]="reports" type="top_selling"></app-table-info>
-            </app-info-wrapper>
-          </div>
+<main>
+  <section>
+    <div class="Section__content">
+      <h1>Panel de control de administrador</h1>
+      <div class="Profile__Menu">
+        <div class="card">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item" [routerLink]="'productos'"><i class="bi bi-bag fs-1"></i> <span
+                class="vr"></span>Productos</li>
+            <li class="list-group-item" [routerLink]="'usuarios'"><i class="bi bi-people fs-1"></i> <span
+                class="vr"></span>Usuarios</li>
+            <li class="list-group-item" [routerLink]="'reportes'"><i class="bi bi-graph-up-arrow fs-1"></i> <span
+                class="vr"></span>Reportes</li>
+            <li class="list-group-item" [routerLink]="'articulos-blog'"><i class="bi bi-newspaper fs-1"></i> <span
+                class="vr"></span>Artículos</li>
+            <li class="list-group-item" [routerLink]="'mensajes'"><i class="bi bi-chat-square-text fs-1"></i> <span
+                class="vr"></span>Mensajes</li>
+          </ul>
         </div>
       </div>
-      <div class="col-lg-5">
-        <app-info-wrapper title="Presupuesto">
-          <app-pie-chart type="budget" [reports]="reports"></app-pie-chart>
-        </app-info-wrapper>
-        <app-info-wrapper title="Ventas recientes">
-          <app-table-info [data]="reports" type="recent_sales"></app-table-info>
-        </app-info-wrapper>
-        <app-info-wrapper title="Tráfico del sitio">
-          <app-pie-chart type="web_traffic" [reports]="reports"></app-pie-chart>
-        </app-info-wrapper>
-      </div>
+      <button type="button" class="btn btn-outline-danger m-2 w-50" (click)="handleLogout()"> Cerrar sesión
+      </button>
     </div>
   </section>
-  <div *ngIf="!reports" class="Loader">
-    <app-loader></app-loader>
-  </div>
 </main>
