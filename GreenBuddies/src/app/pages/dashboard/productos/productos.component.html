@@ -1,28 +1,12 @@
 <main class="main">
     <div class="pagetitle">
-        <h1>Panel de Control</h1>
-        <!-- <button type="button" class="btn btn-outline-danger" (click)="handleLogout()"> Cerrar sesión
-        </button> -->
+        <h1><span>Panel de Control</span> | Productos</h1>
+        <button type="button" class="btn btn-outline-danger" (click)="handleLogout()"> Cerrar sesión
+        </button>
     </div>
-    <section class="section dashboard">
-        <div class="row">
-            <div class="col-lg-7">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="col-12">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <app-info-wrapper title="Presupuesto">
-                    </app-info-wrapper>
-                    <app-info-wrapper title="Ventas recientes">
-                    </app-info-wrapper>
-                    <app-info-wrapper title="Tráfico del sitio">
-                    </app-info-wrapper>
-                </div>
-            </div>
-        </div>
+    <section>
+        <app-table-info [type]="'products'" [products]="products" (notifyGrandParent)="handleProductEdit($event)">
+        </app-table-info>
     </section>
     <div *ngIf="false" class="Loader">
         <app-loader></app-loader>

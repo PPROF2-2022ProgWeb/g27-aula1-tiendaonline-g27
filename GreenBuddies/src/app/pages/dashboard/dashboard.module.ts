@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NgChartsModule } from 'ng2-charts';
 import { NgModule } from '@angular/core';
@@ -17,6 +18,7 @@ import { UsuariosAdminComponent } from './usuarios/usuarios.component';
 import { ReportesAdminComponent } from './reportes/reportes.component';
 import { ArticulosComponent } from './articulos/articulos.component';
 import { MensajesComponent } from './mensajes/mensajes.component';
+import { EditFormComponent } from './components/edit-form/edit-form.component';
 
 @NgModule({
   declarations: [
@@ -32,13 +34,15 @@ import { MensajesComponent } from './mensajes/mensajes.component';
     UsuariosAdminComponent,
     ReportesAdminComponent,
     ArticulosComponent,
-    MensajesComponent
+    MensajesComponent,
+    EditFormComponent
   ],
   imports: [
     CommonModule,
     DashboardRoutingModule,
     SharedModule,
     NgChartsModule,
+    FormsModule,
     RouterModule.forChild([
       {
         path: 'usuarios', pathMatch: 'full', component: UsuariosAdminComponent

@@ -18,6 +18,11 @@
     color: green;
 }
 
+.table i:hover {
+    cursor: pointer;
+    color: green;
+}
+
 @media screen and (min-width: 650px) {
     .table tr {
         font-size: 1rem;

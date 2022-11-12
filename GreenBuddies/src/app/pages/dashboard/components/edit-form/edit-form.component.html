@@ -1,0 +1,57 @@
+<div class="modal fade" id="editProductModal" data-bs-keyboard="false" data-bs-backdrop="static" tabindex="-1"
+    aria-labelledby="editProductModal" aria-hidden="true" *ngIf="product">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="editProductModalLabel">Editar producto</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="productName" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="productName" name="productName"
+                            aria-describedby="productName" [(ngModel)]="product.nombre" [value]="product.nombre"
+                            max="50">
+                    </div>
+                    <div class="mb-3">
+                        <label for="productDescription" class="form-label">Descripción</label>
+                        <textarea type="text" class="form-control" id="productDescription" name="productDescription"
+                            aria-describedby="productDescription" [(ngModel)]="product.descripcion"
+                            [value]="product.descripcion" max="255"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="productDetails" class="form-label">Detalles</label>
+                        <textarea class="form-control" id="productDetails" name="productDetails"
+                            aria-describedby="productDetails" [(ngModel)]="product.detalles" [value]="product.detalles"
+                            max="255"></textarea>
+                        <div id="emailHelp" class="form-text">Separe cada detalle con ,</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="productStock" class="form-label">Stock</label>
+                        <input type="number" class="form-control" id="productStock" name="productStock"
+                            aria-describedby="productStock" min="0" [(ngModel)]="product.stock" [value]="product.stock">
+                    </div>
+                    <div class="mb-3">
+                        <label for="productDiscountPrice" class="form-label">Precio con descuento</label>
+                        <input type="number" class="form-control" id="productDiscountPrice" name="productDiscountPrice"
+                            aria-describedby="productDiscountPrice" min="0" [(ngModel)]="product.precio_con_descuento"
+                            [value]="product.precio_con_descuento">
+                    </div>
+                    <div class="mb-3">
+                        <label for="productPrice" class="form-label">Precio sin descuento</label>
+                        <input type="number" class="form-control" id="productPrice" name="productPrice"
+                            aria-describedby="productPrice" min="0" [(ngModel)]="product.precio_sin_descuento"
+                            [value]="product.precio_sin_descuento">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal"
+                    (click)="handleCloseBtn()">Cancelar</button>
+                <button *ngIf="product" type="button" class="btn btn-success" (click)="editProduct(product)">Guardar
+                    cambios</button>
+            </div>
+        </div>
+    </div>
+</div>
