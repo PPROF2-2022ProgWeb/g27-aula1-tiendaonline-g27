@@ -18,9 +18,19 @@
     color: green;
 }
 
+.controlllers {
+    display: flex;
+    gap: 1.3rem;
+    font-size: 1.5rem;
+}
+
 .table i:hover {
     cursor: pointer;
     color: green;
+}
+
+.removeBtn {
+    color: crimson;
 }
 
 @media screen and (min-width: 650px) {

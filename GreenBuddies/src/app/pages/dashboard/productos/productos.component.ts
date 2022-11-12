@@ -14,6 +14,25 @@ import { Router } from '@angular/router';
 export class ProductosAdminComponent implements OnInit {
   public isLoading: boolean = true;
   public products: IProduct[] | undefined;
+  newProduct: IProduct = {
+    id: null,
+    nombre: null,
+    descripcion: null,
+    detalles: [],
+    descuento: false,
+    categoria: "",
+    imagenes: [
+      {
+        id: 27,
+        src: "https://via.placeholder.com/400x450.jpg?text=greenbuddies.vercel.app",
+        alt: "Placeholder"
+      }
+    ],
+    recomendacion: null,
+    stock: 0,
+    precio_con_descuento: 0,
+    precio_sin_descuento: 0
+  }
 
   constructor(private productsService: ProductsService, private userService: UserService, private router: Router) {
     this.productsService
@@ -36,10 +55,56 @@ export class ProductosAdminComponent implements OnInit {
   }
 
   handleProductEdit(product: IProduct) {
-    console.log(product)
-    console.log(adaptProductFromFrontToAPI(product));
+    const adaptedProduct = adaptProductFromFrontToAPI(product);
     this.productsService
-      .updateProduct(adaptProductFromFrontToAPI(product))
+      .updateProduct(adaptedProduct)
+      .pipe(
+        map(res => {
+          console.log(res);
+          if (res) {
+            this.productsService.getAllProducts()
+              .pipe(
+                tap((response) => {
+                  if (response) {
+                    this.products = response;
+                    this.isLoading = false;
+                    return response;
+                  } else {
+                    return response;
+                  }
+                }))
+          }
+        })
+      )
+      .subscribe();
+  }
+  handleNewProduct(product: IProduct) {
+    this.productsService
+      .createProduct(adaptProductFromFrontToAPI(product))
+      .pipe(
+        map(res => {
+          if (res) {
+            this.productsService.getAllProducts()
+              .pipe(
+                tap((response) => {
+                  if (response) {
+                    this.products = adaptProducts(response);
+                    this.isLoading = false;
+                    window.location.reload();
+                    return response;
+                  } else {
+                    return response;
+                  }
+                }))
+          }
+        })
+      )
+      .subscribe();
+  }
+
+  handleProductDelete(id: number | string) {
+    this.productsService
+      .deleteProduct(id)
       .pipe(
         map(res => {
           if (res) {
@@ -58,8 +123,7 @@ export class ProductosAdminComponent implements OnInit {
         })
       )
       .subscribe();
-
-
+    window.location.reload();
   }
 
 }

@@ -46,9 +46,11 @@
             <td><a [href]="'producto/'+product.id" target="_blank">{{product.nombre}}</a></td>
             <td>{{product.stock | number}}</td>
             <td>${{product.precio_con_descuento || product.precio_sin_descuento}}</td>
-            <td (click)="handleSelectProduct(product)" data-bs-toggle="modal" data-bs-target="#editProductModal"><i
-                    class="bi bi-pencil-square"></i></td>
+            <td data-bs-toggle="modal" data-bs-target="#editProductModal" class="controlllers"><i
+                    (click)="handleSelectProduct(product)" class="bi bi-pencil-square"></i> <i
+                    (click)="handleDeleteProduct(product)" class="bi bi-x-circle-fill removeBtn"></i></td>
         </tr>
-        <app-edit-form [product]="selectedProduct" (editProductEvent)="handleEditProduct($event)"></app-edit-form>
+        <app-edit-form [product]="selectedProduct" (editProductEvent)="handleEditProduct($event)"
+            [id]="'editProductModal'" [type]="'edit'"></app-edit-form>
     </tbody>
 </table>

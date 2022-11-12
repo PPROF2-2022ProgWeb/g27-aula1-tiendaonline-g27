@@ -13,7 +13,8 @@ export class TableInfoComponent implements OnInit {
   @Input() data: IDashboardReports | undefined;
   @Input() products: IProduct[] | undefined;
   @Input() users: IUser[] | undefined;
-  @Output() notifyGrandParent = new EventEmitter();
+  @Output() notifyEditProductToGrandParent = new EventEmitter();
+  @Output() notifyCreateProductToGrandParent = new EventEmitter();
   selectedProduct: IProduct | undefined;
 
   constructor() { }
@@ -25,8 +26,12 @@ export class TableInfoComponent implements OnInit {
   }
 
   handleEditProduct(product: IProduct) {
-    this.notifyGrandParent.emit(product);
-    window.location.reload();
+    this.notifyEditProductToGrandParent.emit(product);
+  }
+
+  handleDeleteProduct(product: IProduct) {
+    this.notifyCreateProductToGrandParent.emit(product.id);
+    /* window.location.reload(); */
   }
 
 }

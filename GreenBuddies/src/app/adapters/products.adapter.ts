@@ -30,6 +30,16 @@ export function adaptProducts(productsApi: IApiProduct[]) {
     return adaptedProducts;
 }
 
+function handleDetails(details: string | string[] | null) {
+    if (typeof (details) === "string") {
+        return details.split(",").join("*");
+    }
+    if (Array.isArray(details)) {
+        return details.join("*");
+    }
+    return null;
+}
+
 export function adaptProductFromFrontToAPI(product: IProduct) {
     const adaptedProduct: IApiProduct = {
         id: product.id || null,
@@ -39,7 +49,7 @@ export function adaptProductFromFrontToAPI(product: IProduct) {
             name: "Cuidado personal"
         },
         description: product.descripcion || "",
-        details: product.detalles ? product.detalles.join("*") : null,
+        details: handleDetails(product.detalles),
         discount: product.descuento,
         images: product.imagenes.map(image => adaptImageFrontToAPI(image)),
         name: product.nombre || "",

@@ -18,11 +18,16 @@ main {
 }
 
 .pagetitle button {
-    width: 100px;
+    width: 120px;
     height: 40px;
     font-size: .8rem;
     margin: 0;
     padding: 0;
+}
+
+.control-btns {
+    display: flex;
+    gap: 10px;
 }
 
 .Loader {
@@ -31,4 +36,9 @@ main {
     justify-content: center;
     min-height: 80vh;
     margin-top: 3rem;
+}
+
+span:hover {
+    cursor: pointer;
+    color: green;
 }

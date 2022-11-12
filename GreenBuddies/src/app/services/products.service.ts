@@ -12,7 +12,8 @@ export class ProductsService {
   private API_GET_PRODUCT_BY_ID = `${PROTOCOL}://${DOMAIN}:${PORT}/products/id`;
   private API_POST_PRODUCT = `${PROTOCOL}://${DOMAIN}:${PORT}/products/save`;
   private API_PUT_PRODUCT = `${PROTOCOL}://${DOMAIN}:${PORT}/products/update`;
-  
+  private API_DELETE_PRODUCT = `${PROTOCOL}://${DOMAIN}:${PORT}/products/delete`;
+
   constructor(public http: HttpClient) { }
 
   public getAllProducts(): Observable<any> {
@@ -29,6 +30,10 @@ export class ProductsService {
 
   public updateProduct(product: IApiProduct): Observable<any> {
     return this.http.put(this.API_PUT_PRODUCT, product);
+  }
+
+  public deleteProduct(id: number | string): Observable<any> {
+    return this.http.delete(`${this.API_DELETE_PRODUCT}/${id}`);
   }
 
 }
