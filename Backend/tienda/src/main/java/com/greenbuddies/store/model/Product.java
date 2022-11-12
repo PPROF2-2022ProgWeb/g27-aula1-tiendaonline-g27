@@ -29,15 +29,7 @@ public class Product {
     private int quantity;
     private String description;
     private String recommendation;
-
-
-    @JoinTable(name = "products_details",
-            joinColumns = {@JoinColumn(name = "product_id")},
-            inverseJoinColumns = {@JoinColumn(name = "detail_id", nullable = false)}
-    )
-    @ManyToMany
-    @ToString.Exclude
-    private List<Detail> details = new ArrayList<>();
+    private String details;
 
     @ManyToOne//(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id", nullable = false)
@@ -49,7 +41,6 @@ public class Product {
     //@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     @ToString.Exclude
     private List<Image> images = new ArrayList<>();
-
 
     @Override
     public boolean equals(Object o) {

@@ -61,6 +61,8 @@ public class ProductService {
         prod.setDescription(newProduct.getDescription());
         prod.setPrice(newProduct.getPrice());
         prod.setImages(newProduct.getImages());
+        prod.setDetails(newProduct.getDetails());
+        prod.setPriceWithDiscount(newProduct.getPriceWithDiscount());
 
         LOGGER.info("Product with ID: "+ prod.getId() + " has been updated");
         productRepository.save(prod);
