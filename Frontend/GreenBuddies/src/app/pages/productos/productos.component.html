@@ -5,9 +5,19 @@
         </div>
         <section>
                 <div class="container text-center" id="card_productos">
-                        <div class="row">
+                        <div class="row" *ngIf="productos">
                                 <div class="col-md-4 mx-auto" *ngFor="let producto of productos">
                                         <app-cards [dataEntrante]="producto"></app-cards>
+                                </div>
+                        </div>
+                        <div class="row" *ngIf="!productos">
+                                <h2 class="p-5">No se han encontrado productos.</h2>
+                                <div class="not-found-btn">
+                                        <button class="btn btn-outline-success w-50 text-center"
+                                                [routerLink]="'/productos'">Ver todos los
+                                                productos</button>
+                                        <button class="btn btn-success w-50 text-center" [routerLink]="'/'">Volver a
+                                                inicio</button>
                                 </div>
                         </div>
                 </div>

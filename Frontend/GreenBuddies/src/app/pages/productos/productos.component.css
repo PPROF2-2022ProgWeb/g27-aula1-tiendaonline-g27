@@ -3,7 +3,24 @@ main {
     flex-direction: column;
     gap: 1.5rem;
 }
+
 .Loader {
     padding: 5rem 0;
     margin: auto;
+}
+
+.not-found-img {
+    width: 150px;
+
+}
+
+.not-found-btn {
+    min-height: 20vh;
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    justify-items: center;
 }

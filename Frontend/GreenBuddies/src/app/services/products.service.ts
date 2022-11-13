@@ -10,6 +10,7 @@ import { Injectable } from '@angular/core';
 export class ProductsService {
   private API_GET_ALL_PRODUCTS = `${PROTOCOL}://${DOMAIN}:${PORT}/products`;
   private API_GET_PRODUCT_BY_ID = `${PROTOCOL}://${DOMAIN}:${PORT}/products/id`;
+  private API_GET_PRODUCTS_BY_NAME = this.API_GET_ALL_PRODUCTS;/* /{name} */
   private API_POST_PRODUCT = `${PROTOCOL}://${DOMAIN}:${PORT}/products/save`;
   private API_PUT_PRODUCT = `${PROTOCOL}://${DOMAIN}:${PORT}/products/update`;
   private API_DELETE_PRODUCT = `${PROTOCOL}://${DOMAIN}:${PORT}/products/delete`;
@@ -22,6 +23,10 @@ export class ProductsService {
 
   public getProductById(id: number | string): Observable<any> {
     return this.http.get<any>(`${this.API_GET_PRODUCT_BY_ID}/${id}`);
+  }
+
+  public getProductsByName(name: string): Observable<any> {
+    return this.http.get<any>(`${this.API_GET_PRODUCTS_BY_NAME}/${name}`)
   }
 
   public createProduct(product: IApiProduct): Observable<any> {
