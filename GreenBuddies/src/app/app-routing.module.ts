@@ -30,7 +30,7 @@ const routes: Routes = [
   { path: "ayuda", component: AyudaComponent },
   { path: "contacto", component: ContactoComponent },
   { path: "carrito", component: CarritoComponent },
-  { path: "admin", loadChildren: () => import('./pages/dashboard/dashboard.module').then(m => m.DashboardModule), canActivate: [AuthGuard], data: { role: "ROLE_ADMIN" } },
+  { path: "admin", loadChildren: () => import('./pages/dashboard/dashboard.module').then(m => m.DashboardModule), canActivate: [AuthGuard], data: { role: "ROLE_ADMIN" }},
   { path: "checkout", component: CheckoutComponent, canActivate: [AuthGuard], data: { role: "any" } },
   { path: "**", component: InicioComponent }
 ];

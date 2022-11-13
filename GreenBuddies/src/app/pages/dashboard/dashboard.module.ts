@@ -1,7 +1,8 @@
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { NgChartsModule } from 'ng2-charts';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import { InfoWrapperComponent } from './components/info-wrapper/info-wrapper.component';
@@ -12,6 +13,12 @@ import { NumericalSummariesListComponent } from './components/numerical-summarie
 import { TableInfoComponent } from './components/table-info/table-info.component';
 import { PieChartComponent } from './components/pie-chart/pie-chart.component';
 import { BarChartComponent } from './components/bar-chart/bar-chart.component';
+import { ProductosAdminComponent } from './productos/productos.component';
+import { UsuariosAdminComponent } from './usuarios/usuarios.component';
+import { ReportesAdminComponent } from './reportes/reportes.component';
+import { ArticulosComponent } from './articulos/articulos.component';
+import { MensajesComponent } from './mensajes/mensajes.component';
+import { EditFormComponent } from './components/edit-form/edit-form.component';
 
 @NgModule({
   declarations: [
@@ -22,13 +29,31 @@ import { BarChartComponent } from './components/bar-chart/bar-chart.component';
     NumericalSummariesListComponent,
     TableInfoComponent,
     PieChartComponent,
-    BarChartComponent
+    BarChartComponent,
+    ProductosAdminComponent,
+    UsuariosAdminComponent,
+    ReportesAdminComponent,
+    ArticulosComponent,
+    MensajesComponent,
+    EditFormComponent
   ],
   imports: [
     CommonModule,
     DashboardRoutingModule,
     SharedModule,
-    NgChartsModule
+    NgChartsModule,
+    FormsModule,
+    RouterModule.forChild([
+      {
+        path: 'usuarios', pathMatch: 'full', component: UsuariosAdminComponent
+      },
+      {
+        path: 'productos', pathMatch: 'full', component: ProductosAdminComponent
+      },
+      {
+        path: 'reportes', pathMatch: 'full', component: ReportesAdminComponent
+      }
+    ])
   ]
 })
 export class DashboardModule { }

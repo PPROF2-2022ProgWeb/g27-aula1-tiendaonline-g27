@@ -1,12 +1,12 @@
-<table class="table table-borderless datatable" *ngIf="data">
+<table class="table table-borderless datatable">
     <thead>
-        <tr *ngIf="type === 'recent_sales' ">
+        <tr *ngIf=" data && type === 'recent_sales' ">
             <th scope="col">Nº</th>
             <th scope="col">Cliente</th>
             <th scope="col">Producto</th>
             <th scope="col">Precio</th>
         </tr>
-        <tr *ngIf="type === 'top_selling' ">
+        <tr *ngIf="data && type === 'top_selling' ">
             <th scope="col">#</th>
             <th scope="col" class="Th_Img">Imagen</th>
             <th scope="col">Producto</th>
@@ -14,8 +14,15 @@
             <th scope="col">Cantidad</th>
             <th scope="col">Ingresos</th>
         </tr>
+        <tr *ngIf="products && type === 'products' ">
+            <th scope="col" class="Th_Img">Imagen</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Stock</th>
+            <th scope="col">Precio</th>
+            <th scope="col"></th>
+        </tr>
     </thead>
-    <tbody *ngIf="type === 'recent_sales'">
+    <tbody *ngIf="data && type === 'recent_sales'">
         <tr *ngFor="let item of data.sales.recent_sales">
             <th scope="row"><a href="#">{{item.id}}</a></th>
             <td>{{item.customer}}</td>
@@ -23,7 +30,7 @@
             <td>${{item.price | number}}</td>
         </tr>
     </tbody>
-    <tbody *ngIf="type === 'top_selling'">
+    <tbody *ngIf="data && type === 'top_selling'">
         <tr *ngFor="let item of data.sales.top_selling">
             <th scope="row"><a href="#">{{item.position}}</a></th>
             <td class="Th_Img"><img [src]="item.thumb" [alt]="item.product_name" width="50px" /></td>
@@ -32,5 +39,18 @@
             <td>{{item.sold | number}}</td>
             <td>${{item.revenue | number}}</td>
         </tr>
+    </tbody>
+    <tbody *ngIf="products && type === 'products'">
+        <tr *ngFor="let product of products">
+            <td class="Th_Img"><img [src]="product.imagenes[0].src" [alt]="product.imagenes[0].alt" width="50px" /></td>
+            <td><a [href]="'producto/'+product.id" target="_blank">{{product.nombre}}</a></td>
+            <td>{{product.stock | number}}</td>
+            <td>${{product.precio_con_descuento || product.precio_sin_descuento}}</td>
+            <td data-bs-toggle="modal" data-bs-target="#editProductModal" class="controlllers"><i
+                    (click)="handleSelectProduct(product)" class="bi bi-pencil-square"></i> <i
+                    (click)="handleDeleteProduct(product)" class="bi bi-x-circle-fill removeBtn"></i></td>
+        </tr>
+        <app-edit-form [product]="selectedProduct" (editProductEvent)="handleEditProduct($event)"
+            [id]="'editProductModal'" [type]="'edit'"></app-edit-form>
     </tbody>
 </table>

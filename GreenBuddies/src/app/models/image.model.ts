@@ -1,11 +1,11 @@
 export interface IImage {
-    id: number;
+    id: number | null;
     src: string;
     alt: string | null;
 }
 
 export interface IApiImage {
-    id: number,
-    alt: string,
+    id: number | null,
+    alt: string | null,
     url: string
 }

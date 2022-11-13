@@ -1,0 +1,25 @@
+<main class="main">
+    <div class="pagetitle">
+        <h1><span [routerLink]="'/admin'">Panel de Control</span> / Productos</h1>
+        <div class="control-btns">
+            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#newProductModal"
+                data-bs-dismiss="modal">
+                Nuevo producto
+            </button>
+            <button type="button" class="btn btn-outline-danger" (click)="handleLogout()"> Cerrar sesión
+            </button>
+        </div>
+    </div>
+    <section>
+        <app-table-info [type]="'products'" [products]="products"
+            (notifyEditProductToGrandParent)="handleProductEdit($event)"
+            (notifyCreateProductToGrandParent)="handleProductDelete($event)">
+        </app-table-info>
+        <app-edit-form [id]="'newProductModal'" [type]="'create'" (createProductEvent)="handleNewProduct($event)"
+            [product]="newProduct">
+        </app-edit-form>
+    </section>
+    <div *ngIf="false" class="Loader">
+        <app-loader></app-loader>
+    </div>
+</main>

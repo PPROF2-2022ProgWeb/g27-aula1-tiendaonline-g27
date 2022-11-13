@@ -24,7 +24,7 @@ export class DetalleProductoComponent implements OnInit {
     precio_con_descuento: null,
     precio_sin_descuento: null,
     recomendacion: null,
-    stock: null,
+    stock: 1,
   };
   public productId: number = 5;
 

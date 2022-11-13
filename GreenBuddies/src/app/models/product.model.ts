@@ -1,6 +1,6 @@
-import { IImage } from "./image.model";
+import { IApiImage, IImage } from "./image.model";
 export interface IProduct {
-  id: number;
+  id: number | null;
   nombre: string | null;
   categoria: string | null;
   descripcion: string | null;
@@ -10,7 +10,7 @@ export interface IProduct {
   precio_con_descuento: number | null;
   precio_sin_descuento: number | null;
   recomendacion: string | null;
-  stock: number | null;
+  stock: number;
 }
 
 export interface IApiProduct {
@@ -19,25 +19,14 @@ export interface IApiProduct {
     id: number,
     name: string
   },
-  description: string,
-  details: [
-    {
-      description: string,
-      id: number
-    }
-  ],
-  discount: true,
-  id: number,
-  images: [
-    {
-      alt: string,
-      id: number,
-      url: string
-    }
-  ],
+  description: string | null,
+  details: string | null,
+  discount: boolean,
+  id: number | null,
+  images: IApiImage[],
   name: string,
-  price: number,
-  priceWithDiscount: number,
+  price: number | null,
+  priceWithDiscount: number | null,
   quantity: number,
-  recommendation: string
+  recommendation: string | null
 }
