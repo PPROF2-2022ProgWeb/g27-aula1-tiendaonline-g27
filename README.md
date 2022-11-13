@@ -1,6 +1,5 @@
 ![Green Buddies](https://i.ibb.co/9ykvZTJ/green-Buddies-Logo.png)
 # Tienda online: Green Buddies SA  
-Link de acceso al sitio: [https://greenbuddies.vercel.app/](https://greenbuddies.vercel.app/)  
  
 ## Integrantes  
 
