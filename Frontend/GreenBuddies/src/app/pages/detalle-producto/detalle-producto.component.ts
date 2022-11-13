@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { tap } from 'rxjs';
 import { IProduct } from 'src/app/models/product.model';
 import { ProductsService } from 'src/app/services/products.service';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-detalle-producto',
@@ -50,5 +51,7 @@ export class DetalleProductoComponent implements OnInit {
   }
 
   ngOnChange(): void { }
+
+  addToCart(product: IProduct){localStorage.setItem("gb-cart", product.toString());};
 
 }

@@ -1,5 +1,5 @@
 import { IApiImage, IImage } from "./image.model";
-export interface IProduct {
+export interface IProduct{
   id: number | null;
   nombre: string | null;
   categoria: string | null;
