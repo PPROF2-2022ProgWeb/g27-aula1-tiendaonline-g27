@@ -20,7 +20,7 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name= "idProduct")
+    @Column(name = "idProduct")
     private Long id;
     private String name;
     private Double price;
@@ -37,7 +37,7 @@ public class Product {
     private Category category;
 
     @OneToMany
-    @JoinColumn(name="product_id")
+    @JoinColumn(name = "product_id")
     //@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     @ToString.Exclude
     private List<Image> images = new ArrayList<>();

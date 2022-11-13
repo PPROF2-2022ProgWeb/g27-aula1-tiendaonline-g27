@@ -4,23 +4,24 @@ package com.greenbuddies.store.service;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.greenbuddies.store.model.Article;
 import com.greenbuddies.store.repository.IArticleRepository;
-import lombok.Data;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.logging.Logger;
 
-@Data
+
 @Service
 public class ArticleService {
 
-    private final Logger LOGGER = Logger.getLogger((String.valueOf(ArticleService.class)));
-    /* Attributes*/
+    private final Logger LOGGER = LoggerFactory.getLogger((String.valueOf(ArticleService.class)));
+    private final ObjectMapper MAPPER = new ObjectMapper();
+
     @Autowired
-    private IArticleRepository articleRepository;
-    private ObjectMapper mapper;
+    private final IArticleRepository articleRepository;
+
 
     public ArticleService(IArticleRepository articleRepository) {
         this.articleRepository = articleRepository;
@@ -28,26 +29,29 @@ public class ArticleService {
 
 
     public Article save(Article article) {
-        articleRepository.save(mapper.convertValue(article, Article.class));
-        LOGGER.info("Article saved successfully");
+        articleRepository.save(MAPPER.convertValue(article, Article.class));
+        if (LOGGER.isInfoEnabled()) {
+            LOGGER.info("Article saved successfully: {}", article);
+        }
         return article;
     }
 
     public Optional<Article> findById(Long id) {
-        LOGGER.info("Search by id in Articles entity");
-        Optional<Article> a = articleRepository.findById(id);
-        if (a.isPresent()) {
-            LOGGER.info("Article founded");
+        Optional<Article> article = articleRepository.findById(id);
+        if (article.isPresent() && LOGGER.isInfoEnabled()) {
+            LOGGER.info("Article founded: {}", article);
         } else {
             LOGGER.info("The id does not match with any existing article");
         }
-        return a;
+        return article;
     }
 
 
     public List<Article> findAll() {
         List<Article> articles = articleRepository.findAll();
-        LOGGER.info("List of all available articles");
+        if (LOGGER.isInfoEnabled()) {
+            LOGGER.info("List of all available articles: {}", articles);
+        }
         return articles;
     }
 
@@ -56,15 +60,17 @@ public class ArticleService {
         art.setTitle(newArticle.getTitle());
         art.setContent(newArticle.getContent());
         art.setImages(newArticle.getImages());
+        if (LOGGER.isInfoEnabled()) {
+            LOGGER.info("Article with ID: {} has been updated", art.getId());
 
-        LOGGER.info("Article with ID: " + art.getId() + " has been updated");
+        }
         articleRepository.save(art);
         return art;
     }
 
 
     public void delete(Long id) {
-        if (articleRepository.findById(id).isPresent()) {
+        if (articleRepository.findById(id).isPresent() && LOGGER.isInfoEnabled()) {
             articleRepository.deleteById(id);
             LOGGER.info("Article deleted correctly!");
         } else {
@@ -74,10 +80,11 @@ public class ArticleService {
 
 
     public Optional<Article> findArticleByTitle(String title) {
-        LOGGER.info("Search by title in Article entity");
         Optional<Article> article = articleRepository.findArticleByTitle(title);
-        if (article.isEmpty()) {
+        if (article.isEmpty() && LOGGER.isInfoEnabled()) {
             LOGGER.info("Article not found");
+        } else {
+            LOGGER.info("Article founded: {}", article);
         }
         return article;
     }

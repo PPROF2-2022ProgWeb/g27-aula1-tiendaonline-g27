@@ -16,7 +16,7 @@ import java.util.Objects;
 public class Label {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name= "idLabel")
+    @Column(name = "idLabel")
     private Long id;
     private String name;
 

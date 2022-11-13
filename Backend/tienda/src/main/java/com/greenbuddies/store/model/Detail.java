@@ -2,9 +2,8 @@ package com.greenbuddies.store.model;
 
 
 import lombok.*;
+
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 
 @Getter
@@ -17,7 +16,7 @@ import java.util.List;
 public class Detail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name= "idDetail")
+    @Column(name = "idDetail")
     private Long id;
     private String description;
 }

@@ -17,7 +17,7 @@ import java.util.Objects;
 public class Receipt {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name= "idReceipt")
+    @Column(name = "idReceipt")
     private Long id;
 
     private Integer number;

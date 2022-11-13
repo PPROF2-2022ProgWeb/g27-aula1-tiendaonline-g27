@@ -19,7 +19,7 @@ import java.util.Objects;
 public class Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name= "idCart")
+    @Column(name = "idCart")
     private Long id;
 
     @OneToOne

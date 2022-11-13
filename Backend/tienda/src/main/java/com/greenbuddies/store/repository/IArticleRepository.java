@@ -1,7 +1,6 @@
 package com.greenbuddies.store.repository;
 
 import com.greenbuddies.store.model.Article;
-import com.greenbuddies.store.model.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

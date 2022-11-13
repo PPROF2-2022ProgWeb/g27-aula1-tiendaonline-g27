@@ -4,52 +4,55 @@ package com.greenbuddies.store.service;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.greenbuddies.store.model.Product;
 import com.greenbuddies.store.repository.IProductRepository;
-import lombok.Data;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.logging.Logger;
 
-@Data
+
 @Service
 public class ProductService {
 
-    /* Attributes*/
-    @Autowired
-    private IProductRepository productRepository;
-    private final Logger LOGGER = Logger.getLogger((String.valueOf(ProductService.class)));
+    private final Logger LOGGER = LoggerFactory.getLogger((String.valueOf(ProductService.class)));
+    private final ObjectMapper MAPPER = new ObjectMapper();
+
 
     @Autowired
-    private ObjectMapper mapper;
+    private final IProductRepository productRepository;
+
 
     public ProductService(IProductRepository productRepository) {
         this.productRepository = productRepository;
     }
 
-    public Product save(Product product)  {
-        productRepository.save(mapper.convertValue(product, Product.class));
-        LOGGER.info("Product saved successfully");
+    public Product save(Product product) {
+        productRepository.save(MAPPER.convertValue(product, Product.class));
+        if (LOGGER.isInfoEnabled()) {
+            LOGGER.info("Product saved successfully: {}", product);
+        }
         return product;
     }
 
 
     public Optional<Product> findById(Long id) {
-        LOGGER.info("Search by id in Products entity");
-        Optional<Product> p = productRepository.findById(id);
-        if(p.isPresent()) {
-           LOGGER.info("Product founded");
+        Optional<Product> product = productRepository.findById(id);
+        if (product.isPresent()) {
+            LOGGER.info("Product founded: {}", product);
         } else {
             LOGGER.info("The id does not match with any existing product");
         }
-        return p;
+        return product;
     }
 
 
     public List<Product> findAll() {
         List<Product> products = productRepository.findAll();
-        LOGGER.info("List of all available products");
+        if (LOGGER.isInfoEnabled()) {
+            LOGGER.info("Available products: {}", products);
+        }
         return products;
     }
 
@@ -64,14 +67,16 @@ public class ProductService {
         prod.setDetails(newProduct.getDetails());
         prod.setPriceWithDiscount(newProduct.getPriceWithDiscount());
 
-        LOGGER.info("Product with ID: "+ prod.getId() + " has been updated");
+        if (LOGGER.isInfoEnabled()) {
+            LOGGER.info("Product with ID {}: has been updated", prod.getId());
+        }
         productRepository.save(prod);
         return prod;
     }
 
 
     public void delete(Long id) {
-        if(productRepository.findById(id).isPresent()){
+        if (productRepository.findById(id).isPresent() && LOGGER.isInfoEnabled()) {
             productRepository.deleteById(id);
             LOGGER.info("Product deleted correctly!");
         } else {
@@ -81,17 +86,21 @@ public class ProductService {
 
 
     public Optional<Product> findProductByName(String name) {
-        LOGGER.info("Search by name in Product entity");
         Optional<Product> prod = productRepository.findProductByName(name);
-        if(prod.isEmpty()) {
+        if (prod.isEmpty() && LOGGER.isInfoEnabled()) {
             LOGGER.info("Product not found");
+        } else {
+            LOGGER.info("Product founded: {}", prod);
         }
         return prod;
     }
 
 
-    public List<Product> listProductsByCategory(String name){
-        LOGGER.info("List of all products by category");
-        return productRepository.listProductsByCategory(name);
+    public List<Product> listProductsByCategory(String name) {
+        List<Product> products = productRepository.listProductsByCategory(name);
+        if (LOGGER.isInfoEnabled()) {
+            LOGGER.info("List of all products by category {}: {}", name, products);
+        }
+        return products;
     }
 }

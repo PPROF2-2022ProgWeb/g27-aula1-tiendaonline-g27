@@ -17,7 +17,7 @@ public class ZipCode {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name= "zip_code_id")
+    @Column(name = "zip_code_id")
     private Long id;
 
     private String code;

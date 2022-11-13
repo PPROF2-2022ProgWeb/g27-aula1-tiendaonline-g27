@@ -1,53 +1,56 @@
 package com.greenbuddies.store.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.greenbuddies.store.model.Product;
 import com.greenbuddies.store.model.User;
 import com.greenbuddies.store.repository.IUserRepository;
-import lombok.Data;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.logging.Logger;
 
-@Data
+
 @Service
 public class UserService {
 
-    /* Attributes*/
+    private final Logger LOGGER = LoggerFactory.getLogger((String.valueOf(UserService.class)));
+    private final ObjectMapper MAPPER = new ObjectMapper();
+
     @Autowired
-    private IUserRepository userRepository;
-    private final Logger LOGGER = Logger.getLogger((String.valueOf(UserService.class)));
-    @Autowired
-    private ObjectMapper mapper;
+    private final IUserRepository userRepository;
+
 
     public UserService(IUserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
-    public User save(User user)  {
-        userRepository.save(mapper.convertValue(user, User.class));
-        LOGGER.info("User saved successfully");
+
+    public User save(User user) {
+        userRepository.save(MAPPER.convertValue(user, User.class));
+        if (LOGGER.isInfoEnabled()) {
+            LOGGER.info("User saved successfully: {}", user);
+        }
         return user;
     }
 
     public Optional<User> findById(Long id) {
-        LOGGER.info("Search by id in Users entity");
-        Optional<User> u = userRepository.findById(id);
-        if(u.isPresent()) {
-            LOGGER.info("User founded");
+        Optional<User> user = userRepository.findById(id);
+        if (user.isPresent() && LOGGER.isInfoEnabled()) {
+            LOGGER.info("User founded: {}", user);
         } else {
             LOGGER.info("The id does not match with any existing user");
         }
-        return u;
+        return user;
     }
 
 
     public List<User> findAll() {
         List<User> users = userRepository.findAll();
-        LOGGER.info("List of all existing users");
+        if (LOGGER.isInfoEnabled()) {
+            LOGGER.info("List of all existing users: {}", users);
+        }
         return users;
     }
 
@@ -62,15 +65,16 @@ public class UserService {
         user.setState(newUser.getState());
         user.setRole(newUser.getRole());
         user.setZipCode(newUser.getZipCode());
-
-        LOGGER.info("User with ID: "+ user.getId() + " has been updated");
+        if (LOGGER.isInfoEnabled()) {
+            LOGGER.info("User with ID: {} has been updated", user.getId());
+        }
         userRepository.save(user);
         return user;
     }
 
 
     public void delete(Long id) {
-        if(userRepository.findById(id).isPresent()){
+        if (userRepository.findById(id).isPresent() && LOGGER.isInfoEnabled()) {
             userRepository.deleteById(id);
             LOGGER.info("User deleted correctly!");
         } else {
@@ -80,46 +84,62 @@ public class UserService {
 
 
     public Optional<User> findUserByCompleteName(String name, String lastName) {
-        LOGGER.info("Search by complete name in User entity");
         Optional<User> user = userRepository.findUserByCompleteName(name, lastName);
-        if(user.isEmpty()) {
+        if (user.isEmpty() && LOGGER.isInfoEnabled()) {
             LOGGER.info("User not found");
+        } else {
+            LOGGER.info("User founded: {}", user);
         }
         return user;
     }
 
     public Optional<User> findUserByEmail(String email) {
-        LOGGER.info("Search by email in User entity");
         Optional<User> user = userRepository.findUserByEmail(email);
-        if(user.isEmpty()) {
+        if (user.isEmpty() && LOGGER.isInfoEnabled()) {
             LOGGER.info("User not found");
+        } else {
+            LOGGER.info("User founded: {}", user);
         }
         return user;
     }
 
-    public List<User> listUsersByRole(String roleName){
-        LOGGER.info("List of all users by role");
-        return userRepository.listUsersByRole(roleName);
+    public List<User> listUsersByRole(String roleName) {
+        List<User> usersByRole = userRepository.listUsersByRole(roleName);
+        if (LOGGER.isInfoEnabled()) {
+            LOGGER.info("Users by role name {}: {}", roleName, usersByRole);
+        }
+        return usersByRole;
     }
 
-    public List<User> listUsersByCountry(String countryName){
-        LOGGER.info("List of all users by country");
-        return userRepository.listUsersByCountry(countryName);
+    public List<User> listUsersByCountry(String countryName) {
+        List<User> usersByCountry = userRepository.listUsersByCountry(countryName);
+        if (LOGGER.isInfoEnabled()) {
+            LOGGER.info("Users by country {}: {}", countryName, usersByCountry);
+        }
+        return usersByCountry;
     }
 
-    public List<User> listUsersByState(String stateName){
-        LOGGER.info("List of all users by state");
-        return userRepository.listUsersByState(stateName);
+    public List<User> listUsersByState(String stateName) {
+        List<User> usersByState = userRepository.listUsersByState(stateName);
+        if (LOGGER.isInfoEnabled()) {
+            LOGGER.info("Users by state {}: {}", stateName, usersByState);
+        }
+        return usersByState;
     }
 
-    public List<User> listUsersByZipCode(String code){
-        LOGGER.info("List of all users by zip code");
-        return userRepository.listUsersByZipCode(code);
+    public List<User> listUsersByZipCode(String code) {
+        List<User> usersByZipCode = userRepository.listUsersByZipCode(code);
+        if (LOGGER.isInfoEnabled()) {
+            LOGGER.info("Users by zip code {}: {}", code, usersByZipCode);
+        }
+        return usersByZipCode;
     }
 
-    public List<User> listUsersByBirthDate(String birthDate){
-        LOGGER.info("List of all users by date of birth");
-        return userRepository.listUsersByBirthDate(birthDate);
+    public List<User> listUsersByBirthDate(String birthDate) {
+        List<User> usersByBirthDate = userRepository.listUsersByBirthDate(birthDate);
+        if (LOGGER.isInfoEnabled()) {
+            LOGGER.info("Users by birth date {}: {}", birthDate, usersByBirthDate);
+        }
+        return usersByBirthDate;
     }
-
 }
