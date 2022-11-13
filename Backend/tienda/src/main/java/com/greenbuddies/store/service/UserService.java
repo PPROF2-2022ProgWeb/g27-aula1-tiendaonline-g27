@@ -1,6 +1,7 @@
 package com.greenbuddies.store.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.greenbuddies.store.model.RoleName;
 import com.greenbuddies.store.model.User;
 import com.greenbuddies.store.repository.IUserRepository;
 import org.slf4j.Logger;
@@ -103,7 +104,7 @@ public class UserService {
         return user;
     }
 
-    public List<User> listUsersByRole(String roleName) {
+    public List<User> listUsersByRole(RoleName roleName) {
         List<User> usersByRole = userRepository.listUsersByRole(roleName);
         if (LOGGER.isInfoEnabled()) {
             LOGGER.info("Users by role name {}: {}", roleName, usersByRole);

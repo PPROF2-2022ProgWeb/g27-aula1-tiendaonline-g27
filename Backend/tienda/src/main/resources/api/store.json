@@ -1804,7 +1804,11 @@
             "in": "path",
             "description": "roleName",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "enum": [
+              "ROLE_ADMIN",
+              "ROLE_USER"
+            ]
           }
         ],
         "responses": {
