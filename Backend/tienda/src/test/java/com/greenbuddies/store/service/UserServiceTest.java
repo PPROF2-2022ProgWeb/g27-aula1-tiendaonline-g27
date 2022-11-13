@@ -2,6 +2,7 @@ package com.greenbuddies.store.service;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.greenbuddies.store.model.RoleName;
 import com.greenbuddies.store.model.User;
 import com.greenbuddies.store.repository.IUserRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -67,7 +68,7 @@ public class UserServiceTest {
                 usersByRole.add(u);//que te pasa metodo que no haces tu trabajo?
             }
         }
-        when(iUserRepositoryMock.listUsersByRole("ROLE_ADMIN")).thenReturn(usersByRole);
+        when(iUserRepositoryMock.listUsersByRole(RoleName.ROLE_ADMIN)).thenReturn(usersByRole);
 
         List<User> usersByCountry = new ArrayList<>();
         for (User u : users){
@@ -153,21 +154,8 @@ public class UserServiceTest {
 
     @Test
     void shouldListAdminUsers() {
-        List<User> adminUsers = userServiceTest.listUsersByRole("ROLE_ADMIN");
+        List<User> adminUsers = userServiceTest.listUsersByRole(RoleName.ROLE_ADMIN);
         assertTrue(adminUsers.size() > 0);
 
     }
-/*
-    @Test
-    void shouldSaveNewProduct() {
-    }
-
-    @Test
-    void update() {
-    }
-
-    @Test
-    void delete() {
-    }
- */
 }

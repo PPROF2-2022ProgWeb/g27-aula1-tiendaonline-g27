@@ -1,6 +1,7 @@
 package com.greenbuddies.store.controller;
 
 import com.greenbuddies.store.exceptions.BadRequestException;
+import com.greenbuddies.store.model.RoleName;
 import com.greenbuddies.store.model.User;
 import com.greenbuddies.store.service.UserService;
 import io.swagger.annotations.ApiOperation;
@@ -149,7 +150,7 @@ public class UserController {
             @ApiResponse(code = 500, message = "Unexpected error")})
     //@PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @GetMapping("role/{roleName}")
-    public List<User> listUsersByRole(@PathVariable String roleName) {
+    public List<User> listUsersByRole(@PathVariable RoleName roleName) {
         if (LOGGER.isInfoEnabled()) {
             LOGGER.info("List of all Users by role");
         }

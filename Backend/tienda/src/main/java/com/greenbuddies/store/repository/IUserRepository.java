@@ -1,6 +1,7 @@
 package com.greenbuddies.store.repository;
 
 
+import com.greenbuddies.store.model.RoleName;
 import com.greenbuddies.store.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -16,7 +17,7 @@ public interface IUserRepository extends JpaRepository<User, Long> {
     Optional<User> findUserByEmail(String email);
 
     @Query("SELECT u FROM User u WHERE u.role.roleName = ?1")
-    List<User> listUsersByRole(String roleName);
+    List<User> listUsersByRole(RoleName roleName);
 
     @Query("SELECT u FROM User u WHERE u.country.name = ?1")
     List<User> listUsersByCountry(String name);
