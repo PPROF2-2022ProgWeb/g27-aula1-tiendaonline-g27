@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavComponent } from './nav/nav.component';
@@ -21,11 +22,12 @@ import { HeaderComponent } from './header/header.component';
     CartBtnComponent,
     MenuIcoComponent,
     MenuListComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   exports: [
     NavComponent,

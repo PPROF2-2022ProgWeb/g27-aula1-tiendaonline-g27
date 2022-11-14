@@ -25,6 +25,7 @@ const routes: Routes = [
   { path: "politica-de-privacidad", component: PoliticaDePrivacidadComponent },
   { path: "garantia-y-devoluciones", component: GarantiaYDevolucionesComponent },
   { path: "productos", component: ProductosComponent },
+  { path: "productos/:name", component: ProductosComponent },
   { path: "informacion-usuario-financiero", loadChildren: () => import("./pages/informacion-usuario-financiero/informacion-usuario-financiero.module").then(m => m.InformacionUsuarioFinancieroModule) },
   { path: "producto/:id", loadChildren: () => import("./pages/detalle-producto/detalle-producto.module").then(m => m.DetalleProductoModule) },
   { path: "ayuda", component: AyudaComponent },
