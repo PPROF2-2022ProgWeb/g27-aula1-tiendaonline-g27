@@ -1,0 +1,571 @@
+{
+	"info": {
+		"_postman_id": "24acf974-9553-4dc3-9cd2-d13d17c27977",
+		"name": "GreenBuddies",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18031133"
+	},
+	"item": [
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "POST",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 18,\r\n        \"name\": \"Producto de prueba\",\r\n        \"price\": 8000.0,\r\n        \"discount\": false,\r\n        \"priceWithDiscount\": null,\r\n        \"quantity\": 12,\r\n        \"description\": \"Producto de prueba para método POST\",\r\n        \"recommendation\": null,\r\n        \"details\": \"\",\r\n        \"category\": {\r\n            \"id\": 1,\r\n            \"name\": \"Cuidado personal\",\r\n            \"description\": \"Artículos para el cuidado personal\"\r\n        },\r\n        \"images\": []\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/products/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"products",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LIST ALL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET BY ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/products/id/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"products",
+								"id",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LIST BY CATEGORY",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/products/category/Cuidado%20personal",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"products",
+								"category",
+								"Cuidado%20personal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET BY NAME",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/products/Esponja%20facial%20%7C%20Konjac",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"products",
+								"Esponja%20facial%20%7C%20Konjac"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 18,\r\n        \"name\": \"Producto de prueba\",\r\n        \"price\": 5000.0,\r\n        \"discount\": false,\r\n        \"priceWithDiscount\": null,\r\n        \"quantity\": 12,\r\n        \"description\": \"Producto de prueba para método POST\",\r\n        \"recommendation\": null,\r\n        \"details\": \"\",\r\n        \"category\": {\r\n            \"id\": 1,\r\n            \"name\": \"Cuidado personal\",\r\n            \"description\": \"Artículos para el cuidado personal\"\r\n        },\r\n        \"images\": []\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/products/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"products",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/products/delete/18",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"products",
+								"delete",
+								"18"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "POST",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 6,\r\n        \"name\": \"Lu\",\r\n        \"lastName\": \"Murga\",\r\n        \"email\": \"mlucianamurga@gmail.com\",\r\n        \"password\": \"password\",\r\n        \"birthDate\": \"1985-02-14\",\r\n        \"country\": {\r\n            \"id\": 1,\r\n            \"name\": \"Argentina\"\r\n        },\r\n        \"state\": {\r\n            \"id\": 1,\r\n            \"name\": \"Córdoba\"\r\n        },\r\n        \"zipCode\": {\r\n            \"id\": 1,\r\n            \"code\": \"5000\"\r\n        },\r\n        \"role\": {\r\n            \"id\": 1,\r\n            \"roleName\": \"ROLE_USER\"\r\n        }\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/users/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"users",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LIST ALL",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET BY ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/users/id/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"users",
+								"id",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET BY ROLENAME",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/users/role/ROLE_USER",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"users",
+								"role",
+								"ROLE_USER"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET BY COMPLETE NAME",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/users/completeName?lastName=Yorbandi&name=Selien",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"users",
+								"completeName"
+							],
+							"query": [
+								{
+									"key": "lastName",
+									"value": "Yorbandi"
+								},
+								{
+									"key": "name",
+									"value": "Selien"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET BY EMAIL",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/users/mlucianamurga%40gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"users",
+								"mlucianamurga%40gmail.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET BY BIRTH DATE",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/users/birthdate/1985-02-14",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"users",
+								"birthdate",
+								"1985-02-14"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET BY COUNTRY",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/users/country/Argentina",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"users",
+								"country",
+								"Argentina"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET BY STATE",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/users/state/Cordoba",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"users",
+								"state",
+								"Cordoba"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET BY ZIP CODE",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/users/zipcode/5000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"users",
+								"zipcode",
+								"5000"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 4,\r\n        \"name\": \"Lu\",\r\n        \"lastName\": \"Murga\",\r\n        \"email\": \"mlucianamurga@gmail.com\",\r\n        \"password\": \"password\",\r\n        \"birthDate\": \"1985-02-14\",\r\n        \"country\": {\r\n            \"id\": 1,\r\n            \"name\": \"Argentina\"\r\n        },\r\n        \"state\": {\r\n            \"id\": 1,\r\n            \"name\": \"Córdoba\"\r\n        },\r\n        \"zipCode\": {\r\n            \"id\": 1,\r\n            \"code\": \"5008\"\r\n        },\r\n        \"role\": {\r\n            \"id\": 1,\r\n            \"roleName\": \"ROLE_ADMIN\"\r\n        }\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/users/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"users",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/users/delete/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"users",
+								"delete",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
