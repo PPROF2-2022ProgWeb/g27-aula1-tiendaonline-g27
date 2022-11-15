@@ -1,0 +1,41 @@
+<main>
+    <app-header [description]="'Blog'" [isTop]="true"></app-header>
+    
+    <section>
+        <div class="container" *ngFor="let post of posts">
+
+            <div class="contenedor-articulo ">
+
+                <div>
+                    <img [src]="post.imagePost" alt="sostenibilidad" />
+                </div>
+
+
+                <div class="banerprincipal">
+                    <div>
+                        <h4>{{ post.titlePost }}</h4>
+
+                        <div class="contenedor-texto">
+                            <p>{{ post.contentPost }}</p>
+                        </div>
+                    </div>
+                    <div>
+                        <a [href]="[post.buttonPost]" class="btn">Leer más<i class="fas fa-angle-double-right"></i></a>
+                    </div>
+                    <div>
+                        <p>{{ post.labelPost }}</p>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+       <!--<div *ngIf="isLoading" class="Loader">
+               <app-loader></app-loader>
+          </div>-->
+          
+    </section>
+</main>
+
