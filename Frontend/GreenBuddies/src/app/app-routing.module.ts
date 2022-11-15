@@ -14,6 +14,7 @@ import { CarritoComponent } from "./pages/carrito/carrito.component";
 import { ContactoComponent } from "./pages/contacto/contacto.component";
 import { AuthGuard } from "./guards/auth.guard";
 import { PerfilComponent } from './pages/perfil/perfil.component';
+import { UserInfoComponent } from './pages/dashboard/user-info/user-info.component';
 
 const routes: Routes = [
   { path: "", component: InicioComponent },
@@ -33,7 +34,9 @@ const routes: Routes = [
   { path: "carrito", component: CarritoComponent },
   { path: "admin", loadChildren: () => import('./pages/dashboard/dashboard.module').then(m => m.DashboardModule), canActivate: [AuthGuard], data: { role: "ROLE_ADMIN" }},
   { path: "checkout", component: CheckoutComponent, canActivate: [AuthGuard], data: { role: "any" } },
+  { path: "user-info", component: UserInfoComponent},
   { path: "**", component: InicioComponent }
+
 ];
 
 @NgModule({

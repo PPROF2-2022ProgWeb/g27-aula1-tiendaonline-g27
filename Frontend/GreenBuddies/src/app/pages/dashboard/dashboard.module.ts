@@ -19,6 +19,7 @@ import { ReportesAdminComponent } from './reportes/reportes.component';
 import { ArticulosComponent } from './articulos/articulos.component';
 import { MensajesComponent } from './mensajes/mensajes.component';
 import { EditFormComponent } from './components/edit-form/edit-form.component';
+import { UserInfoComponent } from './user-info/user-info.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { EditFormComponent } from './components/edit-form/edit-form.component';
     ReportesAdminComponent,
     ArticulosComponent,
     MensajesComponent,
-    EditFormComponent
+    EditFormComponent,
+    UserInfoComponent
   ],
   imports: [
     CommonModule,
