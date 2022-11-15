@@ -18,6 +18,7 @@ import { ContactoComponent } from './contacto/contacto.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { BlogComponent } from './blog/blog.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
     ContactoComponent,
     CarritoComponent,
     PerfilComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    BlogComponent
   ],
   imports: [
     CommonModule,
