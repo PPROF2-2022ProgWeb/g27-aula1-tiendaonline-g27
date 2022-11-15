@@ -1,0 +1,87 @@
+<main>
+  <app-header [description]="'Mis compras'" [isTop]="true"></app-header>
+  <section>
+    <div class="container" > <!--*ngFor="let micompra of miscompras-->
+
+      <h4>Mis compras</h4>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Fecha</th>
+            <th scope="col">Item</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Total</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Acción</th>
+          </tr>
+        </thead>
+
+        <!--<tbody id="items"></tbody>
+        //<button type="button" class="btn btn-outline-danger m-2 w-50" (click)="handleLogout()"> Cerrar sesión
+        </button>-->
+      </table>
+    </div>
+
+
+    <table class="table table-striped table-dark">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Handle</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+  </section>
+</main>
+
+
+<!--
+  /<template id="template-carrito">
+    <tr>
+      <th scope="row">id</th>
+      <td>Café</td>
+      <td>1</td>
+      <td>
+          <button class="btn btn-info btn-sm"></button>
+          <button class="btn btn-danger btn-sm"></button>
+      </td>
+      <td>$ <span>500</span></td>
+    </tr>
+  </template>
+-->
+<!--
+  <template id="template-card">
+    <div class="col-12 mb-2">
+      <div class="card">
+        <div class="card-body">
+          <h5>Titulo</h5>
+          <p>precio</p>
+          <button class="btn btn-dark">Comprar</button>
+        </div>
+      </div>
+    </div>
+  </template>-->
