@@ -3,15 +3,14 @@
         <div class="Section__content">
             <h1>{{userActive.name + " " + userActive.lastname}}</h1>
             <div class="Profile__Menu">
-                <app-sm-horizontal-card>
+                <app-sm-horizontal-card routerLink="/miscompras">
                     <i class="bi bi-bag fs-1"></i>
                     <div class="Profile__Menu__Content">
                         <h2>Mis compras</h2>
-                        <p><a routerLink="/miscompras">Seguí tu historial de compras</a></p>
-                        
+                        <p>Seguí tu historial de compras</p>
                     </div>
                 </app-sm-horizontal-card>
-                <app-sm-horizontal-card>
+                <app-sm-horizontal-card routerLink="/user-info">
                     <i class="bi bi-person-square fs-1"></i>
                     <div class="Profile__Menu__Content">
                         <h2>Mis datos</h2>

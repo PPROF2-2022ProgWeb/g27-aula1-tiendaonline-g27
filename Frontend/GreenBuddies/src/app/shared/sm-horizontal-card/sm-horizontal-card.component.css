@@ -12,3 +12,8 @@
     align-items: center;
     gap: 20px;
 }
+
+.card:hover, .card:active {
+    background: var(--main-color);
+    color: #fff;
+}
