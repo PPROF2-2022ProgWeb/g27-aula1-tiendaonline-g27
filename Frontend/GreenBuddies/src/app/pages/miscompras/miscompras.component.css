@@ -1,0 +1,24 @@
+main{
+    margin: 90px auto 0 auto;
+}
+
+h2 {
+    padding: 3rem 0;
+}
+
+@media (max-width:1130px){
+   
+    .container {
+        width: 80%;
+        flex-direction: column;
+    }
+}
+
+@media (max-width:800px){
+      
+    .container{
+        width: 90%;
+        flex-direction: column;
+    }
+} 
+

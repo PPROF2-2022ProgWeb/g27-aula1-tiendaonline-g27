@@ -16,6 +16,7 @@ import { AuthGuard } from "./guards/auth.guard";
 import { UserInfoComponent } from './pages/dashboard/user-info/user-info.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { BlogComponent } from './pages/blog/blog.component';
+import { MiscomprasComponent } from './pages/miscompras/miscompras.component';
 
 const routes: Routes = [
   { path: "", component: InicioComponent },
@@ -37,8 +38,8 @@ const routes: Routes = [
   { path: "admin", loadChildren: () => import('./pages/dashboard/dashboard.module').then(m => m.DashboardModule), canActivate: [AuthGuard], data: { role: "ROLE_ADMIN" }},
   { path: "checkout", component: CheckoutComponent, canActivate: [AuthGuard], data: { role: "any" } },
   { path: "blog", component: BlogComponent},
+  { path: "miscompras",component: MiscomprasComponent},
   { path: "**", component: InicioComponent }
-
 ];
 
 @NgModule({
