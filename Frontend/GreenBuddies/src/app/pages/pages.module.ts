@@ -39,7 +39,7 @@ import { MiscomprasComponent } from './miscompras/miscompras.component';
     CheckoutComponent,
     BlogComponent,
     MiscomprasComponent,
-
+    BlogComponent
   ],
   imports: [
     CommonModule,

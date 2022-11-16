@@ -13,6 +13,7 @@ import { AyudaComponent } from './pages/ayuda/ayuda.component';
 import { CarritoComponent } from "./pages/carrito/carrito.component";
 import { ContactoComponent } from "./pages/contacto/contacto.component";
 import { AuthGuard } from "./guards/auth.guard";
+import { UserInfoComponent } from './pages/dashboard/user-info/user-info.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { MiscomprasComponent } from './pages/miscompras/miscompras.component';
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: "ayuda", component: AyudaComponent },
   { path: "contacto", component: ContactoComponent },
   { path: "carrito", component: CarritoComponent },
+  { path: "user-info", component: UserInfoComponent},
   { path: "admin", loadChildren: () => import('./pages/dashboard/dashboard.module').then(m => m.DashboardModule), canActivate: [AuthGuard], data: { role: "ROLE_ADMIN" }},
   { path: "checkout", component: CheckoutComponent, canActivate: [AuthGuard], data: { role: "any" } },
   { path: "blog", component: BlogComponent},
