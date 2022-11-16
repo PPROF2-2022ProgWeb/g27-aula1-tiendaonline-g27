@@ -1,0 +1,49 @@
+main {
+    max-width: 1400px;
+    margin: 120px auto 0 auto;
+    padding: 1rem;
+}
+
+.pagetitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.pagetitle h1 {
+    font-size: 1.75rem;
+    padding: 1rem 0;
+    font-weight: 600;
+    color: var(--main-font-color);
+}
+
+.pagetitle button {
+    width: 120px;
+    height: 40px;
+    font-size: .8rem;
+    margin: 0;
+    padding: 0;
+}
+
+.control-btns {
+    display: flex;
+    gap: 10px;
+}
+
+.Loader {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    min-height: 80vh;
+    margin-top: 3rem;
+}
+
+span:hover {
+    cursor: pointer;
+    color: green;
+}
+
+section {
+    padding-bottom: 2rem;
+}

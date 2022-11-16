@@ -24,13 +24,31 @@
     font-size: 1.5rem;
 }
 
-.table i:hover {
+i {
     cursor: pointer;
+}
+
+.table .bi-pencil-square:hover {
     color: green;
 }
 
 .removeBtn {
     color: crimson;
+}
+
+.removeBtn:hover {
+    color: firebrick;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.Usuarios td:last-child,
+.Usuarios td:nth-child(5),
+.Usuarios th:last-child,
+.Usuarios th:nth-child(5) {
+    display: none;
 }
 
 @media screen and (min-width: 650px) {
@@ -40,5 +58,12 @@
 
     .Th_Img {
         display: block;
+    }
+
+    .Usuarios td:last-child,
+    .Usuarios td:nth-child(5),
+    .Usuarios th:last-child,
+    .Usuarios th:nth-child(5) {
+        display: table-cell;
     }
 }

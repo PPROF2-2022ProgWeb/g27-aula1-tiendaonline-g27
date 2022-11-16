@@ -18,7 +18,6 @@ export class BarChartComponent implements OnInit {
 
   ngOnInit(): void {
     this.setAttributes();
-    console.log(this.chartDatasets);
   }
 
   setAttributes() {

@@ -1,1 +1,19 @@
-<p>usuarios works!</p>
+<main class="main">
+    <div class="pagetitle">
+        <h1><span [routerLink]="'/admin'">Panel de Control</span> / Usuarios</h1>
+        <div class="control-btns">
+            <button type="button" class="btn btn-secondary">
+                Nuevo usuario
+            </button>
+            <button type="button" class="btn btn-outline-danger" (click)="handleLogout()"> Cerrar sesión
+            </button>
+        </div>
+    </div>
+    <section>
+        <app-table-info [type]="'users'" [users]="users" (notifyCreateProductToGrandParent)="handleUserDelete($event)">
+        </app-table-info>
+    </section>
+    <div *ngIf="false" class="Loader">
+        <app-loader></app-loader>
+    </div>
+</main>

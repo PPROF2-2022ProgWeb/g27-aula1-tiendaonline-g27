@@ -37,6 +37,10 @@ export class UserService {
         return this.http.get<any>(this.API_GET_USER_BY_EMAIL + email);
     }
 
+    public deleteUserById(id: string): Observable<any> {
+        return this.http.delete<any>(this.API_DELETE_USER_BY_ID + id);
+    }
+
     public async login(user: IUser, password: string) {
         const hashPassword = await hash(password);
         if (user.password ===  hashPassword) {

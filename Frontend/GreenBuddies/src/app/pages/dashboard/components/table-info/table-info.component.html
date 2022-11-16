@@ -1,4 +1,4 @@
-<table class="table table-borderless datatable">
+<table class="table table-borderless datatable" [ngClass]="users && type === 'users' ? 'table-striped Usuarios' : ''">
     <thead>
         <tr *ngIf=" data && type === 'recent_sales' ">
             <th scope="col">Nº</th>
@@ -20,6 +20,14 @@
             <th scope="col">Stock</th>
             <th scope="col">Precio</th>
             <th scope="col"></th>
+        </tr>
+        <tr *ngIf="users && type === 'users' ">
+            <th scope="col">Nombre</th>
+            <th scope="col">Email</th>
+            <th scope="col">País</th>
+            <th scope="col">Provincia</th>
+            <th scope="col">Rol</th>
+            <th scope="col">Edad</th>
         </tr>
     </thead>
     <tbody *ngIf="data && type === 'recent_sales'">
@@ -52,5 +60,17 @@
         </tr>
         <app-edit-form [product]="selectedProduct" (editProductEvent)="handleEditProduct($event)"
             [id]="'editProductModal'" [type]="'edit'"></app-edit-form>
+    </tbody>
+    <tbody *ngIf="users && type === 'users'">
+        <tr *ngFor="let user of users">
+            <td scope="col">{{user.name + " " + user.lastName}}</td>
+            <td scope="col">{{user.email}}</td>
+            <td scope="col">{{user.country.name}}</td>
+            <td scope="col">{{user.state.name}}</td>
+            <td [ngClass]="user.role.roleName ===  'ROLE_ADMIN' ? 'bold' : ''" scope="col">{{user.role.roleName ===
+                "ROLE_ADMIN" ? "Administrador" : "Usuario"}}</td>
+            <td scope="col">{{calculateAge(user.birthDate)}}</td>
+            <td class="controlllers"> <i (click)="handleDeleteUser(user)" class="bi bi-x-circle-fill removeBtn"></i>
+            </td>
     </tbody>
 </table>

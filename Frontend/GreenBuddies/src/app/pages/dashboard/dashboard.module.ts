@@ -51,6 +51,9 @@ import { UserInfoComponent } from './user-info/user-info.component';
       },
       {
         path: 'reportes', pathMatch: 'full', component: ReportesAdminComponent
+      },
+      {
+        path: 'usuarios', pathMatch: 'full', component: UsuariosAdminComponent
       }
     ])
   ]

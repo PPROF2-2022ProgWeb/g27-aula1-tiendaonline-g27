@@ -19,9 +19,7 @@ export class TableInfoComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void { 
-    console.log(this.products);
-  }
+  ngOnInit(): void { }
 
   handleSelectProduct(product: IProduct) {
     this.selectedProduct = product;
@@ -33,7 +31,23 @@ export class TableInfoComponent implements OnInit {
 
   handleDeleteProduct(product: IProduct) {
     this.notifyCreateProductToGrandParent.emit(product.id);
-    /* window.location.reload(); */
+  }
+
+  handleDeleteUser(user: IUser) {
+    this.notifyCreateProductToGrandParent.emit(user.id);
+  }
+
+  calculateAge(birth: string) {
+    let today = new Date();
+    let birthdate = new Date(birth);
+    let age = today.getFullYear() - birthdate.getFullYear();
+    let m = today.getMonth() - birthdate.getMonth();
+
+    if (m < 0 || (m === 0 && today.getDate() < birthdate.getDate())) {
+      age--;
+    }
+
+    return age;
   }
 
 }
