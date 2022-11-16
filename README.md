@@ -23,7 +23,7 @@ Este sitio consume la API realizada con Spring Boot de Backend/tienda. Para pone
 2. Crear en mysql una base de datos con el nombre green_buddies.
 3. Si fuera necesario: cambiar el puerto, el nombre de usuario y la contraseña de su mysql local desde Backend\tienda\src\main\resources\application.properties.  
 4. Ejecutar en su IDE de preferencia (que utilice maven, v.gr. IntelliJ) Backend\tienda\src\main\java\StoreApplication.java.
-5. Ejecutar el script Especificaciones\script-bd.sql que cargará en la base de datos nuestros productos, usuarios, etc.  
+5. Ejecutar el [script](https://github.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/blob/main/Especificaciones/script-bd.sql) que cargará en la base de datos nuestros productos, usuarios, etc.  
 6. Para acceder a la documentaión de la API, una vez ejecutado el proyecto ingresar a [Swagger UI](http://localhost:8081/swagger-ui/index.html) (reemplazar el puerto de ser necesario) o a [Green Buddies API Documentation](https://github.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/blob/main/Backend/tienda/src/main/resources/api/store.json).
 
 ## 🌱 Frontend
