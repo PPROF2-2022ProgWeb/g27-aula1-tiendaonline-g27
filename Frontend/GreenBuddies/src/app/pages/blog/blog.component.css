@@ -52,13 +52,13 @@ img{
 .btn{
     cursor: pointer;
     display: inline-block;
-    font-weight: bold;
-    padding: 10px 20px;
+    font-weight:lighter;
+    padding: 10px 10px;
     background: #262626;
     color: #fff;
-    font-size: 15px;
+    font-size: 10px;
     border: 1px solid #fff;
-    margin: 10px 0;
+    margin: 5px 0;
 }
 .btn:hover{
     opacity: .7;

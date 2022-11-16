@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-mis-compras',
-  templateUrl: './mis-compras.component.html',
-  styleUrls: ['./mis-compras.component.css']
+  selector: 'app-miscompras',
+  templateUrl: './miscompras.component.html',
+  styleUrls: ['./miscompras.component.css']
 })
-export class MisComprasComponent implements OnInit {
+export class MiscomprasComponent implements OnInit {
 
-public miscompras: {
+  public miscompras: {
 
     fechaMiCompra: string;
     tituloMiCompra: string;
@@ -19,7 +19,7 @@ public miscompras: {
   } [] = [
 
   {
-    fechaMiCompra: '10/09/2022',
+    fechaMiCompra: '27-09-2022',
     tituloMiCompra: "Cepillo de dientes Meraki",
     cantidadMiCompra: '2' ,
     totalMiCompra: "440,00 ARS",
@@ -27,7 +27,7 @@ public miscompras: {
     accionesMiCompra: "Repetir compra",
   },
   {
-    fechaMiCompra: '',
+    fechaMiCompra: '11-10-2022',
     tituloMiCompra: "Hilo dental Orlando",
     cantidadMiCompra: '1',
     estadoMiCompra: 'cancelado',
@@ -35,8 +35,8 @@ public miscompras: {
     accionesMiCompra: "Repetir compra",
   },
   {
-    fechaMiCompra: '',
-    tituloMiCompra: "Afeitadora Ecologica Biodegradable",
+    fechaMiCompra: '03-11-2022',
+    tituloMiCompra: "Afeitadora Ecológica Biodegradable",
     cantidadMiCompra: '1',
     estadoMiCompra: "en espera",
     totalMiCompra: "100,00 ARS",
@@ -44,6 +44,7 @@ public miscompras: {
     
   }
 ];
+
 
   constructor() { }
 

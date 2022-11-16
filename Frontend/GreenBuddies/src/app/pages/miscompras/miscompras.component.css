@@ -1,0 +1,29 @@
+main{
+    margin: 90px auto 0 auto;
+}
+/*
+.container{
+    width: 80%;
+    margin: auto;   
+}*/
+
+
+
+@media (max-width:1130px){
+   
+    .container {
+        width: 80%;
+        flex-direction: column;
+    }
+}
+
+
+@media (max-width:800px){
+      
+    .container{
+        width: 90%;
+        flex-direction: column;
+
+    }
+} 
+

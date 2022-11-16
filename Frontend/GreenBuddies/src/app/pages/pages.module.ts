@@ -19,7 +19,7 @@ import { CarritoComponent } from './carrito/carrito.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { BlogComponent } from './blog/blog.component';
-import { MisComprasComponent } from './perfil/mis-compras/mis-compras.component';
+import { MiscomprasComponent } from './miscompras/miscompras.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +38,8 @@ import { MisComprasComponent } from './perfil/mis-compras/mis-compras.component'
     PerfilComponent,
     CheckoutComponent,
     BlogComponent,
-    MisComprasComponent
+    MiscomprasComponent,
+
   ],
   imports: [
     CommonModule,
