@@ -33,11 +33,6 @@
     justify-content: center;
 }
 
-a {
-    color: #000;
-    text-decoration: none;
-}
-
 @media screen and (min-width: 650px) {
     .Section__content {
         padding: 2rem 2rem 0 2rem;

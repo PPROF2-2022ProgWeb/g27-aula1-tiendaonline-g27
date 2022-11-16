@@ -19,7 +19,7 @@
                 "product_name": "Hilo dental | Orlando",
                 "price": 470,
                 "customer": "Celia Cuccittini",
-                "thumb": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/hilodental_orlando.jpg"
+                "thumb": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/Frontend/GreenBuddies/src/assets/img/hilodental_orlando.jpg"
             },
             {
                 "id": 5999,
@@ -27,7 +27,7 @@
                 "product_name": "Comedero para mascotas | Eco-Pet",
                 "price": 380,
                 "customer": "Sergio Romero",
-                "thumb": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/plato_mascota.png"
+                "thumb": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/Frontend/GreenBuddies/src/assets/img/plato_mascota.png"
             },
             {
                 "id": 5998,
@@ -35,7 +35,7 @@
                 "product_name": "Cepillo de dientes | Meraki",
                 "price": 220,
                 "customer": "Gerónimo Rulli",
-                "thumb": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/cepillo_meraki.jpg"
+                "thumb": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/Frontend/GreenBuddies/src/assets/img/cepillo_meraki.jpg"
             },
             {
                 "id": 5997,
@@ -43,7 +43,7 @@
                 "product_name": "Pack de sorbetes reutilizables | Orlando",
                 "price": 1800,
                 "customer": "Mónica García",
-                "thumb": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/sorbetereutilizable_oregon.jpg"
+                "thumb": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/Frontend/GreenBuddies/src/assets/img/sorbetereutilizable_oregon.jpg"
             },
             {
                 "id": 5996,
@@ -51,7 +51,7 @@
                 "product_name": "Esponja facial | Konjac",
                 "price": 749,
                 "customer": "Juan Cabral",
-                "thumb": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/esponja_konjac1.png"
+                "thumb": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/Frontend/GreenBuddies/src/assets/img/esponja_konjac1.png"
             }
         ],
         "top_selling": [
@@ -62,7 +62,7 @@
                 "price": 220,
                 "sold": 2500,
                 "revenue": 550000,
-                "thumb": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/cepillo_meraki.jpg"
+                "thumb": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/Frontend/GreenBuddies/src/assets/img/cepillo_meraki.jpg"
             },
             {
                 "position": 2,
@@ -71,7 +71,7 @@
                 "price": 390,
                 "sold": 1900,
                 "revenue": 741000,
-                "thumb": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/champu-solido-para-perros-.jpg"
+                "thumb": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/Frontend/GreenBuddies/src/assets/img/champu-solido-para-perros-.jpg"
             },
             {
                 "position": 3,
@@ -80,7 +80,7 @@
                 "price": 749,
                 "sold": 1300,
                 "revenue": 973700,
-                "thumb": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/GreenBuddies/src/assets/img/esponja_konjac1.png"
+                "thumb": "https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g27-aula1-tiendaonline-g27/main/Frontend/GreenBuddies/src/assets/img/esponja_konjac1.png"
             }
         ]
     },
@@ -197,7 +197,9 @@
         ]
     },
     "balance": {
-        "labels": [],
+        "labels": [
+            "2022"
+        ],
         "datasets": [
             {
                 "data": [

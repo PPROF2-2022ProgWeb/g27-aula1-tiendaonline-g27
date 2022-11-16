@@ -19,7 +19,9 @@ export class TableInfoComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void { 
+    console.log(this.products);
+  }
 
   handleSelectProduct(product: IProduct) {
     this.selectedProduct = product;
