@@ -33,7 +33,7 @@ export class BlogComponent implements OnInit {
       protegiendo a las personas y comunidades que han participado en todo el proceso de elaboración
       sin provocar impacto en el medio ambiente...” Por Sostenebilidad.unlugarmejor.com`,
         buttonPost: "http://sostenibilidad.unlugarmejor.com/que-es-un-producto-sostenible",
-        labelPost: "sostenebilidad",
+        labelPost: "#sostenebilidad",
       },
       {
         id: '2',
@@ -43,7 +43,7 @@ export class BlogComponent implements OnInit {
       respeto de nuestro medio ambiente, da el paso inicial hacia un
       mañana mejor…” Por Yurena Gonzalez.`,
         buttonPost: "https://www.ecoblognonoa.com",
-        labelPost: "medioambiente",
+        labelPost: "#medioambiente",
       },
       {
         id: '3',
@@ -52,7 +52,7 @@ export class BlogComponent implements OnInit {
         contentPost: `Detrás de este blog está Irene Gijón Prieto, nos escribe sobre sostenibilidad desde varios 
       aspectos, información interesante, novedosa.`,
         buttonPost: "https://larecolectora.com",
-        labelPost: "hábitos_sostenibles",
+        labelPost: "#hábitos_sostenibles",
       },
       {
         id: '4',
@@ -62,7 +62,7 @@ export class BlogComponent implements OnInit {
       sobre lo cual han publicado una guía práctica con consejos y alternativas para ayudarnos en el
       camino del residuo cero.`,
         buttonPost: "https://vivirsinplastico.com",
-        labelPost: "residuo_cero",
+        labelPost: "#residuo_cero",
       },
       {
         id: '5',
@@ -72,7 +72,7 @@ export class BlogComponent implements OnInit {
       sostenibilidad de una manera divertida. Eco-cosas.com ofrece artículos sobre ecología, salud natural,
       como cultivar, bioconstrucción y más.`,
         buttonPost: "Https://ecocosas.com/reciclaje/juguetes-material-reciclado",
-        labelPost: "reciclaje",
+        labelPost: "#reciclaje",
 
       },
       {
@@ -83,7 +83,7 @@ export class BlogComponent implements OnInit {
       cambiar el mundo. En su blog brinda información y recursos sobre moda, alimentación y
       consejos para llevar una vida de cero residuos.`,
         buttonPost: "https://laecocosmopolita.com",
-        labelPost: "economia_sustentable",
+        labelPost: "#economia_sustentable",
       }
 
 

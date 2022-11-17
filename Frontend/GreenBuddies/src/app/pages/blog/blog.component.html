@@ -1,5 +1,5 @@
 <main>
-    <app-header [description]="'Blog'" [isTop]="true"></app-header>
+    <app-header [description]="'¡Sumate a nuestro Blog!'" [isTop]="true"></app-header>
     
     <section>
         <div class="container" *ngFor="let post of posts">
@@ -23,7 +23,7 @@
                         <a [href]="[post.buttonPost]" class="btn">Leer más<i class="fas fa-angle-double-right"></i></a>
                     </div>
                     <div>
-                        <p>{{ post.labelPost }}</p>
+                        <p class="tags">{{ post.labelPost }}</p>
                     </div>
 
 

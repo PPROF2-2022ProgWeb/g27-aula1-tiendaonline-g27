@@ -7,6 +7,15 @@ a{
     text-decoration: none;
 }
 
+.tags{
+    cursor: pointer;
+    color:aqua;
+    text-decoration: underline; 
+}
+.tags:hover{
+    opacity: .7; 
+}
+
 ul{
     list-style: none;
 }
@@ -56,7 +65,7 @@ img{
     padding: 10px 10px;
     background: #262626;
     color: #fff;
-    font-size: 10px;
+    font-size: 15px;
     border: 1px solid #fff;
     margin: 5px 0;
 }
