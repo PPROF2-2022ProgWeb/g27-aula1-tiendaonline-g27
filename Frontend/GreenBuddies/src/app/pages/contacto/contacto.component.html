@@ -1,6 +1,6 @@
 <main class="forms">
 
-    <form class="formulario_registro container">
+    <form [formGroup]="form" class="formulario_contacto container" (ngSubmit)="onEnviar($event)">
 
         <h3>¿Quieres contactarnos?</h3>
         <h4>Envíanos tu consulta</h4><br>
@@ -20,52 +20,89 @@
                 </select>
 
                 <div class="columna1">
+
                     <label for="nombreRegis" class="form-label">Nombre *</label>
-                    <input type="text" class="form-control" name="nombreRegis" id="nombreRegis" required minlength="2" maxlength="24">
+                    <input type="text" class="form-control" formControlName="name" id="nombreRegis"
+                    [class.border-danger]="nameValid"  autocomplete="on">
+                    
+                    <div *ngIf="name?.errors?.['required'] && name?.touched">
+                        <p [ngStyle]="{color:'tomato'}">El nombre es requerido.</p>
+                    </div>
+                    <div *ngIf="name?.errors?.['minlength'] && name?.touched">
+                        <p [ngStyle]="{color:'tomato'}"> Se requiere un mínimo de 3 letras.</p>
+                    </div>
+                    <div *ngIf="name?.errors?.['maxlength'] && name?.touched">
+                        <p [ngStyle]="{color:'tomato'}">La longitud máxima es hasta 14 letras.</p>
+                    </div>
+                    <div *ngIf="name?.errors?.['pattern'] && name?.touched">
+                        <p [ngStyle]="{color:'tomato'}">Este campo solo admite letras.</p>
+                    </div>
                 </div>
-
-                <div class="columna2">
-                    <label for="apellidoRegis" class="form-label">Apellido *</label>
-                    <input type="text" class="form-control" name="apellidoRegis" id="apellidoRegis" value="" required minlength="2"
-                    maxlength="24">
-                </div>
-
-
-                <div class="columna3">
-                    <label for="correoRegis" class="form-label">Correo *</label>
-                    <input type="email" class="form-control" name="correoRegis" id="correoRegis" value="" required>
-                </div>
-
-
-                <div class="columna4">
-                    <label for="motivo" class="form-label">Motivo de consulta * </label>
-                    <select class="form-control" name="motivo-consultas"  id="motivo-consultas" required>
-                        <option value="vacio">-</option>
-                        <option value="nopuedoRegistrarme">No puedo registrarme en el Sitio Web</option>
-                        <option value="cambioTipofactura">Quiero cambiar el tipo de mi factura B por A</option>
-                        <option value="consultacompra">Quiero consultar sobre la compra que realicé</option>
-                        <option value="realizarreclamos">Quiero hacer un reclamo</option>
-                        <option value="consultaseller">Quiero sumarme como seller</option>
-                        <option value="consultafranquicias">Quiero consultar sobre Franquicias de GreenBuddies</option>
-                        <option value="consultarGarantias">Deseo recibir info sobre garantias</option>
-                        <option value="estadoEnvio">Solicito info sobre el envío de mi compra</option>
-                        <option value="otrosMotivos">Otros motivos de consulta</option>
-                    </select>
-                </div>
-
-                <div class="columna5">
-                    <label for="mensajeContacto" class="form-label">Descripción *</label>
-                    <textarea class="form-control" name="mensajeContacto" id="mensajeContacto" rows="4" required minlength="8"></textarea>
-                </div>
-
-
-                <button class="btn btn-success submitBtn" type="submit" name="regSubmit" id="regSubmit"
-                data-bs-target="#modalForm">Enviar</button>
 
             </div>
 
+            <div class="columna2">
+                <label for="apellidoRegis" class="form-label">Apellido *</label>
+                <input type="text" class="form-control" formControlName="lastName" id="apellidoRegis"
+                [class.border-danger]="lastNameValid" autocomplete="on">
+                
+                <div *ngIf="lastName?.errors?.['required'] && lastName?.touched">
+                    <p [ngStyle]="{color:'tomato'}">El apellido es requerido.</p>
+                </div>
+                <div *ngIf="lastName?.errors?.['minlength'] && lastName?.touched">
+                    <p [ngStyle]="{color:'tomato'}"> Se requiere un mínimo de 3 letras.</p>
+                </div>
+                <div *ngIf="lastName?.errors?.['maxlength'] && lastName?.touched">
+                    <p [ngStyle]="{color:'tomato'}">La longitud máxima es hasta 14 letras.</p>
+                </div>
+                <div *ngIf="lastName?.errors?.['pattern'] && lastName?.touched">
+                    <p [ngStyle]="{color:'tomato'}">Este campo solo admite letras.</p>
+                </div>
+            </div>
+
+
+            <div class="columna3">
+                <label for="correoRegis" class="form-label">Correo *</label>
+                <input type="email" class="form-control" placeholder="Correo" formControlName="email" id="correoRegis"
+                [class.border-danger]="emailValid" autocomplete="on">
+
+                <div *ngIf="email?.errors?.['required'] && email?.touched">
+                    <p [ngStyle]="{color:'tomato'}">El email es requerido. </p>
+                </div>
+                <div *ngIf="email?.errors?.['email'] && email?.touched">
+                    <p [ngStyle]="{color:'tomato'}">El formato del email debe ser válido.</p>
+                </div>
+            </div>
         </div>
 
+        <div>
+        <div class="columna4">
+            <label for="motivo" class="form-label">Motivo de consulta * </label>
+            <select class="form-control" name="motivo-consultas" id="motivo-consultas" required>
+                <option value="vacio">-</option>
+                <option value="nopuedoRegistrarme">No puedo registrarme en el Sitio Web</option>
+                <option value="cambioTipofactura">Quiero cambiar el tipo de mi factura B por A</option>
+                <option value="consultacompra">Quiero consultar sobre la compra que realicé</option>
+                <option value="realizarreclamos">Quiero hacer un reclamo</option>
+                <option value="consultaseller">Quiero sumarme como seller</option>
+                <option value="consultafranquicias">Quiero consultar sobre Franquicias de GreenBuddies</option>
+                <option value="consultarGarantias">Deseo recibir info sobre garantias</option>
+                <option value="estadoEnvio">Solicito info sobre el envío de mi compra</option>
+                <option value="otrosMotivos">Otros motivos de consulta</option>
+            </select>
+        </div>
+
+        <div class="columna5">
+            <label for="mensajeContacto" class="form-label">Descripción *</label>
+            <textarea class="form-control" name="mensajeContacto" id="mensajeContacto" rows="4" required
+                minlength="8"></textarea>
+        </div>
+
+      </div>
+        <button class="btn btn-success submitBtn" type="submit" [disabled]="form.invalid" id="regSubmit"
+        data-bs-target="#modalForm">Enviar</button>
+     
+        
     </form>
 
 </main>

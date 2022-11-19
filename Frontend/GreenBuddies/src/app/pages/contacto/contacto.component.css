@@ -23,7 +23,7 @@
   }
   
   /*formato inputs- block*/
-  .formulario_registro input, select, textarea{
+  .formulario_contacto input, select, textarea{
     border-radius: 10px;
     margin-bottom: 16px;
     font-size: 14px;
